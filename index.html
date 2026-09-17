@@ -6,7 +6,12 @@
 
 <title>PK Chat AI</title>
 
+<!-- PK Favicon -->
+<link rel="icon" type="image/svg+xml"
+href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2303050a'/%3E%3Ccircle cx='50' cy='50' r='37' fill='none' stroke='%231683ff' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='29' fill='%23070b13'/%3E%3Ctext x='50' y='61' text-anchor='middle' font-family='Arial' font-size='28' font-weight='bold' fill='%2300c6ff'%3EPK%3C/text%3E%3C/svg%3E">
+
 <style>
+
 /* =========================================================
    PK CHAT AI V2
    ========================================================= */
@@ -72,6 +77,27 @@ body{
 }
 
 /* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar{
+    width:7px;
+}
+
+::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background:rgba(22,131,255,.28);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:rgba(22,131,255,.55);
+}
+
+/* =========================================================
    APP
    ========================================================= */
 
@@ -87,279 +113,279 @@ body{
    ========================================================= */
 
 .sidebar{
-    width:270px;
+    width:285px;
     height:100vh;
-    flex-shrink:0;
-
+    background:rgba(5,8,14,.88);
+    border-right:1px solid var(--border);
+    backdrop-filter:blur(25px);
     display:flex;
     flex-direction:column;
-
-    padding:16px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(9,15,26,.97),
-            rgba(3,7,13,.97)
-        );
-
-    border-right:1px solid var(--border);
-
-    z-index:50;
+    position:relative;
+    z-index:20;
+    transition:.3s ease;
 }
 
 body.light .sidebar{
-    background:#f7faff;
+    background:rgba(255,255,255,.88);
 }
 
 /* Brand */
 
 .brand{
+    height:82px;
+    padding:16px 18px;
     display:flex;
     align-items:center;
-    gap:12px;
-    padding:5px 5px 20px;
+    gap:13px;
+    border-bottom:1px solid var(--border);
 }
 
 .logo{
-    width:44px;
-    height:44px;
-    flex-shrink:0;
-
+    width:48px;
+    height:48px;
+    border-radius:15px;
+    position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
+    background:
+        radial-gradient(circle at 30% 20%,rgba(0,198,255,.25),transparent 50%),
+        #07101c;
+    border:1px solid rgba(0,198,255,.35);
+    box-shadow:
+        0 0 20px rgba(0,137,255,.22),
+        inset 0 0 20px rgba(0,137,255,.08);
+    animation:logoFloat 3s ease-in-out infinite;
+    overflow:hidden;
+}
 
-    border-radius:14px;
+.logo:before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:16px;
+    border:1px solid transparent;
+    border-top-color:var(--blue2);
+    animation:logoSpin 3s linear infinite;
+}
 
-    font-size:16px;
+.logo:after{
+    content:"";
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--blue2);
+    box-shadow:0 0 15px var(--blue2);
+    top:5px;
+    left:50%;
+}
+
+.logo span{
+    font-size:18px;
     font-weight:900;
     letter-spacing:-1px;
-
-    color:white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #075cff,
-            #00bfff,
-            #176bff
-        );
-
-    box-shadow:
-        0 0 15px rgba(0,125,255,.75),
-        0 0 40px rgba(0,105,255,.28);
-
-    animation:logoGlow 2.8s ease-in-out infinite;
+    background:linear-gradient(135deg,#fff,#00c6ff);
+    -webkit-background-clip:text;
+    color:transparent;
+    z-index:2;
 }
 
-@keyframes logoGlow{
+@keyframes logoFloat{
     0%,100%{
-        transform:scale(1);
-        box-shadow:
-            0 0 15px rgba(0,125,255,.75),
-            0 0 40px rgba(0,105,255,.28);
+        transform:translateY(0);
     }
-
     50%{
-        transform:scale(1.06);
-        box-shadow:
-            0 0 22px rgba(0,180,255,.95),
-            0 0 55px rgba(0,105,255,.45);
+        transform:translateY(-3px);
     }
 }
 
-.brand-text h1{
-    font-size:18px;
-    font-weight:800;
+@keyframes logoSpin{
+    to{
+        transform:rotate(360deg);
+    }
 }
 
-.brand-text span{
-    display:block;
-    margin-top:3px;
+.brandText h1{
+    font-size:19px;
+    letter-spacing:-.5px;
+}
+
+.brandText p{
     color:var(--muted);
-    font-size:9px;
-    letter-spacing:.7px;
+    font-size:11px;
+    margin-top:3px;
 }
 
 /* New Chat */
 
-.new-chat{
-    width:100%;
-    height:46px;
-
-    border:1px solid var(--border2);
-    border-radius:12px;
-
+.newChat{
+    margin:16px;
+    height:48px;
+    border:1px solid rgba(0,198,255,.30);
+    border-radius:13px;
     background:
         linear-gradient(
             135deg,
-            rgba(0,110,255,.16),
-            rgba(0,190,255,.06)
+            rgba(22,131,255,.16),
+            rgba(0,198,255,.06)
         );
-
     color:var(--text);
-
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
     cursor:pointer;
-
-    font-size:13px;
+    font-size:14px;
     font-weight:700;
+    transition:.25s;
+}
 
+.newChat:hover{
+    transform:translateY(-2px);
+    border-color:rgba(0,198,255,.7);
+    box-shadow:0 8px 30px rgba(0,128,255,.16);
+}
+
+.newChat span{
+    font-size:20px;
+    color:var(--blue2);
+}
+
+/* Sidebar nav */
+
+.navTitle{
+    color:var(--muted2);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    padding:2px 18px 10px;
+}
+
+.nav{
+    padding:0 10px;
+}
+
+.navItem{
+    width:100%;
+    border:0;
+    background:transparent;
+    color:var(--muted);
+    height:43px;
+    padding:0 12px;
+    display:flex;
+    align-items:center;
+    gap:11px;
+    border-radius:10px;
+    cursor:pointer;
+    text-align:left;
+    font-size:13px;
     transition:.2s;
 }
 
-.new-chat:hover{
-    transform:translateY(-1px);
-    border-color:rgba(0,160,255,.55);
-
-    box-shadow:
-        0 8px 25px rgba(0,100,255,.15);
-}
-
-/* Search */
-
-.search-box{
-    margin-top:12px;
-    position:relative;
-}
-
-.search-box input{
-    width:100%;
-    height:40px;
-
-    padding:0 12px 0 36px;
-
-    border:1px solid var(--border);
-    border-radius:10px;
-
-    outline:none;
-
-    background:var(--panel2);
+.navItem:hover,
+.navItem.active{
+    background:rgba(22,131,255,.10);
     color:var(--text);
-
-    font-size:12px;
 }
 
-.search-icon{
-    position:absolute;
-    left:12px;
-    top:11px;
-
-    color:var(--muted);
-
-    font-size:14px;
+.navIcon{
+    width:25px;
+    text-align:center;
+    font-size:17px;
 }
 
-/* Sidebar heading */
+/* Recent */
 
-.sidebar-title{
-    margin:24px 8px 9px;
-
-    color:var(--muted2);
-
-    font-size:10px;
-    font-weight:700;
-
-    letter-spacing:1px;
-}
-
-/* History */
-
-.history{
+.recent{
     flex:1;
+    min-height:0;
+    padding-top:12px;
     overflow:auto;
 }
 
-.history::-webkit-scrollbar{
-    width:4px;
+.chatHistory{
+    padding:0 10px;
 }
 
-.history::-webkit-scrollbar-thumb{
-    background:rgba(80,130,220,.2);
-    border-radius:20px;
+.historyEmpty{
+    color:var(--muted2);
+    font-size:12px;
+    padding:20px 12px;
+    text-align:center;
 }
 
-.history-item{
-    width:100%;
-
+.historyItem{
     display:flex;
     align-items:center;
-    gap:9px;
-
-    padding:11px 10px;
+    gap:8px;
+    padding:10px 11px;
     margin-bottom:4px;
-
-    border:1px solid transparent;
     border-radius:9px;
-
-    color:var(--muted);
-
     cursor:pointer;
-
+    color:var(--muted);
     font-size:12px;
-
     transition:.2s;
 }
 
-.history-item:hover,
-.history-item.active{
+.historyItem:hover{
+    background:rgba(22,131,255,.08);
     color:var(--text);
-    background:rgba(40,100,190,.10);
-    border-color:var(--border);
 }
 
-.history-item span:first-child{
-    font-size:13px;
+.historyDot{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--blue);
+    box-shadow:0 0 8px rgba(22,131,255,.7);
+    flex:none;
 }
 
 /* Sidebar bottom */
 
-.sidebar-bottom{
+.sidebarBottom{
     border-top:1px solid var(--border);
-    padding-top:12px;
-    margin-top:10px;
+    padding:12px;
 }
 
-.sidebar-btn{
-    width:100%;
+.owner{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:9px;
+    border-radius:12px;
+    background:rgba(255,255,255,.025);
+}
 
-    border:0;
-    background:transparent;
-
-    color:var(--muted);
-
-    padding:10px;
-
-    border-radius:9px;
-
-    text-align:left;
-
-    cursor:pointer;
-
+.ownerAvatar{
+    width:35px;
+    height:35px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
     font-size:12px;
-
-    transition:.2s;
+    background:linear-gradient(135deg,var(--blue),var(--blue2));
+    color:#fff;
+    box-shadow:0 0 18px rgba(0,145,255,.25);
 }
 
-.sidebar-btn:hover{
-    color:var(--text);
-    background:rgba(60,120,220,.08);
+.ownerText{
+    min-width:0;
 }
 
-.creator{
-    margin-top:10px;
-    padding:12px 9px 3px;
-}
-
-.creator small{
+.ownerText strong{
     display:block;
-    color:var(--muted2);
-    font-size:9px;
-    margin-bottom:4px;
+    font-size:12px;
 }
 
-.creator strong{
-    font-size:12px;
+.ownerText small{
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    margin-top:2px;
 }
 
 /* =========================================================
@@ -367,606 +393,610 @@ body.light .sidebar{
    ========================================================= */
 
 .main{
-    min-width:0;
     flex:1;
-
+    min-width:0;
     height:100vh;
-
     display:flex;
     flex-direction:column;
-
     position:relative;
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* Header */
 
 .header{
-    height:68px;
-    min-height:68px;
-
+    height:70px;
+    flex:none;
+    border-bottom:1px solid var(--border);
+    background:rgba(3,5,10,.48);
+    backdrop-filter:blur(20px);
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    padding:0 22px;
-
-    border-bottom:1px solid var(--border);
-
-    background:rgba(3,7,14,.72);
-
-    backdrop-filter:blur(18px);
-
-    z-index:30;
+    padding:0 24px;
+    z-index:10;
 }
 
 body.light .header{
-    background:rgba(255,255,255,.75);
+    background:rgba(255,255,255,.60);
 }
 
-.header-left{
+.headerLeft{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:13px;
 }
 
-.mobile-menu{
+.mobileMenu{
     display:none;
-
+    width:40px;
+    height:40px;
     border:1px solid var(--border);
+    border-radius:10px;
     background:var(--panel);
     color:var(--text);
-
-    width:38px;
-    height:38px;
-
-    border-radius:10px;
-
     cursor:pointer;
+    font-size:19px;
 }
 
-.header-title{
-    font-size:15px;
+.headerTitle{
     font-weight:800;
-}
-
-.header-subtitle{
-    color:var(--muted);
-    font-size:10px;
-    margin-top:3px;
-}
-
-.header-actions{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.icon-btn{
-    width:38px;
-    height:38px;
-
-    border:1px solid var(--border);
-    border-radius:10px;
-
-    background:var(--panel);
-
-    color:var(--muted);
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.icon-btn:hover{
-    color:var(--text);
-    border-color:var(--border2);
-    transform:translateY(-1px);
+    font-size:15px;
 }
 
 .status{
     display:flex;
     align-items:center;
     gap:7px;
-
-    margin-left:5px;
-
     color:var(--muted);
-
-    font-size:10px;
+    font-size:11px;
+    margin-top:3px;
 }
 
-.status-dot{
+.statusDot{
     width:7px;
     height:7px;
-
     border-radius:50%;
-
     background:var(--green);
-
-    box-shadow:
-        0 0 8px var(--green);
-
-    animation:statusPulse 1.7s infinite;
+    box-shadow:0 0 10px var(--green);
+    animation:pulse 1.8s infinite;
 }
 
-@keyframes statusPulse{
-    0%,100%{opacity:1}
-    50%{opacity:.4}
+@keyframes pulse{
+    0%,100%{
+        opacity:1;
+        transform:scale(1);
+    }
+    50%{
+        opacity:.45;
+        transform:scale(.75);
+    }
+}
+
+.headerActions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.iconBtn{
+    width:38px;
+    height:38px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:rgba(255,255,255,.025);
+    color:var(--muted);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    transition:.2s;
+}
+
+.iconBtn:hover{
+    color:var(--text);
+    border-color:var(--border2);
+    background:rgba(22,131,255,.08);
+    transform:translateY(-1px);
 }
 
 /* =========================================================
-   CHAT AREA
+   CONTENT
    ========================================================= */
 
-.chat-area{
+.content{
     flex:1;
-    min-height:0;
-
+    overflow:auto;
     position:relative;
-
-    overflow:hidden;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
 }
-
-/* background particles */
-
-.chat-area::before,
-.chat-area::after{
-    content:"";
-
-    position:absolute;
-
-    width:420px;
-    height:420px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,110,255,.11),
-            transparent 68%
-        );
-
-    filter:blur(25px);
-
-    pointer-events:none;
-}
-
-.chat-area::before{
-    top:-200px;
-    left:20%;
-}
-
-.chat-area::after{
-    right:-180px;
-    bottom:-200px;
-}
-
-/* Welcome */
 
 .welcome{
-    position:relative;
-
+    max-width:900px;
+    margin:0 auto;
+    padding:70px 25px 120px;
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     text-align:center;
-
-    z-index:2;
-
-    max-width:650px;
-
-    padding:30px;
-
-    transition:.4s;
 }
 
-.welcome.hidden{
-    opacity:0;
-    transform:translateY(20px);
-    pointer-events:none;
-}
-
-.big-logo{
-    width:88px;
-    height:88px;
-
-    margin:0 auto 22px;
-
+.heroLogo{
+    width:86px;
+    height:86px;
+    border-radius:26px;
+    background:
+        radial-gradient(circle at 30% 20%,rgba(0,198,255,.35),transparent 55%),
+        #07101b;
+    border:1px solid rgba(0,198,255,.4);
     display:flex;
     align-items:center;
     justify-content:center;
-
-    border-radius:26px;
-
-    font-size:30px;
-    font-weight:900;
-
-    color:white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #075cff,
-            #00c7ff,
-            #145dff
-        );
-
+    position:relative;
     box-shadow:
-        0 0 25px rgba(0,130,255,.65),
-        0 0 80px rgba(0,100,255,.25);
-
-    animation:
-        welcomeFloat 3s ease-in-out infinite;
+        0 0 45px rgba(0,128,255,.15),
+        inset 0 0 30px rgba(0,128,255,.08);
+    animation:heroFloat 4s ease-in-out infinite;
+    overflow:hidden;
 }
 
-@keyframes welcomeFloat{
-    0%,100%{
-        transform:translateY(0) rotate(0);
-    }
+.heroLogo:before{
+    content:"";
+    position:absolute;
+    inset:7px;
+    border-radius:21px;
+    border:1px solid rgba(0,198,255,.22);
+    animation:logoSpin 5s linear infinite;
+}
 
+.heroLogo:after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--blue2),transparent);
+    transform:rotate(-45deg);
+    animation:shine 2.5s infinite;
+}
+
+.heroLogo span{
+    font-size:30px;
+    font-weight:950;
+    background:linear-gradient(135deg,#fff,var(--blue2));
+    -webkit-background-clip:text;
+    color:transparent;
+    z-index:2;
+}
+
+@keyframes heroFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
     50%{
-        transform:translateY(-8px) rotate(1deg);
+        transform:translateY(-7px);
+    }
+}
+
+@keyframes shine{
+    0%{
+        left:-130px;
+    }
+    100%{
+        left:130px;
     }
 }
 
 .welcome h2{
-    font-size:34px;
-    margin-bottom:10px;
-}
-
-.gradient-text{
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #45b8ff,
-            #ffffff
-        );
-
+    font-size:38px;
+    letter-spacing:-1.5px;
+    margin-top:28px;
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #9fdcff,
+        #00c6ff,
+        #fff
+    );
+    background-size:250% auto;
     -webkit-background-clip:text;
-    background-clip:text;
-
     color:transparent;
-
-    background-size:200% auto;
-
-    animation:textShine 4s linear infinite;
+    animation:gradientText 5s linear infinite;
 }
 
-@keyframes textShine{
+body.light .welcome h2{
+    background:linear-gradient(
+        90deg,
+        #111827,
+        #1683ff,
+        #006dca,
+        #111827
+    );
+    background-size:250% auto;
+    -webkit-background-clip:text;
+}
+
+@keyframes gradientText{
     to{
-        background-position:200% center;
+        background-position:250% center;
     }
 }
 
-.welcome p{
+.welcomeSub{
+    max-width:650px;
     color:var(--muted);
     line-height:1.7;
-    font-size:13px;
+    font-size:14px;
+    margin-top:12px;
 }
 
-/* =========================================================
-   QUICK PROMPTS
-   ========================================================= */
+/* Quick prompts */
 
-.quick-prompts{
-    margin-top:28px;
+.quickTitle{
+    width:100%;
+    text-align:left;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.2px;
+    color:var(--muted2);
+    margin:42px 0 12px;
+}
 
+.quickGrid{
+    width:100%;
     display:grid;
     grid-template-columns:repeat(2,1fr);
-
     gap:10px;
 }
 
 .prompt{
-    text-align:left;
-
-    padding:14px;
-
     border:1px solid var(--border);
-
-    border-radius:13px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(15,25,42,.78),
-            rgba(7,12,22,.78)
-        );
-
+    background:rgba(255,255,255,.025);
     color:var(--text);
-
+    padding:16px;
+    border-radius:14px;
     cursor:pointer;
-
-    transition:.22s;
-
+    text-align:left;
+    transition:.25s;
     position:relative;
     overflow:hidden;
 }
 
-body.light .prompt{
-    background:#fff;
-}
-
-.prompt::before{
+.prompt:before{
     content:"";
-
     position:absolute;
-
-    top:0;
-    left:-100%;
-
-    width:100%;
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #1590ff,
-            transparent
-        );
-
-    transition:.5s;
-}
-
-.prompt:hover::before{
-    left:100%;
+    width:90px;
+    height:90px;
+    background:rgba(0,198,255,.08);
+    filter:blur(20px);
+    right:-40px;
+    bottom:-50px;
+    border-radius:50%;
 }
 
 .prompt:hover{
     transform:translateY(-3px);
+    border-color:rgba(0,198,255,.4);
+    background:rgba(22,131,255,.06);
+}
 
-    border-color:rgba(0,145,255,.45);
-
-    box-shadow:
-        0 12px 35px rgba(0,90,255,.12);
+.promptIcon{
+    font-size:19px;
+    margin-bottom:9px;
 }
 
 .prompt strong{
+    font-size:13px;
     display:block;
-    font-size:12px;
-    margin-bottom:5px;
 }
 
-.prompt span{
+.prompt small{
     color:var(--muted);
-    font-size:10px;
-    line-height:1.4;
+    display:block;
+    margin-top:5px;
+    line-height:1.45;
 }
 
-/* =========================================================
-   BOTTOM TOOLBAR
-   ========================================================= */
+/* Bottom helper */
 
-.bottom-area{
-    padding:12px 22px 14px;
-
-    position:relative;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            var(--bg) 35%
-        );
-
-    z-index:20;
-}
-
-.toolbar{
-    max-width:900px;
-
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    gap:8px;
-
-    margin-bottom:8px;
-}
-
-.tool{
-    padding:7px 11px;
-
-    border:1px solid var(--border);
-
-    border-radius:8px;
-
-    background:var(--panel);
-
-    color:var(--muted);
-
-    font-size:10px;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.tool:hover{
-    color:var(--text);
-    border-color:var(--border2);
-}
-
-.footer{
-    text-align:center;
-
+.helper{
+    margin-top:35px;
     color:var(--muted2);
-
-    font-size:9px;
-}
-
-.footer span{
-    color:var(--blue);
-}
-
-/* =========================================================
-   SETTINGS PANEL
-   ========================================================= */
-
-.settings-panel{
-    position:fixed;
-
-    top:78px;
-    right:20px;
-
-    width:270px;
-
-    padding:16px;
-
-    background:
-        rgba(9,15,26,.96);
-
-    border:1px solid var(--border2);
-
-    border-radius:15px;
-
-    box-shadow:var(--shadow);
-
-    backdrop-filter:blur(20px);
-
-    z-index:100;
-
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(-10px);
-
-    transition:.2s;
-}
-
-body.light .settings-panel{
-    background:rgba(255,255,255,.97);
-}
-
-.settings-panel.open{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-}
-
-.settings-title{
-    font-size:14px;
-    font-weight:800;
-
-    margin-bottom:14px;
-}
-
-.setting-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:11px 0;
-
-    border-bottom:1px solid var(--border);
-}
-
-.setting-row:last-child{
-    border-bottom:0;
-}
-
-.setting-label{
     font-size:11px;
 }
 
-.setting-description{
-    display:block;
+kbd{
+    border:1px solid var(--border2);
+    background:var(--panel2);
+    border-radius:5px;
+    padding:2px 6px;
     color:var(--muted);
-    font-size:9px;
-    margin-top:3px;
-}
-
-.toggle{
-    width:40px;
-    height:22px;
-
-    border:0;
-    border-radius:20px;
-
-    background:#253147;
-
-    position:relative;
-
-    cursor:pointer;
-}
-
-.toggle::after{
-    content:"";
-
-    position:absolute;
-
-    width:16px;
-    height:16px;
-
-    top:3px;
-    left:3px;
-
-    border-radius:50%;
-
-    background:#fff;
-
-    transition:.2s;
-}
-
-.toggle.active{
-    background:var(--blue);
-}
-
-.toggle.active::after{
-    left:21px;
 }
 
 /* =========================================================
-   MOBILE OVERLAY
+   CHAT LAUNCH PANEL
+   ========================================================= */
+
+.chatLaunch{
+    margin-top:28px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.startChat{
+    border:none;
+    min-width:190px;
+    height:48px;
+    border-radius:13px;
+    cursor:pointer;
+    color:white;
+    font-weight:800;
+    font-size:14px;
+    background:linear-gradient(135deg,#126eff,#00bdfc);
+    box-shadow:
+        0 10px 30px rgba(0,125,255,.24),
+        inset 0 1px rgba(255,255,255,.25);
+    transition:.25s;
+}
+
+.startChat:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 15px 38px rgba(0,125,255,.32),
+        inset 0 1px rgba(255,255,255,.25);
+}
+
+.startChat:active{
+    transform:translateY(0);
+}
+
+/* =========================================================
+   SEARCH MODAL
    ========================================================= */
 
 .overlay{
-    display:none;
-
     position:fixed;
-
     inset:0;
+    background:rgba(0,0,0,.60);
+    backdrop-filter:blur(8px);
+    z-index:100;
+    display:none;
+    align-items:flex-start;
+    justify-content:center;
+    padding-top:100px;
+}
 
-    background:rgba(0,0,0,.55);
+.overlay.show{
+    display:flex;
+    animation:fadeIn .2s ease;
+}
 
-    z-index:40;
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+.modal{
+    width:min(620px,calc(100% - 30px));
+    background:var(--panel);
+    border:1px solid var(--border2);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    animation:modalIn .25s ease;
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(-15px) scale(.98);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.modalHeader{
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 18px;
+    border-bottom:1px solid var(--border);
+}
+
+.modalHeader h3{
+    font-size:15px;
+}
+
+.closeBtn{
+    width:32px;
+    height:32px;
+    border:none;
+    border-radius:8px;
+    background:rgba(255,255,255,.05);
+    color:var(--muted);
+    cursor:pointer;
+    font-size:17px;
+}
+
+.modalBody{
+    padding:18px;
+}
+
+.searchInput{
+    width:100%;
+    height:45px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    outline:none;
+    background:var(--panel2);
+    color:var(--text);
+    padding:0 14px;
+    font-size:13px;
+}
+
+.searchInput:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(22,131,255,.08);
+}
+
+.searchResults{
+    max-height:320px;
+    overflow:auto;
+    margin-top:12px;
+}
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+.settingRow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 2px;
+    border-bottom:1px solid var(--border);
+}
+
+.settingRow:last-child{
+    border-bottom:0;
+}
+
+.settingInfo strong{
+    font-size:13px;
+    display:block;
+}
+
+.settingInfo small{
+    color:var(--muted);
+    font-size:11px;
+    display:block;
+    margin-top:4px;
+}
+
+.toggle{
+    width:44px;
+    height:24px;
+    border-radius:20px;
+    border:0;
+    background:#273143;
+    cursor:pointer;
+    position:relative;
+}
+
+.toggle:after{
+    content:"";
+    width:18px;
+    height:18px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    left:3px;
+    top:3px;
+    transition:.2s;
+}
+
+body.light .toggle{
+    background:var(--blue);
+}
+
+body.light .toggle:after{
+    left:23px;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.aboutLogo{
+    width:62px;
+    height:62px;
+    border-radius:18px;
+    margin:3px auto 15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#07101c;
+    border:1px solid rgba(0,198,255,.3);
+    color:var(--blue2);
+    font-size:22px;
+    font-weight:900;
+}
+
+.aboutText{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
+}
+
+.aboutText strong{
+    color:var(--text);
+}
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translate(-50%,20px);
+    opacity:0;
+    pointer-events:none;
+    background:rgba(10,15,25,.95);
+    border:1px solid var(--border2);
+    color:var(--text);
+    padding:11px 16px;
+    border-radius:10px;
+    font-size:12px;
+    box-shadow:var(--shadow);
+    z-index:300;
+    transition:.25s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
 }
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
-@media(max-width:800px){
+.mobileBackdrop{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:15;
+}
+
+@media(max-width:850px){
 
     .sidebar{
         position:fixed;
-
-        left:0;
+        left:-290px;
         top:0;
-
-        transform:translateX(-100%);
-
-        transition:.25s;
-
-        z-index:60;
+        box-shadow:20px 0 50px rgba(0,0,0,.3);
     }
 
     .sidebar.open{
-        transform:translateX(0);
+        left:0;
     }
 
-    .overlay.open{
+    .mobileBackdrop.show{
         display:block;
     }
 
-    .mobile-menu{
+    .mobileMenu{
         display:block;
     }
 
@@ -974,178 +1004,151 @@ body.light .settings-panel{
         padding:0 14px;
     }
 
-    .status{
+    .welcome{
+        padding:45px 17px 90px;
+    }
+
+    .welcome h2{
+        font-size:30px;
+    }
+
+    .quickGrid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .headerActions .hideMobile{
         display:none;
+    }
+
+    .heroLogo{
+        width:74px;
+        height:74px;
+    }
+
+    .heroLogo span{
+        font-size:25px;
     }
 
     .welcome h2{
         font-size:27px;
     }
 
-    .quick-prompts{
-        grid-template-columns:1fr;
+    .welcomeSub{
+        font-size:13px;
     }
 
-    .bottom-area{
-        padding:8px 12px 12px;
+    .prompt{
+        padding:14px;
     }
 
-    .toolbar{
-        overflow-x:auto;
-        justify-content:flex-start;
-    }
-
-    .tool{
-        white-space:nowrap;
-    }
-}
-
-@media(max-width:480px){
-
-    .brand-text p{
-        display:none;
-    }
-
-    .header-actions .icon-btn{
-        width:34px;
-        height:34px;
-    }
-
-    .welcome{
-        padding:20px;
-    }
-
-    .big-logo{
-        width:72px;
-        height:72px;
-        font-size:25px;
-    }
-
-    .welcome h2{
-        font-size:24px;
-    }
 }
 
 /* =========================================================
-   ACCESSIBILITY
+   REDUCED MOTION
    ========================================================= */
 
-button,
-input{
-    font-family:inherit;
-}
+@media(prefers-reduced-motion:reduce){
 
-button:focus-visible,
-input:focus-visible{
-    outline:2px solid var(--blue);
-    outline-offset:2px;
+    *,
+    *:before,
+    *:after{
+        animation:none !important;
+        transition:none !important;
+    }
+
 }
 
 </style>
 </head>
 
-
 <body>
 
 <div class="app">
 
-
     <!-- =====================================================
          SIDEBAR
-    ====================================================== -->
+         ===================================================== -->
 
     <aside class="sidebar" id="sidebar">
 
         <div class="brand">
 
             <div class="logo">
-                PK
+                <span>PK</span>
             </div>
 
-            <div class="brand-text">
-
+            <div class="brandText">
                 <h1>PK Chat AI</h1>
-
-                <span>AI ASSISTANT</span>
-
+                <p>Smart AI Assistant</p>
             </div>
 
         </div>
 
-
-        <button
-            class="new-chat"
-            onclick="newChat()">
-
-            ＋ New Chat
-
+        <button class="newChat" onclick="newChat()">
+            <span>＋</span>
+            New Chat
         </button>
 
-
-        <div class="search-box">
-
-            <span class="search-icon">⌕</span>
-
-            <input
-                id="searchInput"
-                type="text"
-                placeholder="Search chats..."
-                oninput="searchChats(this.value)">
-
+        <div class="navTitle">
+            Workspace
         </div>
 
+        <nav class="nav">
 
-        <div class="sidebar-title">
-            RECENT CHATS
-        </div>
+            <button class="navItem active" onclick="newChat()">
+                <span class="navIcon">💬</span>
+                New conversation
+            </button>
 
+            <button class="navItem" onclick="openSearch()">
+                <span class="navIcon">⌕</span>
+                Search chats
+            </button>
 
-        <div class="history" id="history">
+            <button class="navItem" onclick="openSettings()">
+                <span class="navIcon">⚙</span>
+                Settings
+            </button>
 
-            <div class="history-item active">
+            <button class="navItem" onclick="openAbout()">
+                <span class="navIcon">ⓘ</span>
+                About PK Chat
+            </button>
 
-                <span>💬</span>
+        </nav>
 
-                <span>New conversation</span>
+        <div class="recent">
+
+            <div class="navTitle">
+                Recent chats
+            </div>
+
+            <div class="chatHistory" id="chatHistory">
+
+                <div class="historyEmpty" id="historyEmpty">
+                    No recent chats yet.
+                </div>
 
             </div>
 
-            <div class="history-item">
-
-                <span>💬</span>
-
-                <span>PK Chat AI</span>
-
-            </div>
-
         </div>
 
+        <div class="sidebarBottom">
 
-        <div class="sidebar-bottom">
+            <div class="owner">
 
-            <button
-                class="sidebar-btn"
-                onclick="openAbout()">
+                <div class="ownerAvatar">
+                    PY
+                </div>
 
-                ℹ️ About PK Chat
-
-            </button>
-
-
-            <button
-                class="sidebar-btn"
-                onclick="exportChat()">
-
-                📥 Export Chat
-
-            </button>
-
-
-            <div class="creator">
-
-                <small>CREATOR & OWNER</small>
-
-                <strong>Prashant Yadav</strong>
+                <div class="ownerText">
+                    <strong>Prashant Yadav</strong>
+                    <small>Creator & Owner</small>
+                </div>
 
             </div>
 
@@ -1153,268 +1156,172 @@ input:focus-visible{
 
     </aside>
 
-
-    <div
-        class="overlay"
-        id="overlay"
-        onclick="closeMobileMenu()">
+    <div class="mobileBackdrop"
+         id="mobileBackdrop"
+         onclick="closeMobileMenu()">
     </div>
-
 
     <!-- =====================================================
          MAIN
-    ====================================================== -->
+         ===================================================== -->
 
     <main class="main">
 
-
-        <!-- HEADER -->
-
         <header class="header">
 
+            <div class="headerLeft">
 
-            <div class="header-left">
-
-                <button
-                    class="mobile-menu"
-                    onclick="openMobileMenu()">
-
+                <button class="mobileMenu"
+                        onclick="toggleMobileMenu()">
                     ☰
-
                 </button>
-
 
                 <div>
 
-                    <div class="header-title">
+                    <div class="headerTitle">
                         PK Chat AI
                     </div>
 
-                    <div class="header-subtitle">
-                        Your personal AI assistant
+                    <div class="status">
+                        <span class="statusDot"></span>
+                        AI Online
                     </div>
 
                 </div>
 
             </div>
 
+            <div class="headerActions">
 
-            <div class="header-actions">
-
-
-                <button
-                    class="icon-btn"
-                    title="Share"
-                    onclick="shareApp()">
-
-                    ↗
-
+                <button class="iconBtn hideMobile"
+                        title="Search"
+                        onclick="openSearch()">
+                    🔎
                 </button>
 
+                <button class="iconBtn hideMobile"
+                        title="Export Chat"
+                        onclick="exportChat()">
+                    ↥
+                </button>
 
-                <button
-                    class="icon-btn"
-                    title="Theme"
-                    onclick="toggleTheme()">
-
+                <button class="iconBtn"
+                        title="Theme"
+                        onclick="toggleTheme()">
                     ◐
-
                 </button>
 
-
-                <button
-                    class="icon-btn"
-                    title="Settings"
-                    onclick="toggleSettings()">
-
+                <button class="iconBtn"
+                        title="Settings"
+                        onclick="openSettings()">
                     ⚙
-
                 </button>
-
-
-                <div class="status">
-
-                    <span class="status-dot"></span>
-
-                    AI Online
-
-                </div>
 
             </div>
 
         </header>
 
+        <section class="content" id="content">
 
-        <!-- =================================================
-             CHAT AREA
-        ================================================== -->
+            <div class="welcome">
 
-        <section class="chat-area">
-
-
-            <div
-                class="welcome"
-                id="welcome">
-
-
-                <div class="big-logo">
-                    PK
+                <div class="heroLogo">
+                    <span>PK</span>
                 </div>
 
+                <h2>How can I help you today?</h2>
 
-                <h2 class="gradient-text">
-                    What can I help with?
-                </h2>
-
-
-                <p>
-
-                    Welcome to PK Chat AI.
-                    Ask questions, learn,
-                    code, create ideas and more.
-
+                <p class="welcomeSub">
+                    Welcome to <strong>PK Chat AI</strong> — your smart,
+                    fast and friendly AI assistant. Ask questions,
+                    explore ideas, learn something new, or just chat.
                 </p>
 
+                <div class="chatLaunch">
 
-                <!-- QUICK PROMPTS -->
-
-                <div class="quick-prompts">
-
-
-                    <button
-                        class="prompt"
-                        onclick="openAIWithPrompt(
-                            'Explain this topic in simple words'
-                        )">
-
-                        <strong>
-                            💡 Explain
-                        </strong>
-
-                        <span>
-                            Make a difficult topic easy to understand.
-                        </span>
-
+                    <button class="startChat"
+                            onclick="openChat()">
+                        🚀 Start Chatting
                     </button>
-
-
-                    <button
-                        class="prompt"
-                        onclick="openAIWithPrompt(
-                            'Help me learn something new today'
-                        )">
-
-                        <strong>
-                            📚 Learn
-                        </strong>
-
-                        <span>
-                            Learn a concept step by step.
-                        </span>
-
-                    </button>
-
-
-                    <button
-                        class="prompt"
-                        onclick="openAIWithPrompt(
-                            'Help me write something'
-                        )">
-
-                        <strong>
-                            ✍️ Write
-                        </strong>
-
-                        <span>
-                            Get help with writing and ideas.
-                        </span>
-
-                    </button>
-
-
-                    <button
-                        class="prompt"
-                        onclick="openAIWithPrompt(
-                            'Give me some creative ideas'
-                        )">
-
-                        <strong>
-                            ✨ Create
-                        </strong>
-
-                        <span>
-                            Brainstorm something creative.
-                        </span>
-
-                    </button>
-
 
                 </div>
 
+                <div class="quickTitle">
+                    Quick prompts
+                </div>
+
+                <div class="quickGrid">
+
+                    <button class="prompt"
+                            onclick="promptChat('Explain something to me in a simple way')">
+
+                        <div class="promptIcon">
+                            💡
+                        </div>
+
+                        <strong>Explain something</strong>
+
+                        <small>
+                            Get a simple and easy-to-understand explanation.
+                        </small>
+
+                    </button>
+
+                    <button class="prompt"
+                            onclick="promptChat('Help me write something creative')">
+
+                        <div class="promptIcon">
+                            ✍️
+                        </div>
+
+                        <strong>Creative writing</strong>
+
+                        <small>
+                            Ideas, scripts, captions and creative concepts.
+                        </small>
+
+                    </button>
+
+                    <button class="prompt"
+                            onclick="promptChat('Help me learn a new topic')">
+
+                        <div class="promptIcon">
+                            🧠
+                        </div>
+
+                        <strong>Learn something new</strong>
+
+                        <small>
+                            Break difficult topics into simple steps.
+                        </small>
+
+                    </button>
+
+                    <button class="prompt"
+                            onclick="promptChat('Give me some useful ideas')">
+
+                        <div class="promptIcon">
+                            🚀
+                        </div>
+
+                        <strong>Brainstorm ideas</strong>
+
+                        <small>
+                            Generate useful ideas and possibilities.
+                        </small>
+
+                    </button>
+
+                </div>
+
+                <div class="helper">
+                    Tip: Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to search
+                    or <kbd>Ctrl</kbd> + <kbd>N</kbd> for a new chat.
+                </div>
 
             </div>
-
 
         </section>
-
-
-        <!-- =================================================
-             BOTTOM
-        ================================================== -->
-
-        <div class="bottom-area">
-
-
-            <div class="toolbar">
-
-                <button
-                    class="tool"
-                    onclick="openAI()">
-
-                    💬 Start Chat
-
-                </button>
-
-
-                <button
-                    class="tool"
-                    onclick="newChat()">
-
-                    ＋ New Chat
-
-                </button>
-
-
-                <button
-                    class="tool"
-                    onclick="exportChat()">
-
-                    📥 Export
-
-                </button>
-
-
-                <button
-                    class="tool"
-                    onclick="shareApp()">
-
-                    ↗ Share
-
-                </button>
-
-
-            </div>
-
-
-            <div class="footer">
-
-                PK Chat AI • Created &amp; Owned by
-                <span>Prashant Yadav</span>
-
-            </div>
-
-        </div>
-
 
     </main>
 
@@ -1422,84 +1329,113 @@ input:focus-visible{
 
 
 <!-- =========================================================
-     SETTINGS
-========================================================= -->
+     SEARCH MODAL
+     ========================================================= -->
 
-<div
-    class="settings-panel"
-    id="settingsPanel">
+<div class="overlay" id="searchModal">
 
+    <div class="modal">
 
-    <div class="settings-title">
-        ⚙️ PK Chat Settings
-    </div>
+        <div class="modalHeader">
 
+            <h3>Search chats</h3>
 
-    <div class="setting-row">
-
-        <div>
-
-            <div class="setting-label">
-                Dark Mode
-            </div>
-
-            <span class="setting-description">
-                Use dark PK Chat theme
-            </span>
+            <button class="closeBtn"
+                    onclick="closeModal('searchModal')">
+                ×
+            </button>
 
         </div>
 
-        <button
-            class="toggle active"
-            id="themeToggle"
-            onclick="toggleTheme()">
-        </button>
+        <div class="modalBody">
 
-    </div>
+            <input
+                id="searchInput"
+                class="searchInput"
+                type="text"
+                placeholder="Search your chats..."
+                oninput="searchChats(this.value)"
+            >
 
+            <div class="searchResults"
+                 id="searchResults">
 
-    <div class="setting-row">
+                <div class="historyEmpty">
+                    Type something to search.
+                </div>
 
-        <div>
-
-            <div class="setting-label">
-                Animations
             </div>
-
-            <span class="setting-description">
-                Enable interface animations
-            </span>
 
         </div>
 
-        <button
-            class="toggle active"
-            id="animationToggle"
-            onclick="toggleAnimations()">
-        </button>
-
     </div>
 
+</div>
 
-    <div class="setting-row">
 
-        <div>
+<!-- =========================================================
+     SETTINGS MODAL
+     ========================================================= -->
 
-            <div class="setting-label">
-                Sounds
-            </div>
+<div class="overlay" id="settingsModal">
 
-            <span class="setting-description">
-                Interface sound effects
-            </span>
+    <div class="modal">
+
+        <div class="modalHeader">
+
+            <h3>Settings</h3>
+
+            <button class="closeBtn"
+                    onclick="closeModal('settingsModal')">
+                ×
+            </button>
 
         </div>
 
-        <button
-            class="toggle"
-            id="soundToggle"
-            onclick="toggleSounds()">
-        </button>
+        <div class="modalBody">
+
+            <div class="settingRow">
+
+                <div class="settingInfo">
+                    <strong>Appearance</strong>
+                    <small>Switch between dark and light mode.</small>
+                </div>
+
+                <button class="toggle"
+                        onclick="toggleTheme()">
+                </button>
+
+            </div>
+
+            <div class="settingRow">
+
+                <div class="settingInfo">
+                    <strong>Chat history</strong>
+                    <small>Remove locally saved chat titles.</small>
+                </div>
+
+                <button class="iconBtn"
+                        onclick="clearHistory()">
+                    🗑
+                </button>
+
+            </div>
+
+            <div class="settingRow">
+
+                <div class="settingInfo">
+                    <strong>Export</strong>
+                    <small>Download your saved chat titles.</small>
+                </div>
+
+                <button class="iconBtn"
+                        onclick="exportChat()">
+                    ↥
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -1508,133 +1444,749 @@ input:focus-visible{
 
 <!-- =========================================================
      ABOUT MODAL
-========================================================= -->
+     ========================================================= -->
 
-<div
-    id="aboutModal"
-    style="
-        display:none;
-        position:fixed;
-        inset:0;
-        background:rgba(0,0,0,.65);
-        z-index:200;
-        align-items:center;
-        justify-content:center;
-        padding:20px;
-    ">
+<div class="overlay" id="aboutModal">
 
-    <div
-        style="
-            width:min(430px,100%);
-            background:var(--panel);
-            border:1px solid var(--border2);
-            border-radius:20px;
-            padding:25px;
-            box-shadow:var(--shadow);
-            text-align:center;
-        ">
+    <div class="modal">
 
-        <div
-            style="
-                width:65px;
-                height:65px;
-                margin:0 auto 15px;
-                border-radius:18px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                background:linear-gradient(135deg,#075cff,#00c7ff);
-                color:white;
-                font-size:23px;
-                font-weight:900;
-            ">
+        <div class="modalHeader">
 
-            PK
+            <h3>About PK Chat AI</h3>
+
+            <button class="closeBtn"
+                    onclick="closeModal('aboutModal')">
+                ×
+            </button>
 
         </div>
 
+        <div class="modalBody">
 
-        <h2 style="margin-bottom:8px;">
-            PK Chat AI
-        </h2>
+            <div class="aboutLogo">
+                PK
+            </div>
 
+            <div class="aboutText">
 
-        <p
-            style="
-                color:var(--muted);
-                font-size:12px;
-                line-height:1.7;
-                margin-bottom:18px;
-            ">
+                <strong>PK Chat AI</strong>
+                <br><br>
 
-            A personal AI assistant for
-            learning, coding, writing,
-            questions and creative ideas.
+                A modern AI chat interface built with
+                HTML, CSS and JavaScript.
 
-        </p>
+                <br><br>
 
-
-        <p
-            style="
-                color:var(--muted2);
-                font-size:10px;
-                margin-bottom:18px;
-            ">
-
-            Created &amp; Owned by
-            <strong style="color:var(--blue);">
+                <strong>Creator & Owner</strong><br>
                 Prashant Yadav
-            </strong>
 
-        </p>
+                <br><br>
 
+                Powered by Chatbase AI.
 
-        <button
-            onclick="closeAbout()"
-            style="
-                width:100%;
-                height:42px;
-                border:0;
-                border-radius:10px;
-                background:linear-gradient(135deg,#075cff,#00aaff);
-                color:white;
-                font-weight:700;
-                cursor:pointer;
-            ">
+            </div>
 
-            Close
-
-        </button>
+        </div>
 
     </div>
 
 </div>
 
 
+<!-- Toast -->
+
+<div class="toast" id="toast"></div>
+
+
 <!-- =========================================================
      JAVASCRIPT
-========================================================= -->
+     ========================================================= -->
 
 <script>
 
 /* =========================================================
-   SETTINGS
-========================================================= */
+   STORAGE
+   ========================================================= */
 
-let animationsEnabled = true;
-let soundsEnabled = false;
+const HISTORY_KEY = "pk_chat_history_v2";
+const THEME_KEY = "pk_chat_theme";
+
+let chatHistory = [];
+
+try{
+    chatHistory =
+        JSON.parse(
+            localStorage.getItem(HISTORY_KEY)
+        ) || [];
+}catch(e){
+    chatHistory = [];
+}
+
+
+/* =========================================================
+   INIT
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    loadTheme();
+
+    renderHistory();
+
+});
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer =
+        setTimeout(function(){
+
+            toast.classList.remove("show");
+
+        },2200);
+}
 
 
 /* =========================================================
    CHATBASE CENTER STAGE
-========================================================= */
+   ========================================================= */
+
+function openChat(){
+
+    closeMobileMenu();
+
+    /*
+      Chatbase Center Stage command.
+    */
+
+    if(
+        window.chatbaseCenterStage &&
+        typeof window.chatbaseCenterStage === "function"
+    ){
+
+        window.chatbaseCenterStage("open");
+
+        saveChat("New conversation");
+
+        return;
+    }
+
+    showToast(
+        "Chat is loading. Please try again in a moment."
+    );
+}
+
+
+/* =========================================================
+   QUICK PROMPTS
+   ========================================================= */
+
+function promptChat(text){
+
+    saveChat(text);
+
+    openChat();
+
+    /*
+      Center Stage opens Chatbase.
+      The custom shell cannot safely inject text into
+      Chatbase unless Chatbase exposes a supported API
+      for that action.
+    */
+
+    setTimeout(function(){
+
+        showToast(
+            "Chat opened — send your prompt there."
+        );
+
+    },500);
+}
+
+
+/* =========================================================
+   NEW CHAT
+   ========================================================= */
+
+function newChat(){
+
+    closeMobileMenu();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    showToast("New chat ready.");
+
+    /*
+      Opening a new Center Stage session depends on
+      Chatbase's own conversation controls.
+    */
+}
+
+
+/* =========================================================
+   CHAT HISTORY
+   ========================================================= */
+
+function saveChat(title){
+
+    if(!title){
+        title = "New conversation";
+    }
+
+    const item = {
+        title:title.substring(0,70),
+        time:new Date().toLocaleString()
+    };
+
+    chatHistory.unshift(item);
+
+    chatHistory =
+        chatHistory.slice(0,30);
+
+    try{
+
+        localStorage.setItem(
+            HISTORY_KEY,
+            JSON.stringify(chatHistory)
+        );
+
+    }catch(e){}
+
+    renderHistory();
+}
+
+
+function renderHistory(){
+
+    const container =
+        document.getElementById("chatHistory");
+
+    const empty =
+        document.getElementById("historyEmpty");
+
+    if(!container) return;
+
+    if(chatHistory.length === 0){
+
+        if(empty){
+            empty.style.display = "block";
+        }
+
+        return;
+    }
+
+    if(empty){
+        empty.style.display = "none";
+    }
+
+    container.innerHTML = "";
+
+    chatHistory.forEach(function(item,index){
+
+        const div =
+            document.createElement("div");
+
+        div.className = "historyItem";
+
+        div.title = item.time || "";
+
+        div.innerHTML = `
+            <span class="historyDot"></span>
+            <span>${escapeHtml(item.title)}</span>
+        `;
+
+        div.onclick = function(){
+
+            openChat();
+
+        };
+
+        container.appendChild(div);
+
+    });
+
+}
+
+
+function clearHistory(){
+
+    if(!confirm(
+        "Clear all locally saved chat titles?"
+    )){
+        return;
+    }
+
+    chatHistory = [];
+
+    try{
+        localStorage.removeItem(HISTORY_KEY);
+    }catch(e){}
+
+    renderHistory();
+
+    showToast("Chat history cleared.");
+
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+function openSearch(){
+
+    closeMobileMenu();
+
+    document
+        .getElementById("searchModal")
+        .classList.add("show");
+
+    setTimeout(function(){
+
+        document
+            .getElementById("searchInput")
+            .focus();
+
+    },100);
+
+    searchChats("");
+}
+
+
+function searchChats(value){
+
+    const results =
+        document.getElementById("searchResults");
+
+    if(!value.trim()){
+
+        if(chatHistory.length === 0){
+
+            results.innerHTML =
+                `<div class="historyEmpty">
+                    No saved chats yet.
+                 </div>`;
+
+        }else{
+
+            results.innerHTML =
+                `<div class="historyEmpty">
+                    Type something to search.
+                 </div>`;
+
+        }
+
+        return;
+    }
+
+    const query =
+        value.toLowerCase();
+
+    const matches =
+        chatHistory.filter(function(item){
+
+            return item.title
+                .toLowerCase()
+                .includes(query);
+
+        });
+
+    if(matches.length === 0){
+
+        results.innerHTML =
+            `<div class="historyEmpty">
+                No matching chats found.
+             </div>`;
+
+        return;
+    }
+
+    results.innerHTML = "";
+
+    matches.forEach(function(item){
+
+        const div =
+            document.createElement("div");
+
+        div.className = "historyItem";
+
+        div.innerHTML = `
+            <span class="historyDot"></span>
+            <span>${escapeHtml(item.title)}</span>
+        `;
+
+        div.onclick = function(){
+
+            closeModal("searchModal");
+
+            openChat();
+
+        };
+
+        results.appendChild(div);
+
+    });
+
+}
+
+
+/* =========================================================
+   SETTINGS / ABOUT
+   ========================================================= */
+
+function openSettings(){
+
+    closeMobileMenu();
+
+    document
+        .getElementById("settingsModal")
+        .classList.add("show");
+
+}
+
+
+function openAbout(){
+
+    closeMobileMenu();
+
+    document
+        .getElementById("aboutModal")
+        .classList.add("show");
+
+}
+
+
+function closeModal(id){
+
+    const modal =
+        document.getElementById(id);
+
+    if(modal){
+        modal.classList.remove("show");
+    }
+
+}
+
+
+/* =========================================================
+   THEME
+   ========================================================= */
+
+function loadTheme(){
+
+    let theme = "dark";
+
+    try{
+        theme =
+            localStorage.getItem(THEME_KEY)
+            || "dark";
+    }catch(e){}
+
+    if(theme === "light"){
+        document.body.classList.add("light");
+    }
+
+}
+
+
+function toggleTheme(){
+
+    document.body.classList.toggle("light");
+
+    const isLight =
+        document.body.classList.contains("light");
+
+    try{
+
+        localStorage.setItem(
+            THEME_KEY,
+            isLight ? "light" : "dark"
+        );
+
+    }catch(e){}
+
+    showToast(
+        isLight
+            ? "Light mode enabled."
+            : "Dark mode enabled."
+    );
+
+}
+
+
+/* =========================================================
+   EXPORT
+   ========================================================= */
+
+function exportChat(){
+
+    if(chatHistory.length === 0){
+
+        showToast("No saved chats to export.");
+
+        return;
+    }
+
+    let text =
+        "PK CHAT AI\n" +
+        "Creator & Owner: Prashant Yadav\n" +
+        "==============================\n\n";
+
+    chatHistory.forEach(function(item,index){
+
+        text +=
+            (index + 1) +
+            ". " +
+            item.title +
+            "\n";
+
+        text +=
+            "Time: " +
+            (item.time || "") +
+            "\n\n";
+
+    });
+
+    const blob =
+        new Blob(
+            [text],
+            {type:"text/plain"}
+        );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const a =
+        document.createElement("a");
+
+    a.href = url;
+
+    a.download =
+        "PK-Chat-History.txt";
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    a.remove();
+
+    URL.revokeObjectURL(url);
+
+    showToast("Chat history exported.");
+}
+
+
+/* =========================================================
+   SHARE
+   ========================================================= */
+
+async function shareSite(){
+
+    const shareData = {
+        title:"PK Chat AI",
+        text:"Check out PK Chat AI.",
+        url:window.location.href
+    };
+
+    if(
+        navigator.share
+    ){
+
+        try{
+
+            await navigator.share(
+                shareData
+            );
+
+        }catch(e){}
+
+    }else{
+
+        try{
+
+            await navigator.clipboard.writeText(
+                window.location.href
+            );
+
+            showToast(
+                "Website link copied."
+            );
+
+        }catch(e){
+
+            showToast(
+                "Sharing is not available."
+            );
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+function toggleMobileMenu(){
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const backdrop =
+        document.getElementById("mobileBackdrop");
+
+    sidebar.classList.toggle("open");
+
+    backdrop.classList.toggle("show");
+
+}
+
+
+function closeMobileMenu(){
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const backdrop =
+        document.getElementById("mobileBackdrop");
+
+    sidebar.classList.remove("open");
+
+    backdrop.classList.remove("show");
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
+
+function escapeHtml(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================================================
+   KEYBOARD SHORTCUTS
+   ========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        /* Ctrl + K = Search */
+
+        if(
+            (e.ctrlKey || e.metaKey) &&
+            e.key.toLowerCase() === "k"
+        ){
+
+            e.preventDefault();
+
+            openSearch();
+
+        }
+
+
+        /* Ctrl + N = New Chat */
+
+        if(
+            (e.ctrlKey || e.metaKey) &&
+            e.key.toLowerCase() === "n"
+        ){
+
+            e.preventDefault();
+
+            newChat();
+
+        }
+
+
+        /* Escape = close */
+
+        if(e.key === "Escape"){
+
+            document
+                .querySelectorAll(".overlay.show")
+                .forEach(function(modal){
+
+                    modal.classList.remove("show");
+
+                });
+
+            closeMobileMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   CLICK OUTSIDE MODALS
+   ========================================================= */
+
+document
+    .querySelectorAll(".overlay")
+    .forEach(function(overlay){
+
+        overlay.addEventListener(
+            "click",
+            function(e){
+
+                if(e.target === overlay){
+
+                    overlay.classList.remove("show");
+
+                }
+
+            }
+        );
+
+    });
+
+
+</script>
+
+
+<!-- =========================================================
+     CHATBASE CENTER STAGE
+     ========================================================= -->
+
+<script>
 
 (function(){
 
     if(
         !window.chatbaseCenterStage ||
-        window.chatbaseCenterStage("getState")
-        !== "initialized"
+        window.chatbaseCenterStage("getState") !== "initialized"
     ){
 
         window.chatbaseCenterStage =
@@ -1654,57 +2206,42 @@ let soundsEnabled = false;
 
             };
 
-
         window.chatbaseCenterStage =
             new Proxy(
                 window.chatbaseCenterStage,
                 {
-
-                    get(target, prop){
+                    get(target,prop){
 
                         if(prop === "q"){
-
                             return target.q;
-
                         }
 
                         return (...args) =>
-                            target(
-                                prop,
-                                ...args
-                            );
+                            target(prop,...args);
 
                     }
-
                 }
             );
 
     }
-
 
     const onLoad = function(){
 
         const script =
             document.createElement("script");
 
-
         script.src =
             "https://www.chatbase.co/center-stage-embed.min.js";
-
 
         script.id =
             "w1w87E2kLtw0ymZvC0_4V";
 
-
         script.domain =
             "www.chatbase.co";
 
-
         document.body.appendChild(script);
 
-
     };
-
 
     if(
         document.readyState === "complete"
@@ -1712,8 +2249,7 @@ let soundsEnabled = false;
 
         onLoad();
 
-    }
-    else{
+    }else{
 
         window.addEventListener(
             "load",
@@ -1723,590 +2259,6 @@ let soundsEnabled = false;
     }
 
 })();
-
-
-/* =========================================================
-   OPEN CHAT
-========================================================= */
-
-function openAI(){
-
-    if(
-        typeof window.chatbaseCenterStage
-        === "function"
-    ){
-
-        window.chatbaseCenterStage("open");
-
-        hideWelcome();
-
-    }
-    else{
-
-        alert(
-            "PK Chat AI is still loading. Please try again."
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   OPEN CHAT WITH QUICK PROMPT
-========================================================= */
-
-function openAIWithPrompt(text){
-
-    openAI();
-
-    /*
-       Center Stage controls its own input field.
-       We don't inject text into Chatbase's internal UI
-       because it is outside this page's DOM.
-    */
-
-    setTimeout(function(){
-
-        console.log(
-            "Quick prompt:",
-            text
-        );
-
-    },500);
-
-}
-
-
-/* =========================================================
-   HIDE WELCOME
-========================================================= */
-
-function hideWelcome(){
-
-    const welcome =
-        document.getElementById("welcome");
-
-    if(welcome){
-
-        welcome.classList.add("hidden");
-
-    }
-
-}
-
-
-/* =========================================================
-   NEW CHAT
-========================================================= */
-
-function newChat(){
-
-    const history =
-        document.getElementById("history");
-
-
-    const item =
-        document.createElement("div");
-
-
-    item.className =
-        "history-item active";
-
-
-    item.innerHTML =
-        "<span>💬</span>" +
-        "<span>New conversation</span>";
-
-
-    history.prepend(item);
-
-
-    hideWelcome();
-
-
-    openAI();
-
-}
-
-
-/* =========================================================
-   SEARCH CHATS
-========================================================= */
-
-function searchChats(value){
-
-    const items =
-        document.querySelectorAll(
-            ".history-item"
-        );
-
-
-    value =
-        value.toLowerCase().trim();
-
-
-    items.forEach(function(item){
-
-        const text =
-            item.innerText.toLowerCase();
-
-
-        item.style.display =
-            text.includes(value)
-            ? "flex"
-            : "none";
-
-    });
-
-}
-
-
-/* =========================================================
-   THEME
-========================================================= */
-
-function toggleTheme(){
-
-    document.body.classList.toggle("light");
-
-
-    const isLight =
-        document.body.classList.contains("light");
-
-
-    localStorage.setItem(
-        "pkchat-theme",
-        isLight ? "light" : "dark"
-    );
-
-
-    const toggle =
-        document.getElementById("themeToggle");
-
-
-    if(toggle){
-
-        toggle.classList.toggle(
-            "active",
-            !isLight
-        );
-
-    }
-
-}
-
-
-/* Load saved theme */
-
-(function(){
-
-    const saved =
-        localStorage.getItem(
-            "pkchat-theme"
-        );
-
-
-    if(saved === "light"){
-
-        document.body.classList.add("light");
-
-        const toggle =
-            document.getElementById(
-                "themeToggle"
-            );
-
-        if(toggle){
-
-            toggle.classList.remove(
-                "active"
-            );
-
-        }
-
-    }
-
-})();
-
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-function toggleAnimations(){
-
-    animationsEnabled =
-        !animationsEnabled;
-
-
-    const toggle =
-        document.getElementById(
-            "animationToggle"
-        );
-
-
-    toggle.classList.toggle(
-        "active",
-        animationsEnabled
-    );
-
-
-    document.body.style.setProperty(
-        "--animation-state",
-        animationsEnabled
-        ? "running"
-        : "paused"
-    );
-
-
-    document.querySelectorAll("*").forEach(
-        function(el){
-
-            el.style.animationPlayState =
-                animationsEnabled
-                ? "running"
-                : "paused";
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   SOUNDS
-========================================================= */
-
-function toggleSounds(){
-
-    soundsEnabled =
-        !soundsEnabled;
-
-
-    const toggle =
-        document.getElementById(
-            "soundToggle"
-        );
-
-
-    toggle.classList.toggle(
-        "active",
-        soundsEnabled
-    );
-
-}
-
-
-/* =========================================================
-   SETTINGS
-========================================================= */
-
-function toggleSettings(){
-
-    const panel =
-        document.getElementById(
-            "settingsPanel"
-        );
-
-
-    panel.classList.toggle("open");
-
-}
-
-
-/* Close settings when clicking elsewhere */
-
-document.addEventListener(
-    "click",
-    function(event){
-
-        const panel =
-            document.getElementById(
-                "settingsPanel"
-            );
-
-
-        const settingsButton =
-            event.target.closest(
-                '[title="Settings"]'
-            );
-
-
-        if(
-            !panel.contains(event.target) &&
-            !settingsButton
-        ){
-
-            panel.classList.remove(
-                "open"
-            );
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   SHARE
-========================================================= */
-
-async function shareApp(){
-
-    const shareData = {
-
-        title:"PK Chat AI",
-
-        text:
-            "Check out PK Chat AI — " +
-            "my AI assistant.",
-
-        url:window.location.href
-
-    };
-
-
-    if(
-        navigator.share
-    ){
-
-        try{
-
-            await navigator.share(
-                shareData
-            );
-
-        }
-        catch(error){
-
-            console.log(
-                "Share cancelled."
-            );
-
-        }
-
-    }
-    else{
-
-        try{
-
-            await navigator.clipboard.writeText(
-                window.location.href
-            );
-
-
-            alert(
-                "PK Chat link copied!"
-            );
-
-        }
-        catch(error){
-
-            alert(
-                "Copy this page URL to share PK Chat."
-            );
-
-        }
-
-    }
-
-}
-
-
-/* =========================================================
-   EXPORT
-========================================================= */
-
-function exportChat(){
-
-    const text =
-`PK Chat AI
-Created & Owned by Prashant Yadav
-
-This is an exported PK Chat session.
-
-Page:
-${window.location.href}
-`;
-
-
-    const blob =
-        new Blob(
-            [text],
-            {
-                type:"text/plain"
-            }
-        );
-
-
-    const url =
-        URL.createObjectURL(blob);
-
-
-    const a =
-        document.createElement("a");
-
-
-    a.href = url;
-
-    a.download =
-        "PK-Chat-export.txt";
-
-
-    document.body.appendChild(a);
-
-    a.click();
-
-    a.remove();
-
-
-    URL.revokeObjectURL(url);
-
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-function openAbout(){
-
-    document.getElementById(
-        "aboutModal"
-    ).style.display =
-        "flex";
-
-}
-
-
-function closeAbout(){
-
-    document.getElementById(
-        "aboutModal"
-    ).style.display =
-        "none";
-
-}
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-function openMobileMenu(){
-
-    document.getElementById(
-        "sidebar"
-    ).classList.add("open");
-
-
-    document.getElementById(
-        "overlay"
-    ).classList.add("open");
-
-}
-
-
-function closeMobileMenu(){
-
-    document.getElementById(
-        "sidebar"
-    ).classList.remove("open");
-
-
-    document.getElementById(
-        "overlay"
-    ).classList.remove("open");
-
-}
-
-
-/* =========================================================
-   KEYBOARD SHORTCUTS
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        /* Ctrl/Cmd + K = search */
-
-        if(
-            (event.ctrlKey || event.metaKey) &&
-            event.key.toLowerCase() === "k"
-        ){
-
-            event.preventDefault();
-
-
-            const search =
-                document.getElementById(
-                    "searchInput"
-                );
-
-
-            search.focus();
-
-        }
-
-
-        /* Ctrl/Cmd + N = new chat */
-
-        if(
-            (event.ctrlKey || event.metaKey) &&
-            event.key.toLowerCase() === "n"
-        ){
-
-            event.preventDefault();
-
-            newChat();
-
-        }
-
-
-        /* Escape = close panels */
-
-        if(
-            event.key === "Escape"
-        ){
-
-            document.getElementById(
-                "settingsPanel"
-            ).classList.remove(
-                "open"
-            );
-
-
-            closeMobileMenu();
-
-            closeAbout();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CLOSE ABOUT WHEN CLICKING BACKDROP
-========================================================= */
-
-document.getElementById(
-    "aboutModal"
-).addEventListener(
-    "click",
-    function(event){
-
-        if(
-            event.target === this
-        ){
-
-            closeAbout();
-
-        }
-
-    }
-);
 
 </script>
 
