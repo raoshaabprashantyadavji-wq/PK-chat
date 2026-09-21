@@ -7,15 +7,50 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
+<meta name="description" content="PK Chat AI is a smart, fast and friendly AI assistant by Prashant Yadav. Ask questions, explore ideas, learn new things and chat online.">
+<meta name="owner" content="Prashant Yadav">
+<meta name="application-name" content="PK Chat AI">
+<meta name="theme-color" content="#03050a">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<link rel="canonical" href="https://raoshaabprashantyadavji-wq.github.io/PK-chat/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PK Chat AI">
+<meta property="og:title" content="PK Chat AI – Smart AI Assistant">
+<meta property="og:description" content="Ask questions, explore ideas, learn new things and chat with PK Chat AI.">
+<meta property="og:url" content="https://raoshaabprashantyadavji-wq.github.io/PK-chat/">
+
+<!-- X / Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PK Chat AI – Smart AI Assistant">
+<meta name="twitter:description" content="A smart, fast and friendly AI assistant by Prashant Yadav.">
+
+<!-- Structured data: helps search engines understand the site -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "PK Chat AI",
+  "alternateName": "PK Chat",
+  "url": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/",
+  "description": "A smart, fast and friendly AI assistant for questions, learning, ideas and chat.",
+  "creator": {
+    "@type": "Person",
+    "name": "Prashant Yadav"
+  }
+}
+</script>
+
+
 <meta name="google-site-verification" content="xicmRrXqfnPOqeR7rmxWS-BL9XJXMAquFtioAa5fM2M" />
-
-<title>PK Chat AI</title>
-
-
 <!-- PK Favicon -->
 <link rel="icon" type="image/svg+xml"
 href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2303050a'/%3E%3Ccircle cx='50' cy='50' r='37' fill='none' stroke='%231683ff' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='29' fill='%23070b13'/%3E%3Ctext x='50' y='61' text-anchor='middle' font-family='Arial' font-size='28' font-weight='bold' fill='%2300c6ff'%3EPK%3C/text%3E%3C/svg%3E">
-<title>PK Chat AI</title>
+<title>PK Chat AI – Smart AI Assistant | Chat, Learn & Explore</title>
 <style>
 
 /* =========================================================
@@ -946,6 +981,55 @@ body.light .toggle:after{
     color:var(--text);
 }
 
+
+.seoIntro{
+    max-width:720px;
+    color:var(--muted);
+    line-height:1.65;
+    font-size:13px;
+    margin-top:12px;
+}
+
+.aboutMeta{
+    margin-top:18px;
+    padding:14px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:rgba(22,131,255,.045);
+    text-align:left;
+}
+
+.aboutMetaRow{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:15px;
+    padding:8px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.aboutMetaRow:last-child{
+    border-bottom:0;
+}
+
+.aboutMetaRow span{
+    color:var(--muted);
+    font-size:11px;
+}
+
+.aboutMetaRow strong{
+    color:var(--text);
+    font-size:12px;
+    text-align:right;
+}
+
+.aboutMission{
+    margin-top:16px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
+}
+
 /* =========================================================
    TOAST
    ========================================================= */
@@ -971,6 +1055,13 @@ body.light .toggle:after{
 .toast.show{
     opacity:1;
     transform:translate(-50%,0);
+}
+
+
+.creatorLine{
+    margin-top:22px;
+    color:var(--muted2);
+    font-size:10px;
 }
 
 /* =========================================================
@@ -1068,179 +1159,6 @@ body.light .toggle:after{
 
 }
 
-
-/* =========================================================
-   PK CHAT AI - V2 FEATURE STYLES
-   ========================================================= */
-
-.featureStrip{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
-    margin-top:20px;
-}
-
-.featureStrip span{
-    padding:7px 11px;
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:999px;
-    background:rgba(255,255,255,.035);
-    color:var(--muted);
-    font-size:11px;
-}
-
-.historyItem{
-    position:relative;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    padding-right:8px;
-}
-
-.historyMain{
-    min-width:0;
-    flex:1;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    cursor:pointer;
-}
-
-.historyTitle{
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-}
-
-.historyActions{
-    display:flex;
-    gap:3px;
-    opacity:.65;
-}
-
-.historyItem:hover .historyActions{
-    opacity:1;
-}
-
-.historyAction{
-    width:27px;
-    height:27px;
-    border:0;
-    border-radius:7px;
-    background:rgba(255,255,255,.06);
-    color:inherit;
-    cursor:pointer;
-}
-
-.historyAction:hover{
-    background:rgba(255,255,255,.12);
-}
-
-.smallSettingInput{
-    width:150px;
-    padding:9px 10px;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:9px;
-    background:rgba(255,255,255,.05);
-    color:inherit;
-    outline:none;
-}
-
-.smallSettingInput:focus{
-    border-color:rgba(255,255,255,.30);
-}
-
-.settingActions{
-    display:flex;
-    gap:6px;
-}
-
-.settingNote{
-    margin-top:12px;
-    padding:11px 12px;
-    border-radius:10px;
-    background:rgba(255,255,255,.04);
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.5;
-}
-
-.settingNote strong{
-    color:inherit;
-}
-
-.voiceListening{
-    animation:pulseVoice 1s infinite;
-}
-
-@keyframes pulseVoice{
-    50%{transform:scale(1.06);opacity:.65;}
-}
-
-.light .featureStrip span{
-    border-color:rgba(0,0,0,.09);
-    background:rgba(0,0,0,.025);
-}
-
-.light .smallSettingInput{
-    border-color:rgba(0,0,0,.12);
-    background:rgba(0,0,0,.03);
-}
-
-@media(max-width:600px){
-    .smallSettingInput{width:125px;}
-    .historyActions{opacity:1;}
-}
-.voiceBtn{
-    margin:14px auto 0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    min-width:180px;
-    padding:12px 20px;
-    border:1px solid var(--border2);
-    border-radius:12px;
-    background:var(--panel2);
-    color:var(--text);
-    font-size:13px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.voiceBtn:hover{
-    transform:translateY(-1px);
-    border-color:var(--blue);
-}
-
-.voiceBtn.listening{
-    border-color:var(--blue);
-    box-shadow:0 0 0 4px rgba(22,131,255,.12);
-}
-.readAloudBtn{
-    margin:14px auto 0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    min-width:180px;
-    padding:12px 20px;
-    border:1px solid var(--border2);
-    border-radius:12px;
-    background:var(--panel2);
-    color:var(--text);
-    font-size:13px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.readAloudBtn:hover{
-    transform:translateY(-1px);
-    border-color:var(--blue);
-}
 </style>
 </head>
 
@@ -1408,12 +1326,17 @@ body.light .toggle:after{
                     <span>PK</span>
                 </div>
 
-                <h2>How can I help you today?</h2>
+                <h2>PK Chat AI — Your Smart AI Assistant</h2>
 
                 <p class="welcomeSub">
                     Welcome to <strong>PK Chat AI</strong> — your smart,
                     fast and friendly AI assistant. Ask questions,
                     explore ideas, learn something new, or just chat.
+                </p>
+
+                <p class="seoIntro">
+                    PK Chat AI helps you ask questions, understand topics, brainstorm ideas,
+                    write creatively and explore information through an easy-to-use AI chat experience.
                 </p>
 
                 <div class="chatLaunch">
@@ -1422,12 +1345,6 @@ body.light .toggle:after{
                             onclick="openChat()">
                         🚀 Start Chatting
                     </button>
-<button class="voiceBtn" id="voiceBtn" type="button">
-    🎤 Voice Input
-</button>
-<button class="readAloudBtn" id="readAloudBtn" type="button">
-    🔊 Read Aloud
-</button>
 
                 </div>
 
@@ -1504,11 +1421,8 @@ body.light .toggle:after{
                     or <kbd>Ctrl</kbd> + <kbd>N</kbd> for a new chat.
                 </div>
 
-                <div class="featureStrip">
-                    <span>🎤 Voice input</span>
-                    <span>🔎 Chat search</span>
-                    <span>📤 Export</span>
-                    <span>💾 Local settings</span>
+                <div class="creatorLine">
+                    PK Chat AI · Created & owned by Prashant Yadav
                 </div>
 
             </div>
@@ -1587,55 +1501,44 @@ body.light .toggle:after{
         <div class="modalBody">
 
             <div class="settingRow">
+
                 <div class="settingInfo">
                     <strong>Appearance</strong>
                     <small>Switch between dark and light mode.</small>
                 </div>
-                <button class="toggle" onclick="toggleTheme()"></button>
+
+                <button class="toggle"
+                        onclick="toggleTheme()">
+                </button>
+
             </div>
 
             <div class="settingRow">
-                <div class="settingInfo">
-                    <strong>Display name</strong>
-                    <small>Saved only in this browser.</small>
-                </div>
-                <input id="displayNameInput" class="smallSettingInput"
-                       type="text" maxlength="30" placeholder="Your name"
-                       oninput="saveDisplayName(this.value)">
-            </div>
 
-            <div class="settingRow">
-                <div class="settingInfo">
-                    <strong>Voice input</strong>
-                    <small>Use your microphone to dictate a prompt when supported.</small>
-                </div>
-                <button class="iconBtn" onclick="startVoiceInput()">🎤</button>
-            </div>
-
-            <div class="settingRow">
                 <div class="settingInfo">
                     <strong>Chat history</strong>
-                    <small>Rename, delete, or clear locally saved chat titles.</small>
+                    <small>Remove locally saved chat titles.</small>
                 </div>
-                <button class="iconBtn" onclick="clearHistory()">🗑</button>
+
+                <button class="iconBtn"
+                        onclick="clearHistory()">
+                    🗑
+                </button>
+
             </div>
 
             <div class="settingRow">
+
                 <div class="settingInfo">
                     <strong>Export</strong>
-                    <small>Download saved chat titles as TXT or JSON.</small>
+                    <small>Download your saved chat titles.</small>
                 </div>
-                <div class="settingActions">
-                    <button class="iconBtn" onclick="exportChat()">TXT</button>
-                    <button class="iconBtn" onclick="exportChatJSON()">JSON</button>
-                </div>
-            </div>
 
-            <div class="settingNote">
-                <strong>Cross-device note:</strong>
-                this GitHub Pages version stores the custom history/settings locally
-                in each browser. To make one account's conversations sync across phones,
-                a real authentication + cloud database backend is required.
+                <button class="iconBtn"
+                        onclick="exportChat()">
+                    ↥
+                </button>
+
             </div>
 
         </div>
@@ -1675,17 +1578,46 @@ body.light .toggle:after{
                 <strong>PK Chat AI</strong>
                 <br><br>
 
-                A modern AI chat interface built with
-                HTML, CSS and JavaScript.
+                A modern, responsive AI chat experience designed
+                to make asking questions, learning, brainstorming
+                and exploring ideas simple.
 
-                <br><br>
+                <div class="aboutMeta">
 
-                <strong>Creator & Owner</strong><br>
-                Prashant Yadav
+                    <div class="aboutMetaRow">
+                        <span>Creator & Owner</span>
+                        <strong>Prashant Yadav</strong>
+                    </div>
 
-                <br><br>
+                    <div class="aboutMetaRow">
+                        <span>Project</span>
+                        <strong>PK Chat AI</strong>
+                    </div>
 
-                Powered by Chatbase AI.
+                    <div class="aboutMetaRow">
+                        <span>Technology</span>
+                        <strong>HTML · CSS · JavaScript</strong>
+                    </div>
+
+                    <div class="aboutMetaRow">
+                        <span>AI Chat</span>
+                        <strong>Chatbase</strong>
+                    </div>
+
+                </div>
+
+                <div class="aboutMission">
+                    <strong>About the creator</strong><br>
+                    Prashant Yadav is the creator and owner of PK Chat AI,
+                    a personal web project focused on building a clean,
+                    fast and approachable AI chat interface.
+                </div>
+
+                <div class="aboutMission">
+                    <strong>Project goal</strong><br>
+                    PK Chat AI is designed to provide a simple place
+                    to ask questions, learn, create ideas and chat with AI.
+                </div>
 
             </div>
 
@@ -1735,8 +1667,6 @@ document.addEventListener("DOMContentLoaded", function(){
     loadTheme();
 
     renderHistory();
-
-    updateSettingsUI();
 
 });
 
@@ -1837,14 +1767,12 @@ function newChat(){
         behavior:"smooth"
     });
 
-    if(
-        window.chatbaseCenterStage &&
-        typeof window.chatbaseCenterStage === "function"
-    ){
-        window.chatbaseCenterStage("open");
-    }
-
     showToast("New chat ready.");
+
+    /*
+      Opening a new Center Stage session depends on
+      Chatbase's own conversation controls.
+    */
 }
 
 
@@ -1863,19 +1791,19 @@ function saveChat(title){
         time:new Date().toLocaleString()
     };
 
-    // Avoid creating the exact same title repeatedly.
-    if(
-        chatHistory[0] &&
-        chatHistory[0].title === item.title
-    ){
-        chatHistory[0].time = item.time;
-    }else{
-        chatHistory.unshift(item);
-    }
+    chatHistory.unshift(item);
 
-    chatHistory = chatHistory.slice(0,30);
+    chatHistory =
+        chatHistory.slice(0,30);
 
-    persistHistory();
+    try{
+
+        localStorage.setItem(
+            HISTORY_KEY,
+            JSON.stringify(chatHistory)
+        );
+
+    }catch(e){}
 
     renderHistory();
 }
@@ -1883,63 +1811,53 @@ function saveChat(title){
 
 function renderHistory(){
 
-    const container = document.getElementById("chatHistory");
+    const container =
+        document.getElementById("chatHistory");
+
+    const empty =
+        document.getElementById("historyEmpty");
+
     if(!container) return;
 
     if(chatHistory.length === 0){
-        container.innerHTML = `
-            <div class="historyEmpty" id="historyEmpty">
-                No recent chats yet.
-            </div>`;
+
+        if(empty){
+            empty.style.display = "block";
+        }
+
         return;
+    }
+
+    if(empty){
+        empty.style.display = "none";
     }
 
     container.innerHTML = "";
 
     chatHistory.forEach(function(item,index){
 
-        const div = document.createElement("div");
+        const div =
+            document.createElement("div");
+
         div.className = "historyItem";
+
         div.title = item.time || "";
 
-        const main = document.createElement("div");
-        main.className = "historyMain";
-        main.innerHTML = `
+        div.innerHTML = `
             <span class="historyDot"></span>
-            <span class="historyTitle">${escapeHtml(item.title)}</span>
+            <span>${escapeHtml(item.title)}</span>
         `;
 
-        main.onclick = function(){
+        div.onclick = function(){
+
             openChat();
+
         };
 
-        const actions = document.createElement("div");
-        actions.className = "historyActions";
-
-        const rename = document.createElement("button");
-        rename.className = "historyAction";
-        rename.title = "Rename";
-        rename.textContent = "✎";
-        rename.onclick = function(e){
-            e.stopPropagation();
-            renameChat(index);
-        };
-
-        const del = document.createElement("button");
-        del.className = "historyAction";
-        del.title = "Delete";
-        del.textContent = "×";
-        del.onclick = function(e){
-            e.stopPropagation();
-            deleteChat(index);
-        };
-
-        actions.appendChild(rename);
-        actions.appendChild(del);
-        div.appendChild(main);
-        div.appendChild(actions);
         container.appendChild(div);
+
     });
+
 }
 
 
@@ -1961,165 +1879,6 @@ function clearHistory(){
 
     showToast("Chat history cleared.");
 
-}
-
-
-function persistHistory(){
-    try{
-        localStorage.setItem(HISTORY_KEY, JSON.stringify(chatHistory));
-    }catch(e){}
-}
-
-function deleteChat(index){
-    if(!chatHistory[index]) return;
-
-    const title = chatHistory[index].title || "this chat";
-    if(!confirm('Delete "' + title + '" from local history?')) return;
-
-    chatHistory.splice(index,1);
-    persistHistory();
-    renderHistory();
-    showToast("Chat removed.");
-}
-
-function renameChat(index){
-    if(!chatHistory[index]) return;
-
-    const current = chatHistory[index].title || "New conversation";
-    const next = prompt("Rename chat:", current);
-
-    if(next === null) return;
-
-    const clean = next.trim();
-    if(!clean){
-        showToast("Chat name cannot be empty.");
-        return;
-    }
-
-    chatHistory[index].title = clean.substring(0,70);
-    chatHistory[index].time = new Date().toLocaleString();
-    persistHistory();
-    renderHistory();
-    showToast("Chat renamed.");
-}
-
-function exportChatJSON(){
-
-    if(chatHistory.length === 0){
-        showToast("No saved chats to export.");
-        return;
-    }
-
-    const data = {
-        app:"PK Chat AI",
-        exportedAt:new Date().toISOString(),
-        chats:chatHistory
-    };
-
-    const blob = new Blob(
-        [JSON.stringify(data,null,2)],
-        {type:"application/json"}
-    );
-
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "PK-Chat-History.json";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-
-    showToast("JSON history exported.");
-}
-
-const DISPLAY_NAME_KEY = "pk_chat_display_name_v1";
-
-function loadDisplayName(){
-    const input = document.getElementById("displayNameInput");
-    if(!input) return;
-
-    try{
-        input.value = localStorage.getItem(DISPLAY_NAME_KEY) || "";
-    }catch(e){}
-}
-
-function saveDisplayName(value){
-    try{
-        localStorage.setItem(
-            DISPLAY_NAME_KEY,
-            String(value).substring(0,30)
-        );
-    }catch(e){}
-}
-
-function startVoiceInput(){
-
-    const SpeechRecognition =
-        window.SpeechRecognition ||
-        window.webkitSpeechRecognition;
-
-    if(!SpeechRecognition){
-        showToast("Voice input is not supported in this browser.");
-        return;
-    }
-
-    if(window.pkVoiceRecognition){
-        try{
-            window.pkVoiceRecognition.stop();
-        }catch(e){}
-        window.pkVoiceRecognition = null;
-        showToast("Voice input stopped.");
-        return;
-    }
-
-    const recognition = new SpeechRecognition();
-
-    recognition.lang = document.documentElement.lang || "en-IN";
-    recognition.interimResults = false;
-    recognition.continuous = false;
-
-    window.pkVoiceRecognition = recognition;
-
-    recognition.onstart = function(){
-        showToast("Listening… speak now.");
-    };
-
-    recognition.onresult = function(event){
-
-        const transcript =
-            event.results[0][0].transcript;
-
-        openChat();
-
-        // Put the recognized text in the clipboard so it can
-        // be pasted into the Chatbase composer if direct
-        // injection is not exposed by the embed.
-        if(navigator.clipboard){
-            navigator.clipboard.writeText(transcript).catch(function(){});
-        }
-
-        showToast("Voice text copied. Paste it into the chat.");
-    };
-
-    recognition.onerror = function(){
-        showToast("Could not capture voice input.");
-    };
-
-    recognition.onend = function(){
-        window.pkVoiceRecognition = null;
-    };
-
-    try{
-        recognition.start();
-    }catch(e){
-        window.pkVoiceRecognition = null;
-        showToast("Microphone could not be started.");
-    }
-}
-
-function updateSettingsUI(){
-    loadDisplayName();
 }
 
 
@@ -2206,7 +1965,7 @@ function searchChats(value){
 
         div.innerHTML = `
             <span class="historyDot"></span>
-            <span class="historyTitle">${escapeHtml(item.title)}</span>
+            <span>${escapeHtml(item.title)}</span>
         `;
 
         div.onclick = function(){
@@ -2235,8 +1994,6 @@ function openSettings(){
     document
         .getElementById("settingsModal")
         .classList.add("show");
-
-    updateSettingsUI();
 
 }
 
@@ -2550,139 +2307,6 @@ document
 
     });
 
-/* =========================================================
-   VOICE INPUT
-   ========================================================= */
-
-const voiceBtn = document.getElementById("voiceBtn");
-
-const SpeechRecognition =
-    window.SpeechRecognition ||
-    window.webkitSpeechRecognition;
-
-if(voiceBtn){
-
-    if(!SpeechRecognition){
-
-        voiceBtn.disabled = true;
-        voiceBtn.textContent = "🎤 Voice Not Supported";
-
-    }else{
-
-        const recognition = new SpeechRecognition();
-
-        recognition.lang = "hi-IN";
-        recognition.interimResults = false;
-        recognition.continuous = false;
-
-        voiceBtn.addEventListener("click", function(){
-
-            try{
-                recognition.start();
-
-                voiceBtn.textContent = "🔴 Listening...";
-                voiceBtn.classList.add("listening");
-
-            }catch(error){
-                console.log(error);
-            }
-
-        });
-
-        recognition.onresult = function(event){
-
-            const text =
-                event.results[0][0].transcript;
-
-            voiceBtn.textContent = "✅ " + text;
-
-            showToast("Voice captured: " + text);
-
-            setTimeout(function(){
-                voiceBtn.textContent = "🎤 Voice Input";
-            },2500);
-
-        };
-
-        recognition.onerror = function(event){
-
-            console.log(
-                "Voice error:",
-                event.error
-            );
-
-            voiceBtn.textContent =
-                "🎤 Voice Input";
-
-            voiceBtn.classList.remove("listening");
-
-            showToast(
-                "Voice input could not be started."
-            );
-
-        };
-
-        recognition.onend = function(){
-
-            voiceBtn.textContent =
-                "🎤 Voice Input";
-
-            voiceBtn.classList.remove("listening");
-
-        };
-
-    }
-}
-/* =========================================================
-   READ ALOUD
-   ========================================================= */
-
-const readAloudBtn =
-    document.getElementById("readAloudBtn");
-
-if(readAloudBtn){
-
-    readAloudBtn.addEventListener("click", function(){
-
-        if(!("speechSynthesis" in window)){
-            showToast("🔊 Read Aloud is not supported.");
-            return;
-        }
-
-        // Page par available text
-        const text = document.body.innerText.trim();
-
-        if(!text){
-            showToast("No text found to read.");
-            return;
-        }
-
-        // Agar already bol raha hai to stop
-        if(window.speechSynthesis.speaking){
-            window.speechSynthesis.cancel();
-            readAloudBtn.textContent = "🔊 Read Aloud";
-            return;
-        }
-
-        const speech = new SpeechSynthesisUtterance(text);
-
-        speech.lang = "en-IN";
-        speech.rate = 1;
-        speech.pitch = 1;
-
-        speech.onstart = function(){
-            readAloudBtn.textContent = "⏹️ Stop Reading";
-        };
-
-        speech.onend = function(){
-            readAloudBtn.textContent = "🔊 Read Aloud";
-        };
-
-        window.speechSynthesis.speak(speech);
-
-    });
-
-}
 
 </script>
 
