@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raoshaabprashantyadavji-wq.github.io/PK-chat/sitemap.xml
