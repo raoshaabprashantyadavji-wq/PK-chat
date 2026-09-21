@@ -9,7 +9,7 @@
 
 
 
-<meta name="description" content="PK Chat AI is a web-based AI chat assistant by Prashant Yadav for questions, learning, brainstorming, creative ideas and everyday conversations.">
+<meta name="description" content="PK Chat AI is a smart, fast and friendly AI assistant by Prashant Yadav. Ask questions, explore ideas, learn new things and chat online.">
 <meta name="author" content="Prashant Yadav">
 <meta name="application-name" content="PK Chat AI">
 <meta name="theme-color" content="#03050a">
@@ -1104,81 +1104,6 @@ body.light .toggle:after{
     font-size:10px;
 }
 
-
-/* =========================================================
-   ON-PAGE SEO CONTENT
-   ========================================================= */
-
-.seoSections{
-    width:min(900px,100%);
-    margin:34px auto 0;
-    display:grid;
-    gap:16px;
-    text-align:left;
-}
-
-.seoCard{
-    padding:22px;
-    border:1px solid var(--border);
-    border-radius:18px;
-    background:linear-gradient(135deg,rgba(22,131,255,.07),rgba(0,198,255,.025));
-}
-
-.seoCard h3{
-    color:var(--text);
-    font-size:18px;
-    margin-bottom:9px;
-}
-
-.seoCard p{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.75;
-}
-
-.seoCard strong{
-    color:var(--text);
-}
-
-.faqList{
-    display:grid;
-    gap:12px;
-    margin-top:12px;
-}
-
-.faqItem{
-    padding:14px 16px;
-    border:1px solid var(--border);
-    border-radius:14px;
-    background:rgba(255,255,255,.015);
-}
-
-.faqItem h3{
-    font-size:14px;
-    margin-bottom:6px;
-}
-
-.faqItem p{
-    font-size:12px;
-}
-
-.creatorSeo{
-    text-align:center;
-    color:var(--muted2);
-    font-size:11px;
-    margin-top:2px;
-}
-
-@media(max-width:650px){
-    .seoSections{
-        margin-top:24px;
-    }
-
-    .seoCard{
-        padding:18px;
-    }
-}
-
 /* =========================================================
    MOBILE
    ========================================================= */
@@ -1539,75 +1464,6 @@ body.light .toggle:after{
                 <div class="creatorLine">
                     PK Chat AI · Created & owned by Prashant Yadav
                 </div>
-
-                <section class="seoSections" aria-label="About PK Chat AI">
-
-                    <div class="seoCard">
-                        <h3>What is PK Chat AI?</h3>
-                        <p>
-                            <strong>PK Chat AI</strong> is a web-based AI chat assistant designed for asking questions,
-                            learning concepts, exploring ideas, brainstorming, and getting help with creative writing.
-                            The interface is built to make everyday AI conversations simple and easy to start.
-                        </p>
-                    </div>
-
-                    <div class="seoCard">
-                        <h3>What can you do with PK Chat AI?</h3>
-                        <p>
-                            You can use PK Chat AI to <strong>ask questions, understand difficult topics, learn step by step,
-                            brainstorm ideas, and explore creative concepts</strong>. Start with a quick prompt or open a new
-                            conversation and ask your own question.
-                        </p>
-                    </div>
-
-                    <div class="seoCard">
-                        <h3>How to use PK Chat AI</h3>
-                        <p>
-                            Choose <strong>Start Chatting</strong> to begin, select a quick prompt for inspiration, or write
-                            your own question. You can also create new conversations and search your saved chats from the
-                            workspace controls.
-                        </p>
-                    </div>
-
-                    <div class="seoCard">
-                        <h3>About the creator</h3>
-                        <p>
-                            <strong>Prashant Yadav</strong> is the creator and owner of PK Chat AI. The project is presented
-                            as an accessible AI chat experience for learning, questions, ideas, and everyday exploration.
-                        </p>
-                    </div>
-
-                    <div class="seoCard">
-                        <h3>Frequently asked questions</h3>
-
-                        <div class="faqList">
-
-                            <div class="faqItem">
-                                <h3>What is PK Chat AI used for?</h3>
-                                <p>PK Chat AI can be used for questions, explanations, learning, brainstorming, and creative ideas.</p>
-                            </div>
-
-                            <div class="faqItem">
-                                <h3>How do I start a chat?</h3>
-                                <p>Click <strong>Start Chatting</strong> or choose a quick prompt to begin a conversation.</p>
-                            </div>
-
-                            <div class="faqItem">
-                                <h3>Who created PK Chat AI?</h3>
-                                <p>PK Chat AI was created and is owned by <strong>Prashant Yadav</strong>.</p>
-                            </div>
-
-                            <div class="faqItem">
-                                <h3>Can I use PK Chat AI to learn?</h3>
-                                <p>Yes. You can ask for explanations and step-by-step help on topics you want to understand.</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <p class="creatorSeo">PK Chat AI · Smart AI Assistant · Created &amp; owned by Prashant Yadav</p>
-
-                </section>
 
             </div>
 
@@ -2544,7 +2400,14 @@ document
 
     }
 
+    let chatbaseLoaded = false;
+    let loading = false;
+
     const onLoad = function(){
+
+        if(chatbaseLoaded || loading) return;
+
+        loading = true;
 
         const script =
             document.createElement("script");
@@ -2558,24 +2421,37 @@ document
         script.domain =
             "www.chatbase.co";
 
+        script.async = true;
+
+        script.onload = function(){
+            chatbaseLoaded = true;
+            loading = false;
+        };
+
+        script.onerror = function(){
+            loading = false;
+        };
+
         document.body.appendChild(script);
 
     };
 
-    if(
-        document.readyState === "complete"
-    ){
-
+    /* Load Chatbase only when the visitor is about to use chat.
+       This keeps the initial page lightweight and preserves the
+       existing Center Stage command queue. */
+    const loadOnIntent = function(){
         onLoad();
+    };
 
-    }else{
+    document.addEventListener("click", function(e){
+        const target = e.target.closest("button");
+        if(target && (target.matches(".startChat") || target.matches(".prompt") || target.matches(".historyItem"))){
+            loadOnIntent();
+        }
+    }, {passive:true});
 
-        window.addEventListener(
-            "load",
-            onLoad
-        );
-
-    }
+    /* No Chatbase network request is made during initial page load.
+       It starts only when the visitor actually uses the chat UI. */
 
 })();
 
