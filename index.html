@@ -1,2336 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>PK Chat AI – Smart AI Assistant</title>
 
-
-<meta name="description" content="PK Chat AI is a smart, fast and friendly AI assistant by Prashant Yadav. Ask questions, explore ideas, learn new things and chat online.">
+<meta name="description" content="PK Chat AI is a smart AI assistant created and owned by Prashant Yadav. Chat, learn and explore.">
 <meta name="author" content="Prashant Yadav">
-<meta name="application-name" content="PK Chat AI">
-<meta name="theme-color" content="#03050a">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://raoshaabprashantyadavji-wq.github.io/PK-chat/">
+<link rel="icon" type="image/png" href="favicon.png">
 
-<!-- Open Graph / social preview -->
+<meta property="og:title" content="PK Chat AI – Smart AI Assistant">
+<meta property="og:description" content="Chat, learn and explore with PK Chat AI.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="PK Chat AI">
-<meta property="og:title" content="PK Chat AI – Smart AI Assistant | Chat, Learn & Explore">
-<meta property="og:description" content="Ask questions, explore ideas, learn new things and chat with PK Chat AI — created and owned by Prashant Yadav.">
 <meta property="og:url" content="https://raoshaabprashantyadavji-wq.github.io/PK-chat/">
-<meta property="og:image" content="https://raoshaabprashantyadavji-wq.github.io/PK-chat/og-image.png">
-<meta property="og:image:secure_url" content="https://raoshaabprashantyadavji-wq.github.io/PK-chat/og-image.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="675">
-<meta property="og:image:alt" content="PK Chat AI — Smart AI Assistant created and owned by Prashant Yadav">
-<meta property="og:locale" content="en_IN">
+<meta property="og:image" content="og-image.png">
 
-<!-- X / Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PK Chat AI – Smart AI Assistant | Chat, Learn & Explore">
-<meta name="twitter:description" content="A smart, fast and friendly AI assistant created and owned by Prashant Yadav.">
-<meta name="twitter:image" content="https://raoshaabprashantyadavji-wq.github.io/PK-chat/og-image.png">
-<meta name="twitter:image:alt" content="PK Chat AI — Smart AI Assistant">
-
-<!-- Structured data: WebSite + Organization + Person -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/#website",
-      "name": "PK Chat AI",
-      "alternateName": "PK Chat",
-      "url": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/",
-      "description": "A smart, fast and friendly AI assistant for questions, learning, ideas and chat.",
-      "publisher": {
-        "@id": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/#organization"
-      },
-      "creator": {
-        "@id": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/#person"
-      },
-      "image": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/og-image.png"
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/#organization",
-      "name": "PK Chat AI",
-      "url": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/",
-      "logo": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/favicon.png",
-      "description": "PK Chat AI is a web-based AI assistant project for chatting, learning and exploring ideas.",
-      "founder": {
-        "@id": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/#person"
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/#person",
-      "name": "Prashant Yadav",
-      "url": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/",
-      "image": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/favicon.png",
-      "jobTitle": "Creator & Owner",
-      "description": "Creator and owner of PK Chat AI.",
-      "worksFor": {
-        "@id": "https://raoshaabprashantyadavji-wq.github.io/PK-chat/#organization"
-      }
-    }
-  ]
-}
-</script>
-
-<meta name="google-site-verification" content="xicmRrXqfnPOqeR7rmxWS-BL9XJXMAquFtioAa5fM2M" />
-
-<!-- Stable site favicon -->
-<link rel="icon" type="image/png" sizes="512x512" href="./favicon.png">
-<link rel="apple-touch-icon" sizes="512x512" href="./favicon.png">
-<title>PK Chat AI – Smart AI Assistant | Chat, Learn & Explore</title>
 <style>
-
-/* =========================================================
-   PK CHAT AI V2
-   ========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-:root{
-    --bg:#03050a;
-    --bg2:#070b13;
-    --panel:#0a0f19;
-    --panel2:#0d1420;
-    --border:rgba(82,145,255,.18);
-    --border2:rgba(82,145,255,.30);
-    --text:#f5f8ff;
-    --muted:#8995aa;
-    --muted2:#5f6b7e;
-    --blue:#1683ff;
-    --blue2:#00c6ff;
-    --green:#20e68a;
-    --danger:#ff5570;
-    --shadow:0 20px 70px rgba(0,0,0,.45);
-}
-
-body.light{
-    --bg:#eef5ff;
-    --bg2:#f8fbff;
-    --panel:#ffffff;
-    --panel2:#f1f6ff;
-    --border:rgba(20,100,210,.15);
-    --border2:rgba(20,100,210,.28);
-    --text:#101827;
-    --muted:#617087;
-    --muted2:#8995a7;
-    --shadow:0 20px 60px rgba(35,75,130,.15);
-}
-
-html,
-body{
-    width:100%;
-    height:100%;
-}
-
-body{
-    overflow:hidden;
-    font-family:Inter,Arial,Helvetica,sans-serif;
-    color:var(--text);
-    background:
-        radial-gradient(
-            circle at 50% -20%,
-            rgba(0,125,255,.22),
-            transparent 42%
-        ),
-        radial-gradient(
-            circle at 100% 100%,
-            rgba(0,80,255,.10),
-            transparent 35%
-        ),
-        var(--bg);
-}
-
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
-
-::-webkit-scrollbar{
-    width:7px;
-}
-
-::-webkit-scrollbar-track{
-    background:transparent;
-}
-
-::-webkit-scrollbar-thumb{
-    background:rgba(22,131,255,.28);
-    border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:rgba(22,131,255,.55);
-}
-
-/* =========================================================
-   APP
-   ========================================================= */
-
-.app{
-    width:100%;
-    height:100vh;
-    display:flex;
-    position:relative;
-}
-
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
-
-.sidebar{
-    width:285px;
-    height:100vh;
-    background:rgba(5,8,14,.88);
-    border-right:1px solid var(--border);
-    backdrop-filter:blur(25px);
-    display:flex;
-    flex-direction:column;
-    position:relative;
-    z-index:20;
-    transition:.3s ease;
-}
-
-body.light .sidebar{
-    background:rgba(255,255,255,.88);
-}
-
-/* Brand */
-
-.brand{
-    height:82px;
-    padding:16px 18px;
-    display:flex;
-    align-items:center;
-    gap:13px;
-    border-bottom:1px solid var(--border);
-}
-
-.logo{
-    width:48px;
-    height:48px;
-    border-radius:15px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:
-        radial-gradient(circle at 30% 20%,rgba(0,198,255,.25),transparent 50%),
-        #07101c;
-    border:1px solid rgba(0,198,255,.35);
-    box-shadow:
-        0 0 20px rgba(0,137,255,.22),
-        inset 0 0 20px rgba(0,137,255,.08);
-    animation:logoFloat 3s ease-in-out infinite;
-    overflow:hidden;
-}
-
-.logo:before{
-    content:"";
-    position:absolute;
-    inset:-2px;
-    border-radius:16px;
-    border:1px solid transparent;
-    border-top-color:var(--blue2);
-    animation:logoSpin 3s linear infinite;
-}
-
-.logo:after{
-    content:"";
-    position:absolute;
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:var(--blue2);
-    box-shadow:0 0 15px var(--blue2);
-    top:5px;
-    left:50%;
-}
-
-.logo span{
-    font-size:18px;
-    font-weight:900;
-    letter-spacing:-1px;
-    background:linear-gradient(135deg,#fff,#00c6ff);
-    -webkit-background-clip:text;
-    color:transparent;
-    z-index:2;
-}
-
-@keyframes logoFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-3px);
-    }
-}
-
-@keyframes logoSpin{
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-.brandText h1{
-    font-size:19px;
-    letter-spacing:-.5px;
-}
-
-.brandText p{
-    color:var(--muted);
-    font-size:11px;
-    margin-top:3px;
-}
-
-/* New Chat */
-
-.newChat{
-    margin:16px;
-    height:48px;
-    border:1px solid rgba(0,198,255,.30);
-    border-radius:13px;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(22,131,255,.16),
-            rgba(0,198,255,.06)
-        );
-    color:var(--text);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    cursor:pointer;
-    font-size:14px;
-    font-weight:700;
-    transition:.25s;
-}
-
-.newChat:hover{
-    transform:translateY(-2px);
-    border-color:rgba(0,198,255,.7);
-    box-shadow:0 8px 30px rgba(0,128,255,.16);
-}
-
-.newChat span{
-    font-size:20px;
-    color:var(--blue2);
-}
-
-/* Sidebar nav */
-
-.navTitle{
-    color:var(--muted2);
-    font-size:10px;
-    text-transform:uppercase;
-    letter-spacing:1.4px;
-    padding:2px 18px 10px;
-}
-
-.nav{
-    padding:0 10px;
-}
-
-.navItem{
-    width:100%;
-    border:0;
-    background:transparent;
-    color:var(--muted);
-    height:43px;
-    padding:0 12px;
-    display:flex;
-    align-items:center;
-    gap:11px;
-    border-radius:10px;
-    cursor:pointer;
-    text-align:left;
-    font-size:13px;
-    transition:.2s;
-}
-
-.navItem:hover,
-.navItem.active{
-    background:rgba(22,131,255,.10);
-    color:var(--text);
-}
-
-.navIcon{
-    width:25px;
-    text-align:center;
-    font-size:17px;
-}
-
-/* Recent */
-
-.recent{
-    flex:1;
-    min-height:0;
-    padding-top:12px;
-    overflow:auto;
-}
-
-.chatHistory{
-    padding:0 10px;
-}
-
-.historyEmpty{
-    color:var(--muted2);
-    font-size:12px;
-    padding:20px 12px;
-    text-align:center;
-}
-
-.historyItem{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    padding:10px 11px;
-    margin-bottom:4px;
-    border-radius:9px;
-    cursor:pointer;
-    color:var(--muted);
-    font-size:12px;
-    transition:.2s;
-}
-
-.historyItem:hover{
-    background:rgba(22,131,255,.08);
-    color:var(--text);
-}
-
-.historyDot{
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:var(--blue);
-    box-shadow:0 0 8px rgba(22,131,255,.7);
-    flex:none;
-}
-
-/* Sidebar bottom */
-
-.sidebarBottom{
-    border-top:1px solid var(--border);
-    padding:12px;
-}
-
-.owner{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:9px;
-    border-radius:12px;
-    background:rgba(255,255,255,.025);
-}
-
-.ownerAvatar{
-    width:35px;
-    height:35px;
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:900;
-    font-size:12px;
-    background:linear-gradient(135deg,var(--blue),var(--blue2));
-    color:#fff;
-    box-shadow:0 0 18px rgba(0,145,255,.25);
-}
-
-.ownerText{
-    min-width:0;
-}
-
-.ownerText strong{
-    display:block;
-    font-size:12px;
-}
-
-.ownerText small{
-    display:block;
-    color:var(--muted);
-    font-size:10px;
-    margin-top:2px;
-}
-
-/* =========================================================
-   MAIN
-   ========================================================= */
-
-.main{
-    flex:1;
-    min-width:0;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    position:relative;
-}
-
-/* Header */
-
-.header{
-    height:70px;
-    flex:none;
-    border-bottom:1px solid var(--border);
-    background:rgba(3,5,10,.48);
-    backdrop-filter:blur(20px);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 24px;
-    z-index:10;
-}
-
-body.light .header{
-    background:rgba(255,255,255,.60);
-}
-
-.headerLeft{
-    display:flex;
-    align-items:center;
-    gap:13px;
-}
-
-.mobileMenu{
-    display:none;
-    width:40px;
-    height:40px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    background:var(--panel);
-    color:var(--text);
-    cursor:pointer;
-    font-size:19px;
-}
-
-.headerTitle{
-    font-weight:800;
-    font-size:15px;
-}
-
-.status{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    color:var(--muted);
-    font-size:11px;
-    margin-top:3px;
-}
-
-.statusDot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:var(--green);
-    box-shadow:0 0 10px var(--green);
-    animation:pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-    0%,100%{
-        opacity:1;
-        transform:scale(1);
-    }
-    50%{
-        opacity:.45;
-        transform:scale(.75);
-    }
-}
-
-.headerActions{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.iconBtn{
-    width:38px;
-    height:38px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    background:rgba(255,255,255,.025);
-    color:var(--muted);
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:16px;
-    transition:.2s;
-}
-
-.iconBtn:hover{
-    color:var(--text);
-    border-color:var(--border2);
-    background:rgba(22,131,255,.08);
-    transform:translateY(-1px);
-}
-
-/* =========================================================
-   CONTENT
-   ========================================================= */
-
-.content{
-    flex:1;
-    overflow:auto;
-    position:relative;
-}
-
-.welcome{
-    max-width:900px;
-    margin:0 auto;
-    padding:70px 25px 120px;
-    min-height:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-}
-
-.heroLogo{
-    width:86px;
-    height:86px;
-    border-radius:26px;
-    background:
-        radial-gradient(circle at 30% 20%,rgba(0,198,255,.35),transparent 55%),
-        #07101b;
-    border:1px solid rgba(0,198,255,.4);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    box-shadow:
-        0 0 45px rgba(0,128,255,.15),
-        inset 0 0 30px rgba(0,128,255,.08);
-    animation:heroFloat 4s ease-in-out infinite;
-    overflow:hidden;
-}
-
-.heroLogo:before{
-    content:"";
-    position:absolute;
-    inset:7px;
-    border-radius:21px;
-    border:1px solid rgba(0,198,255,.22);
-    animation:logoSpin 5s linear infinite;
-}
-
-.heroLogo:after{
-    content:"";
-    position:absolute;
-    width:100px;
-    height:2px;
-    background:linear-gradient(90deg,transparent,var(--blue2),transparent);
-    transform:rotate(-45deg);
-    animation:shine 2.5s infinite;
-}
-
-.heroLogo span{
-    font-size:30px;
-    font-weight:950;
-    background:linear-gradient(135deg,#fff,var(--blue2));
-    -webkit-background-clip:text;
-    color:transparent;
-    z-index:2;
-}
-
-@keyframes heroFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-7px);
-    }
-}
-
-@keyframes shine{
-    0%{
-        left:-130px;
-    }
-    100%{
-        left:130px;
-    }
-}
-
-.welcome h2{
-    font-size:38px;
-    letter-spacing:-1.5px;
-    margin-top:28px;
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #9fdcff,
-        #00c6ff,
-        #fff
-    );
-    background-size:250% auto;
-    -webkit-background-clip:text;
-    color:transparent;
-    animation:gradientText 5s linear infinite;
-}
-
-body.light .welcome h2{
-    background:linear-gradient(
-        90deg,
-        #111827,
-        #1683ff,
-        #006dca,
-        #111827
-    );
-    background-size:250% auto;
-    -webkit-background-clip:text;
-}
-
-@keyframes gradientText{
-    to{
-        background-position:250% center;
-    }
-}
-
-.welcomeSub{
-    max-width:650px;
-    color:var(--muted);
-    line-height:1.7;
-    font-size:14px;
-    margin-top:12px;
-}
-
-/* Quick prompts */
-
-.quickTitle{
-    width:100%;
-    text-align:left;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:1.2px;
-    color:var(--muted2);
-    margin:42px 0 12px;
-}
-
-.quickGrid{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-}
-
-.prompt{
-    border:1px solid var(--border);
-    background:rgba(255,255,255,.025);
-    color:var(--text);
-    padding:16px;
-    border-radius:14px;
-    cursor:pointer;
-    text-align:left;
-    transition:.25s;
-    position:relative;
-    overflow:hidden;
-}
-
-.prompt:before{
-    content:"";
-    position:absolute;
-    width:90px;
-    height:90px;
-    background:rgba(0,198,255,.08);
-    filter:blur(20px);
-    right:-40px;
-    bottom:-50px;
-    border-radius:50%;
-}
-
-.prompt:hover{
-    transform:translateY(-3px);
-    border-color:rgba(0,198,255,.4);
-    background:rgba(22,131,255,.06);
-}
-
-.promptIcon{
-    font-size:19px;
-    margin-bottom:9px;
-}
-
-.prompt strong{
-    font-size:13px;
-    display:block;
-}
-
-.prompt small{
-    color:var(--muted);
-    display:block;
-    margin-top:5px;
-    line-height:1.45;
-}
-
-/* Bottom helper */
-
-.helper{
-    margin-top:35px;
-    color:var(--muted2);
-    font-size:11px;
-}
-
-kbd{
-    border:1px solid var(--border2);
-    background:var(--panel2);
-    border-radius:5px;
-    padding:2px 6px;
-    color:var(--muted);
-}
-
-/* =========================================================
-   CHAT LAUNCH PANEL
-   ========================================================= */
-
-.chatLaunch{
-    margin-top:28px;
-    width:100%;
-    display:flex;
-    justify-content:center;
-}
-
-.startChat{
-    border:none;
-    min-width:190px;
-    height:48px;
-    border-radius:13px;
-    cursor:pointer;
-    color:white;
-    font-weight:800;
-    font-size:14px;
-    background:linear-gradient(135deg,#126eff,#00bdfc);
-    box-shadow:
-        0 10px 30px rgba(0,125,255,.24),
-        inset 0 1px rgba(255,255,255,.25);
-    transition:.25s;
-}
-
-.startChat:hover{
-    transform:translateY(-3px);
-    box-shadow:
-        0 15px 38px rgba(0,125,255,.32),
-        inset 0 1px rgba(255,255,255,.25);
-}
-
-.startChat:active{
-    transform:translateY(0);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* =========================================================
-   SEARCH MODAL
-   ========================================================= */
-
-.overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.60);
-    backdrop-filter:blur(8px);
-    z-index:100;
-    display:none;
-    align-items:flex-start;
-    justify-content:center;
-    padding-top:100px;
+html, body {
+  min-height: 100%;
 }
 
-.overlay.show{
-    display:flex;
-    animation:fadeIn .2s ease;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #05070b;
+  color: #eefaff;
 }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.modal{
-    width:min(620px,calc(100% - 30px));
-    background:var(--panel);
-    border:1px solid var(--border2);
-    border-radius:18px;
-    box-shadow:var(--shadow);
-    overflow:hidden;
-    animation:modalIn .25s ease;
+/* HEADER */
+header {
+  height: 70px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,190,255,.18);
+  background: #060910;
 }
 
-@keyframes modalIn{
-    from{
-        opacity:0;
-        transform:translateY(-15px) scale(.98);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.modalHeader{
-    height:60px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 18px;
-    border-bottom:1px solid var(--border);
+/* YOUR REAL ICON */
+.real-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 11px;
+  object-fit: cover;
+  box-shadow: 0 0 22px rgba(0,180,255,.28);
 }
 
-.modalHeader h3{
-    font-size:15px;
+.brand h1 {
+  font-size: 20px;
 }
 
-.closeBtn{
-    width:32px;
-    height:32px;
-    border:none;
-    border-radius:8px;
-    background:rgba(255,255,255,.05);
-    color:var(--muted);
-    cursor:pointer;
-    font-size:17px;
+.brand p {
+  font-size: 11px;
+  color: #7890a2;
+  margin-top: 3px;
 }
 
-.modalBody{
-    padding:18px;
+/* MAIN */
+main {
+  width: min(1050px, 100%);
+  margin: auto;
+  padding: 38px 14px 45px;
+  text-align: center;
 }
 
-.searchInput{
-    width:100%;
-    height:45px;
-    border-radius:10px;
-    border:1px solid var(--border);
-    outline:none;
-    background:var(--panel2);
-    color:var(--text);
-    padding:0 14px;
-    font-size:13px;
-}
-
-.searchInput:focus{
-    border-color:var(--blue);
-    box-shadow:0 0 0 3px rgba(22,131,255,.08);
-}
-
-.searchResults{
-    max-height:320px;
-    overflow:auto;
-    margin-top:12px;
-}
-
-/* =========================================================
-   SETTINGS
-   ========================================================= */
-
-.settingRow{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:14px 2px;
-    border-bottom:1px solid var(--border);
-}
-
-.settingRow:last-child{
-    border-bottom:0;
-}
-
-.settingInfo strong{
-    font-size:13px;
-    display:block;
-}
-
-.settingInfo small{
-    color:var(--muted);
-    font-size:11px;
-    display:block;
-    margin-top:4px;
-}
+h2 {
+  font-size: clamp(30px, 6vw, 48px);
+  margin-bottom: 10px;
 
-.toggle{
-    width:44px;
-    height:24px;
-    border-radius:20px;
-    border:0;
-    background:#273143;
-    cursor:pointer;
-    position:relative;
+  background: linear-gradient(90deg, #ffffff, #4bdcff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.toggle:after{
-    content:"";
-    width:18px;
-    height:18px;
-    background:white;
-    border-radius:50%;
-    position:absolute;
-    left:3px;
-    top:3px;
-    transition:.2s;
+.subtitle {
+  max-width: 620px;
+  margin: 0 auto 25px;
+  color: #8ea5b6;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-body.light .toggle{
-    background:var(--blue);
-}
+/* CHATBOT */
+.chat-wrap {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+  padding: 7px;
+  border-radius: 19px;
 
-body.light .toggle:after{
-    left:23px;
-}
+  border: 1px solid rgba(0,190,255,.22);
+  background: #080d14;
 
-/* =========================================================
-   ABOUT
-   ========================================================= */
-
-.aboutLogo{
-    width:62px;
-    height:62px;
-    border-radius:18px;
-    margin:3px auto 15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#07101c;
-    border:1px solid rgba(0,198,255,.3);
-    color:var(--blue2);
-    font-size:22px;
-    font-weight:900;
+  box-shadow:
+    0 20px 65px rgba(0,0,0,.45),
+    0 0 30px rgba(0,180,255,.08);
 }
 
-.aboutText{
-    text-align:center;
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.7;
-}
+.chat-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 680px;
 
-.aboutText strong{
-    color:var(--text);
+  border: 0;
+  border-radius: 13px;
+  background: #080d14;
 }
 
-
-.seoIntro{
-    max-width:720px;
-    color:var(--muted);
-    line-height:1.65;
-    font-size:13px;
-    margin-top:12px;
+/* CREATOR */
+.creator {
+  margin-top: 18px;
+  color: #6f8798;
+  font-size: 12px;
 }
 
-.aboutMeta{
-    margin-top:18px;
-    padding:14px;
-    border:1px solid var(--border);
-    border-radius:14px;
-    background:rgba(22,131,255,.045);
-    text-align:left;
+.creator strong {
+  color: #b9dbea;
 }
 
-.aboutMetaRow{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:15px;
-    padding:8px 0;
-    border-bottom:1px solid var(--border);
+/* FOOTER */
+footer {
+  padding: 17px;
+  text-align: center;
+  border-top: 1px solid rgba(0,190,255,.12);
+  color: #60798a;
+  font-size: 11px;
 }
 
-.aboutMetaRow:last-child{
-    border-bottom:0;
-}
+/* LAST WEB ICON */
+.web-icon {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
 
-.aboutMetaRow span{
-    color:var(--muted);
-    font-size:11px;
-}
+  width: 54px;
+  height: 54px;
 
-.aboutMetaRow strong{
-    color:var(--text);
-    font-size:12px;
-    text-align:right;
-}
+  border-radius: 50%;
 
-.aboutMission{
-    margin-top:16px;
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.7;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-/* =========================================================
-   TOAST
-   ========================================================= */
-
-.toast{
-    position:fixed;
-    left:50%;
-    bottom:25px;
-    transform:translate(-50%,20px);
-    opacity:0;
-    pointer-events:none;
-    background:rgba(10,15,25,.95);
-    border:1px solid var(--border2);
-    color:var(--text);
-    padding:11px 16px;
-    border-radius:10px;
-    font-size:12px;
-    box-shadow:var(--shadow);
-    z-index:300;
-    transition:.25s;
-}
+  background: #08131d;
+  border: 1px solid rgba(0,210,255,.55);
 
-.toast.show{
-    opacity:1;
-    transform:translate(-50%,0);
-}
+  box-shadow: 0 0 24px rgba(0,190,255,.30);
 
+  z-index: 9999;
+  text-decoration: none;
 
-.creatorLine{
-    margin-top:22px;
-    color:var(--muted2);
-    font-size:10px;
+  transition: transform .2s ease;
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-.mobileBackdrop{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.55);
-    z-index:15;
+/* REAL ICON INSIDE LAST WEB BUTTON */
+.web-icon img {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  object-fit: cover;
 }
-
-@media(max-width:850px){
-
-    .sidebar{
-        position:fixed;
-        left:-290px;
-        top:0;
-        box-shadow:20px 0 50px rgba(0,0,0,.3);
-    }
 
-    .sidebar.open{
-        left:0;
-    }
-
-    .mobileBackdrop.show{
-        display:block;
-    }
-
-    .mobileMenu{
-        display:block;
-    }
-
-    .header{
-        padding:0 14px;
-    }
-
-    .welcome{
-        padding:45px 17px 90px;
-    }
-
-    .welcome h2{
-        font-size:30px;
-    }
-
-    .quickGrid{
-        grid-template-columns:1fr;
-    }
-
+.web-icon:hover {
+  transform: scale(1.08);
 }
-
-@media(max-width:500px){
-
-    .headerActions .hideMobile{
-        display:none;
-    }
 
-    .heroLogo{
-        width:74px;
-        height:74px;
-    }
+/* MOBILE */
+@media (max-width: 600px) {
 
-    .heroLogo span{
-        font-size:25px;
-    }
+  header {
+    height: 64px;
+    padding: 0 14px;
+  }
 
-    .welcome h2{
-        font-size:27px;
-    }
+  .brand h1 {
+    font-size: 17px;
+  }
 
-    .welcomeSub{
-        font-size:13px;
-    }
+  .brand p {
+    display: none;
+  }
 
-    .prompt{
-        padding:14px;
-    }
+  main {
+    padding: 28px 8px 35px;
+  }
 
-}
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
+  .chat-wrap {
+    padding: 5px;
+    border-radius: 15px;
+  }
 
-@media(prefers-reduced-motion:reduce){
+  .chat-wrap iframe {
+    height: 650px;
+    border-radius: 11px;
+  }
 
-    *,
-    *:before,
-    *:after{
-        animation:none !important;
-        transition:none !important;
-    }
-
+  .web-icon {
+    right: 14px;
+    bottom: 14px;
+  }
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="app">
+<div class="page">
 
-    <!-- =====================================================
-         SIDEBAR
-         ===================================================== -->
+<!-- HEADER -->
+<header>
 
-    <aside class="sidebar" id="sidebar">
+  <div class="brand">
 
-        <div class="brand">
+    <!-- YOUR REAL ICON -->
+    <img
+      class="real-icon"
+      src="favicon.png"
+      alt="PK Chat AI icon"
+    >
 
-            <div class="logo">
-                <span>PK</span>
-            </div>
-
-            <div class="brandText">
-                <h1>PK Chat AI</h1>
-                <p>Smart AI Assistant</p>
-            </div>
-
-        </div>
-
-        <button class="newChat" onclick="newChat()">
-            <span>＋</span>
-            New Chat
-        </button>
-
-        <div class="navTitle">
-            Workspace
-        </div>
-
-        <nav class="nav">
-
-            <button class="navItem active" onclick="newChat()">
-                <span class="navIcon">💬</span>
-                New conversation
-            </button>
-
-            <button class="navItem" onclick="openSearch()">
-                <span class="navIcon">⌕</span>
-                Search chats
-            </button>
-
-            <button class="navItem" onclick="openSettings()">
-                <span class="navIcon">⚙</span>
-                Settings
-            </button>
-
-            <button class="navItem" onclick="openAbout()">
-                <span class="navIcon">ⓘ</span>
-                About PK Chat
-            </button>
-
-        </nav>
-
-        <div class="recent">
-
-            <div class="navTitle">
-                Recent chats
-            </div>
-
-            <div class="chatHistory" id="chatHistory">
-
-                <div class="historyEmpty" id="historyEmpty">
-                    No recent chats yet.
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="sidebarBottom">
-
-            <div class="owner">
-
-                <div class="ownerAvatar">
-                    PY
-                </div>
-
-                <div class="ownerText">
-                    <strong>Prashant Yadav</strong>
-                    <small>Creator & Owner</small>
-                </div>
-
-            </div>
-
-        </div>
-
-    </aside>
-
-    <div class="mobileBackdrop"
-         id="mobileBackdrop"
-         onclick="closeMobileMenu()">
+    <div>
+      <h1>PK Chat AI</h1>
+      <p>Smart AI Assistant</p>
     </div>
 
-    <!-- =====================================================
-         MAIN
-         ===================================================== -->
+  </div>
 
-    <main class="main">
+</header>
 
-        <header class="header">
 
-            <div class="headerLeft">
+<!-- MAIN -->
+<main>
 
-                <button class="mobileMenu"
-                        onclick="toggleMobileMenu()">
-                    ☰
-                </button>
+  <h2>PK Chat AI</h2>
 
-                <div>
+  <p class="subtitle">
+    Ask questions, learn something new, explore ideas,
+    and chat with your AI assistant.
+  </p>
 
-                    <div class="headerTitle">
-                        PK Chat AI
-                    </div>
 
-                    <div class="status">
-                        <span class="statusDot"></span>
-                        AI Online
-                    </div>
+  <!-- RAGMYAI CHATBOT -->
+  <section
+    class="chat-wrap"
+    aria-label="PK Chat AI chatbot"
+  >
 
-                </div>
+    <iframe
+      src="https://chat.ragmyai.com/ccc0c077-f3cb-467e-a3a3-89316f42a657"
+      title="PK Chat AI chatbot"
+      loading="lazy"
+      allow="microphone; clipboard-write">
+    </iframe>
 
-            </div>
+  </section>
 
-            <div class="headerActions">
 
-                <button class="iconBtn hideMobile"
-                        title="Search"
-                        onclick="openSearch()">
-                    🔎
-                </button>
+  <p class="creator">
+    PK Chat AI · Created &amp; owned by
+    <strong>Prashant Yadav</strong>
+  </p>
 
-                <button class="iconBtn hideMobile"
-                        title="Export Chat"
-                        onclick="exportChat()">
-                    ↥
-                </button>
+</main>
 
-                <button class="iconBtn"
-                        title="Theme"
-                        onclick="toggleTheme()">
-                    ◐
-                </button>
 
-                <button class="iconBtn"
-                        title="Settings"
-                        onclick="openSettings()">
-                    ⚙
-                </button>
+<!-- FOOTER -->
+<footer>
+  © 2026 PK Chat AI · Created &amp; owned by Prashant Yadav
+</footer>
 
-            </div>
 
-        </header>
+<!-- LAST WEB ICON USING YOUR REAL ICON -->
+<a
+  class="web-icon"
+  href="https://raoshaabprashantyadavji-wq.github.io/PK-chat/"
+  aria-label="Open PK Chat AI website"
+  title="PK Chat AI website"
+>
 
-        <section class="content" id="content">
+  <img
+    src="favicon.png"
+    alt="PK Chat AI"
+  >
 
-            <div class="welcome">
-
-                <div class="heroLogo">
-                    <span>PK</span>
-                </div>
-
-                <h2>PK Chat AI — Your Smart AI Assistant</h2>
-
-                <p class="welcomeSub">
-                    Welcome to <strong>PK Chat AI</strong> — your smart,
-                    fast and friendly AI assistant. Ask questions,
-                    explore ideas, learn something new, or just chat.
-                </p>
-
-                <p class="seoIntro">
-                    PK Chat AI helps you ask questions, understand topics, brainstorm ideas,
-                    write creatively and explore information through an easy-to-use AI chat experience.
-                </p>
-
-                <div class="chatLaunch">
-
-                    <button class="startChat"
-                            onclick="openChat()">
-                        🚀 Start Chatting
-                    </button>
-
-                </div>
-
-                <div class="quickTitle">
-                    Quick prompts
-                </div>
-
-                <div class="quickGrid">
-
-                    <button class="prompt"
-                            onclick="promptChat('Explain something to me in a simple way')">
-
-                        <div class="promptIcon">
-                            💡
-                        </div>
-
-                        <strong>Explain something</strong>
-
-                        <small>
-                            Get a simple and easy-to-understand explanation.
-                        </small>
-
-                    </button>
-
-                    <button class="prompt"
-                            onclick="promptChat('Help me write something creative')">
-
-                        <div class="promptIcon">
-                            ✍️
-                        </div>
-
-                        <strong>Creative writing</strong>
-
-                        <small>
-                            Ideas, scripts, captions and creative concepts.
-                        </small>
-
-                    </button>
-
-                    <button class="prompt"
-                            onclick="promptChat('Help me learn a new topic')">
-
-                        <div class="promptIcon">
-                            🧠
-                        </div>
-
-                        <strong>Learn something new</strong>
-
-                        <small>
-                            Break difficult topics into simple steps.
-                        </small>
-
-                    </button>
-
-                    <button class="prompt"
-                            onclick="promptChat('Give me some useful ideas')">
-
-                        <div class="promptIcon">
-                            🚀
-                        </div>
-
-                        <strong>Brainstorm ideas</strong>
-
-                        <small>
-                            Generate useful ideas and possibilities.
-                        </small>
-
-                    </button>
-
-                </div>
-
-                <div class="helper">
-                    Tip: Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to search
-                    or <kbd>Ctrl</kbd> + <kbd>N</kbd> for a new chat.
-                </div>
-
-                <div class="creatorLine">
-                    PK Chat AI · Created & owned by Prashant Yadav
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
+</a>
 
 </div>
-
-
-<!-- =========================================================
-     SEARCH MODAL
-     ========================================================= -->
-
-<div class="overlay" id="searchModal">
-
-    <div class="modal">
-
-        <div class="modalHeader">
-
-            <h3>Search chats</h3>
-
-            <button class="closeBtn"
-                    onclick="closeModal('searchModal')">
-                ×
-            </button>
-
-        </div>
-
-        <div class="modalBody">
-
-            <input
-                id="searchInput"
-                class="searchInput"
-                type="text"
-                placeholder="Search your chats..."
-                oninput="searchChats(this.value)"
-            >
-
-            <div class="searchResults"
-                 id="searchResults">
-
-                <div class="historyEmpty">
-                    Type something to search.
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     SETTINGS MODAL
-     ========================================================= -->
-
-<div class="overlay" id="settingsModal">
-
-    <div class="modal">
-
-        <div class="modalHeader">
-
-            <h3>Settings</h3>
-
-            <button class="closeBtn"
-                    onclick="closeModal('settingsModal')">
-                ×
-            </button>
-
-        </div>
-
-        <div class="modalBody">
-
-            <div class="settingRow">
-
-                <div class="settingInfo">
-                    <strong>Appearance</strong>
-                    <small>Switch between dark and light mode.</small>
-                </div>
-
-                <button class="toggle"
-                        onclick="toggleTheme()">
-                </button>
-
-            </div>
-
-            <div class="settingRow">
-
-                <div class="settingInfo">
-                    <strong>Chat history</strong>
-                    <small>Remove locally saved chat titles.</small>
-                </div>
-
-                <button class="iconBtn"
-                        onclick="clearHistory()">
-                    🗑
-                </button>
-
-            </div>
-
-            <div class="settingRow">
-
-                <div class="settingInfo">
-                    <strong>Export</strong>
-                    <small>Download your saved chat titles.</small>
-                </div>
-
-                <button class="iconBtn"
-                        onclick="exportChat()">
-                    ↥
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     ABOUT MODAL
-     ========================================================= -->
-
-<div class="overlay" id="aboutModal">
-
-    <div class="modal">
-
-        <div class="modalHeader">
-
-            <h3>About PK Chat AI</h3>
-
-            <button class="closeBtn"
-                    onclick="closeModal('aboutModal')">
-                ×
-            </button>
-
-        </div>
-
-        <div class="modalBody">
-
-            <div class="aboutLogo">
-                PK
-            </div>
-
-            <div class="aboutText">
-
-                <strong>PK Chat AI</strong>
-                <br><br>
-
-                A modern, responsive AI chat experience designed
-                to make asking questions, learning, brainstorming
-                and exploring ideas simple.
-
-                <div class="aboutMeta">
-
-                    <div class="aboutMetaRow">
-                        <span>Creator & Owner</span>
-                        <strong>Prashant Yadav</strong>
-                    </div>
-
-                    <div class="aboutMetaRow">
-                        <span>Project</span>
-                        <strong>PK Chat AI</strong>
-                    </div>
-
-                    <div class="aboutMetaRow">
-                        <span>Technology</span>
-                        <strong>HTML · CSS · JavaScript</strong>
-                    </div>
-
-                    <div class="aboutMetaRow">
-                        <span>AI Chat</span>
-                        <strong>RagmyAI</strong>
-                    </div>
-
-                </div>
-
-                <div class="aboutMission">
-                    <strong>About the creator</strong><br>
-                    Prashant Yadav is the creator and owner of PK Chat AI,
-                    a personal web project focused on building a clean,
-                    fast and approachable AI chat interface.
-                </div>
-
-                <div class="aboutMission">
-                    <strong>Project goal</strong><br>
-                    PK Chat AI is designed to provide a simple place
-                    to ask questions, learn, create ideas and chat with AI.
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- Toast -->
-
-<div class="toast" id="toast"></div>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
-
-<script>
-
-/* =========================================================
-   STORAGE
-   ========================================================= */
-
-const HISTORY_KEY = "pk_chat_history_v2";
-const THEME_KEY = "pk_chat_theme";
-
-let chatHistory = [];
-
-try{
-    chatHistory =
-        JSON.parse(
-            localStorage.getItem(HISTORY_KEY)
-        ) || [];
-}catch(e){
-    chatHistory = [];
-}
-
-
-/* =========================================================
-   INIT
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function(){
-
-    loadTheme();
-
-    renderHistory();
-
-});
-
-
-/* =========================================================
-   TOAST
-   ========================================================= */
-
-let toastTimer;
-
-function showToast(message){
-
-    const toast =
-        document.getElementById("toast");
-
-    toast.textContent = message;
-
-    toast.classList.add("show");
-
-    clearTimeout(toastTimer);
-
-    toastTimer =
-        setTimeout(function(){
-
-            toast.classList.remove("show");
-
-        },2200);
-}
-
-
-/* =========================================================
-   RAGMYAI CHAT WIDGET
-   ========================================================= */
-
-function openChat(){
-
-    closeMobileMenu();
-
-    saveChat("New conversation");
-
-    showToast(
-        "PK Chat AI is ready — use the chat button to start. 💬"
-    );
-}
-
-/* =========================================================
-   QUICK PROMPTS
-   ========================================================= */
-
-function promptChat(text){
-
-    saveChat(text);
-
-    openChat();
-
-    setTimeout(function(){
-
-        showToast(
-            "Chat is ready — send your prompt in the chatbot. 💬"
-        );
-
-    },500);
-}
-
-
-/* =========================================================
-   NEW CHAT
-   ========================================================= */
-
-function newChat(){
-
-    closeMobileMenu();
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-    showToast("New chat ready.");
-
-    /* The RagmyAI widget manages its own conversation session. */
-}
-
-
-/* =========================================================
-   CHAT HISTORY
-   ========================================================= */
-
-function saveChat(title){
-
-    if(!title){
-        title = "New conversation";
-    }
-
-    const item = {
-        title:title.substring(0,70),
-        time:new Date().toLocaleString()
-    };
-
-    chatHistory.unshift(item);
-
-    chatHistory =
-        chatHistory.slice(0,30);
-
-    try{
-
-        localStorage.setItem(
-            HISTORY_KEY,
-            JSON.stringify(chatHistory)
-        );
-
-    }catch(e){}
-
-    renderHistory();
-}
-
-
-function renderHistory(){
-
-    const container =
-        document.getElementById("chatHistory");
-
-    const empty =
-        document.getElementById("historyEmpty");
-
-    if(!container) return;
-
-    if(chatHistory.length === 0){
-
-        if(empty){
-            empty.style.display = "block";
-        }
-
-        return;
-    }
-
-    if(empty){
-        empty.style.display = "none";
-    }
-
-    container.innerHTML = "";
-
-    chatHistory.forEach(function(item,index){
-
-        const div =
-            document.createElement("div");
-
-        div.className = "historyItem";
-
-        div.title = item.time || "";
-
-        div.innerHTML = `
-            <span class="historyDot"></span>
-            <span>${escapeHtml(item.title)}</span>
-        `;
-
-        div.onclick = function(){
-
-            openChat();
-
-        };
-
-        container.appendChild(div);
-
-    });
-
-}
-
-
-function clearHistory(){
-
-    if(!confirm(
-        "Clear all locally saved chat titles?"
-    )){
-        return;
-    }
-
-    chatHistory = [];
-
-    try{
-        localStorage.removeItem(HISTORY_KEY);
-    }catch(e){}
-
-    renderHistory();
-
-    showToast("Chat history cleared.");
-
-}
-
-
-/* =========================================================
-   SEARCH
-   ========================================================= */
-
-function openSearch(){
-
-    closeMobileMenu();
-
-    document
-        .getElementById("searchModal")
-        .classList.add("show");
-
-    setTimeout(function(){
-
-        document
-            .getElementById("searchInput")
-            .focus();
-
-    },100);
-
-    searchChats("");
-}
-
-
-function searchChats(value){
-
-    const results =
-        document.getElementById("searchResults");
-
-    if(!value.trim()){
-
-        if(chatHistory.length === 0){
-
-            results.innerHTML =
-                `<div class="historyEmpty">
-                    No saved chats yet.
-                 </div>`;
-
-        }else{
-
-            results.innerHTML =
-                `<div class="historyEmpty">
-                    Type something to search.
-                 </div>`;
-
-        }
-
-        return;
-    }
-
-    const query =
-        value.toLowerCase();
-
-    const matches =
-        chatHistory.filter(function(item){
-
-            return item.title
-                .toLowerCase()
-                .includes(query);
-
-        });
-
-    if(matches.length === 0){
-
-        results.innerHTML =
-            `<div class="historyEmpty">
-                No matching chats found.
-             </div>`;
-
-        return;
-    }
-
-    results.innerHTML = "";
-
-    matches.forEach(function(item){
-
-        const div =
-            document.createElement("div");
-
-        div.className = "historyItem";
-
-        div.innerHTML = `
-            <span class="historyDot"></span>
-            <span>${escapeHtml(item.title)}</span>
-        `;
-
-        div.onclick = function(){
-
-            closeModal("searchModal");
-
-            openChat();
-
-        };
-
-        results.appendChild(div);
-
-    });
-
-}
-
-
-/* =========================================================
-   SETTINGS / ABOUT
-   ========================================================= */
-
-function openSettings(){
-
-    closeMobileMenu();
-
-    document
-        .getElementById("settingsModal")
-        .classList.add("show");
-
-}
-
-
-function openAbout(){
-
-    closeMobileMenu();
-
-    document
-        .getElementById("aboutModal")
-        .classList.add("show");
-
-}
-
-
-function closeModal(id){
-
-    const modal =
-        document.getElementById(id);
-
-    if(modal){
-        modal.classList.remove("show");
-    }
-
-}
-
-
-/* =========================================================
-   THEME
-   ========================================================= */
-
-function loadTheme(){
-
-    let theme = "dark";
-
-    try{
-        theme =
-            localStorage.getItem(THEME_KEY)
-            || "dark";
-    }catch(e){}
-
-    if(theme === "light"){
-        document.body.classList.add("light");
-    }
-
-}
-
-
-function toggleTheme(){
-
-    document.body.classList.toggle("light");
-
-    const isLight =
-        document.body.classList.contains("light");
-
-    try{
-
-        localStorage.setItem(
-            THEME_KEY,
-            isLight ? "light" : "dark"
-        );
-
-    }catch(e){}
-
-    showToast(
-        isLight
-            ? "Light mode enabled."
-            : "Dark mode enabled."
-    );
-
-}
-
-
-/* =========================================================
-   EXPORT
-   ========================================================= */
-
-function exportChat(){
-
-    if(chatHistory.length === 0){
-
-        showToast("No saved chats to export.");
-
-        return;
-    }
-
-    let text =
-        "PK CHAT AI\n" +
-        "Creator & Owner: Prashant Yadav\n" +
-        "==============================\n\n";
-
-    chatHistory.forEach(function(item,index){
-
-        text +=
-            (index + 1) +
-            ". " +
-            item.title +
-            "\n";
-
-        text +=
-            "Time: " +
-            (item.time || "") +
-            "\n\n";
-
-    });
-
-    const blob =
-        new Blob(
-            [text],
-            {type:"text/plain"}
-        );
-
-    const url =
-        URL.createObjectURL(blob);
-
-    const a =
-        document.createElement("a");
-
-    a.href = url;
-
-    a.download =
-        "PK-Chat-History.txt";
-
-    document.body.appendChild(a);
-
-    a.click();
-
-    a.remove();
-
-    URL.revokeObjectURL(url);
-
-    showToast("Chat history exported.");
-}
-
-
-/* =========================================================
-   SHARE
-   ========================================================= */
-
-async function shareSite(){
-
-    const shareData = {
-        title:"PK Chat AI",
-        text:"Check out PK Chat AI.",
-        url:window.location.href
-    };
-
-    if(
-        navigator.share
-    ){
-
-        try{
-
-            await navigator.share(
-                shareData
-            );
-
-        }catch(e){}
-
-    }else{
-
-        try{
-
-            await navigator.clipboard.writeText(
-                window.location.href
-            );
-
-            showToast(
-                "Website link copied."
-            );
-
-        }catch(e){
-
-            showToast(
-                "Sharing is not available."
-            );
-
-        }
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
-
-function toggleMobileMenu(){
-
-    const sidebar =
-        document.getElementById("sidebar");
-
-    const backdrop =
-        document.getElementById("mobileBackdrop");
-
-    sidebar.classList.toggle("open");
-
-    backdrop.classList.toggle("show");
-
-}
-
-
-function closeMobileMenu(){
-
-    const sidebar =
-        document.getElementById("sidebar");
-
-    const backdrop =
-        document.getElementById("mobileBackdrop");
-
-    sidebar.classList.remove("open");
-
-    backdrop.classList.remove("show");
-
-}
-
-
-/* =========================================================
-   ESCAPE HTML
-   ========================================================= */
-
-function escapeHtml(value){
-
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* =========================================================
-   KEYBOARD SHORTCUTS
-   ========================================================= */
-
-document.addEventListener(
-    "keydown",
-    function(e){
-
-        /* Ctrl + K = Search */
-
-        if(
-            (e.ctrlKey || e.metaKey) &&
-            e.key.toLowerCase() === "k"
-        ){
-
-            e.preventDefault();
-
-            openSearch();
-
-        }
-
-
-        /* Ctrl + N = New Chat */
-
-        if(
-            (e.ctrlKey || e.metaKey) &&
-            e.key.toLowerCase() === "n"
-        ){
-
-            e.preventDefault();
-
-            newChat();
-
-        }
-
-
-        /* Escape = close */
-
-        if(e.key === "Escape"){
-
-            document
-                .querySelectorAll(".overlay.show")
-                .forEach(function(modal){
-
-                    modal.classList.remove("show");
-
-                });
-
-            closeMobileMenu();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CLICK OUTSIDE MODALS
-   ========================================================= */
-
-document
-    .querySelectorAll(".overlay")
-    .forEach(function(overlay){
-
-        overlay.addEventListener(
-            "click",
-            function(e){
-
-                if(e.target === overlay){
-
-                    overlay.classList.remove("show");
-
-                }
-
-            }
-        );
-
-    });
-
-
-</script>
-
-
-<!-- =========================================================
-     RAGMYAI CHAT WIDGET
-     ========================================================= -->
-
-<script src="https://chat.ragmyai.com/chat-widget.min.js" data-page-id="ccc0c077-f3cb-467e-a3a3-89316f42a657"></script>
 
 </body>
 </html>
