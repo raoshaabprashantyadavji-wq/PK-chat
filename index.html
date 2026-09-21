@@ -1641,7 +1641,7 @@ body.light .toggle:after{
 
                     <div class="aboutMetaRow">
                         <span>AI Chat</span>
-                        <strong>Chatbase</strong>
+                        <strong>RagmyAI</strong>
                     </div>
 
                 </div>
@@ -1738,34 +1738,19 @@ function showToast(message){
 
 
 /* =========================================================
-   CHATBASE CENTER STAGE
+   RAGMYAI CHAT WIDGET
    ========================================================= */
 
 function openChat(){
 
     closeMobileMenu();
 
-    /*
-      Chatbase Center Stage command.
-    */
-
-    if(
-        window.chatbaseCenterStage &&
-        typeof window.chatbaseCenterStage === "function"
-    ){
-
-        window.chatbaseCenterStage("open");
-
-        saveChat("New conversation");
-
-        return;
-    }
+    saveChat("New conversation");
 
     showToast(
-        "Chat is loading. Please try again in a moment."
+        "PK Chat AI is ready — use the chat button to start. 💬"
     );
 }
-
 
 /* =========================================================
    QUICK PROMPTS
@@ -1777,17 +1762,10 @@ function promptChat(text){
 
     openChat();
 
-    /*
-      Center Stage opens Chatbase.
-      The custom shell cannot safely inject text into
-      Chatbase unless Chatbase exposes a supported API
-      for that action.
-    */
-
     setTimeout(function(){
 
         showToast(
-            "Chat opened — send your prompt there."
+            "Chat is ready — send your prompt in the chatbot. 💬"
         );
 
     },500);
@@ -1809,10 +1787,7 @@ function newChat(){
 
     showToast("New chat ready.");
 
-    /*
-      Opening a new Center Stage session depends on
-      Chatbase's own conversation controls.
-    */
+    /* The RagmyAI widget manages its own conversation session. */
 }
 
 
@@ -2352,110 +2327,10 @@ document
 
 
 <!-- =========================================================
-     CHATBASE CENTER STAGE
+     RAGMYAI CHAT WIDGET
      ========================================================= -->
 
-<script>
-
-(function(){
-
-    if(
-        !window.chatbaseCenterStage ||
-        window.chatbaseCenterStage("getState") !== "initialized"
-    ){
-
-        window.chatbaseCenterStage =
-            (...arguments) => {
-
-                if(
-                    !window.chatbaseCenterStage.q
-                ){
-
-                    window.chatbaseCenterStage.q = [];
-
-                }
-
-                window.chatbaseCenterStage.q.push(
-                    arguments
-                );
-
-            };
-
-        window.chatbaseCenterStage =
-            new Proxy(
-                window.chatbaseCenterStage,
-                {
-                    get(target,prop){
-
-                        if(prop === "q"){
-                            return target.q;
-                        }
-
-                        return (...args) =>
-                            target(prop,...args);
-
-                    }
-                }
-            );
-
-    }
-
-    let chatbaseLoaded = false;
-    let loading = false;
-
-    const onLoad = function(){
-
-        if(chatbaseLoaded || loading) return;
-
-        loading = true;
-
-        const script =
-            document.createElement("script");
-
-        script.src =
-            "https://www.chatbase.co/center-stage-embed.min.js";
-
-        script.id =
-            "w1w87E2kLtw0ymZvC0_4V";
-
-        script.domain =
-            "www.chatbase.co";
-
-        script.async = true;
-
-        script.onload = function(){
-            chatbaseLoaded = true;
-            loading = false;
-        };
-
-        script.onerror = function(){
-            loading = false;
-        };
-
-        document.body.appendChild(script);
-
-    };
-
-    /* Load Chatbase only when the visitor is about to use chat.
-       This keeps the initial page lightweight and preserves the
-       existing Center Stage command queue. */
-    const loadOnIntent = function(){
-        onLoad();
-    };
-
-    document.addEventListener("click", function(e){
-        const target = e.target.closest("button");
-        if(target && (target.matches(".startChat") || target.matches(".prompt") || target.matches(".historyItem"))){
-            loadOnIntent();
-        }
-    }, {passive:true});
-
-    /* No Chatbase network request is made during initial page load.
-       It starts only when the visitor actually uses the chat UI. */
-
-})();
-
-</script>
+<script src="https://chat.ragmyai.com/chat-widget.min.js" data-page-id="ccc0c077-f3cb-467e-a3a3-89316f42a657"></script>
 
 </body>
 </html>
