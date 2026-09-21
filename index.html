@@ -1,249 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>PK Chat AI – Smart AI Assistant</title>
 
-<meta name="description" content="PK Chat AI is a smart AI assistant created and owned by Prashant Yadav. Chat, learn and explore.">
+<meta
+  name="description"
+  content="PK Chat AI is a smart AI assistant created and owned by Prashant Yadav. Chat, learn and explore."
+>
+
 <meta name="author" content="Prashant Yadav">
+
 <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="https://raoshaabprashantyadavji-wq.github.io/PK-chat/">
-<link rel="icon" type="image/png" href="favicon.png">
+<link
+  rel="canonical"
+  href="https://raoshaabprashantyadavji-wq.github.io/PK-chat/"
+>
 
+<!-- YOUR REAL ICON -->
+<link
+  rel="icon"
+  type="image/png"
+  href="favicon.png"
+>
+
+<!-- SOCIAL PREVIEW -->
 <meta property="og:title" content="PK Chat AI – Smart AI Assistant">
-<meta property="og:description" content="Chat, learn and explore with PK Chat AI.">
+
+<meta
+  property="og:description"
+  content="Chat, learn and explore with PK Chat AI."
+>
+
+<meta
+  property="og:url"
+  content="https://raoshaabprashantyadavji-wq.github.io/PK-chat/"
+>
+
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://raoshaabprashantyadavji-wq.github.io/PK-chat/">
-<meta property="og:image" content="og-image.png">
+
+<meta
+  property="og:image"
+  content="og-image.png"
+>
+
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-  min-height: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   background: #05070b;
+
   color: #eefaff;
 }
 
+
+/* =========================
+   PAGE
+========================= */
+
 .page {
   min-height: 100vh;
+
   display: flex;
+
   flex-direction: column;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
+
 header {
-  height: 70px;
-  padding: 0 24px;
+
+  height: 72px;
+
   display: flex;
+
   align-items: center;
-  border-bottom: 1px solid rgba(0,190,255,.18);
+
+  padding: 0 25px;
+
   background: #060910;
+
+  border-bottom:
+    1px solid
+    rgba(0, 190, 255, 0.18);
 }
 
+
 .brand {
+
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 }
 
+
 /* YOUR REAL ICON */
+
 .real-icon {
-  width: 43px;
-  height: 43px;
-  border-radius: 11px;
+
+  width: 44px;
+
+  height: 44px;
+
+  border-radius: 12px;
+
   object-fit: cover;
-  box-shadow: 0 0 22px rgba(0,180,255,.28);
+
+  display: block;
+
+  box-shadow:
+    0 0 22px
+    rgba(0, 190, 255, 0.30);
 }
 
-.brand h1 {
+
+.brand-text h1 {
+
   font-size: 20px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.4px;
 }
 
-.brand p {
-  font-size: 11px;
-  color: #7890a2;
+
+.brand-text p {
+
   margin-top: 3px;
+
+  font-size: 11px;
+
+  color: #7890a2;
 }
 
-/* MAIN */
+
+/* =========================
+   MAIN
+========================= */
+
 main {
+
   width: min(1050px, 100%);
+
   margin: auto;
-  padding: 38px 14px 45px;
+
+  padding:
+    70px 20px
+    80px;
+
   text-align: center;
 }
 
-h2 {
-  font-size: clamp(30px, 6vw, 48px);
-  margin-bottom: 10px;
 
-  background: linear-gradient(90deg, #ffffff, #4bdcff);
+.badge {
+
+  display: inline-block;
+
+  padding:
+    7px 14px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  color: #69dcff;
+
+  background:
+    rgba(0, 190, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(0, 190, 255, 0.25);
+
+  margin-bottom: 18px;
+}
+
+
+h2 {
+
+  font-size:
+    clamp(34px, 7vw, 56px);
+
+  line-height: 1.1;
+
+  letter-spacing: -1.8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #42d8ff
+    );
+
   -webkit-background-clip: text;
+
   background-clip: text;
+
   color: transparent;
 }
 
+
 .subtitle {
-  max-width: 620px;
-  margin: 0 auto 25px;
-  color: #8ea5b6;
-  font-size: 14px;
+
+  max-width: 650px;
+
+  margin:
+    18px auto
+    32px;
+
+  color: #91a7b8;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   CHAT SECTION
+========================= */
+
+.chat-section {
+
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #080d14,
+      #060a10
+    );
+
+  border:
+    1px solid
+    rgba(0, 190, 255, 0.18);
+
+  box-shadow:
+    0 20px 70px
+    rgba(0,0,0,0.45);
+}
+
+
+.chat-section h3 {
+
+  font-size: 18px;
+
+  margin-bottom: 10px;
+}
+
+
+.chat-section p {
+
+  color: #718899;
+
+  font-size: 13px;
+
   line-height: 1.6;
 }
 
-/* CHATBOT */
-.chat-wrap {
-  width: 100%;
-  max-width: 720px;
-  margin: auto;
-  padding: 7px;
-  border-radius: 19px;
 
-  border: 1px solid rgba(0,190,255,.22);
-  background: #080d14;
+/* =========================
+   CREATOR
+========================= */
 
-  box-shadow:
-    0 20px 65px rgba(0,0,0,.45),
-    0 0 30px rgba(0,180,255,.08);
-}
-
-.chat-wrap iframe {
-  display: block;
-  width: 100%;
-  height: 680px;
-
-  border: 0;
-  border-radius: 13px;
-  background: #080d14;
-}
-
-/* CREATOR */
 .creator {
-  margin-top: 18px;
-  color: #6f8798;
+
+  margin-top: 25px;
+
   font-size: 12px;
+
+  color: #718899;
 }
+
 
 .creator strong {
-  color: #b9dbea;
+
+  color: #b9d9e9;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
-  padding: 17px;
+
+  margin-top: auto;
+
+  padding: 18px;
+
   text-align: center;
-  border-top: 1px solid rgba(0,190,255,.12);
-  color: #60798a;
+
   font-size: 11px;
+
+  color: #60798a;
+
+  border-top:
+    1px solid
+    rgba(0, 190, 255, 0.12);
 }
 
-/* LAST WEB ICON */
-.web-icon {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
 
-  width: 54px;
-  height: 54px;
+/* =========================
+   MOBILE
+========================= */
 
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #08131d;
-  border: 1px solid rgba(0,210,255,.55);
-
-  box-shadow: 0 0 24px rgba(0,190,255,.30);
-
-  z-index: 9999;
-  text-decoration: none;
-
-  transition: transform .2s ease;
-}
-
-/* REAL ICON INSIDE LAST WEB BUTTON */
-.web-icon img {
-  width: 38px;
-  height: 38px;
-  border-radius: 9px;
-  object-fit: cover;
-}
-
-.web-icon:hover {
-  transform: scale(1.08);
-}
-
-/* MOBILE */
 @media (max-width: 600px) {
 
   header {
+
     height: 64px;
-    padding: 0 14px;
+
+    padding:
+      0 15px;
   }
 
-  .brand h1 {
+
+  .real-icon {
+
+    width: 40px;
+
+    height: 40px;
+  }
+
+
+  .brand-text h1 {
+
     font-size: 17px;
   }
 
-  .brand p {
+
+  .brand-text p {
+
     display: none;
   }
 
+
   main {
-    padding: 28px 8px 35px;
+
+    padding:
+      45px 15px
+      60px;
   }
 
-  .chat-wrap {
-    padding: 5px;
-    border-radius: 15px;
+
+  .subtitle {
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
   }
 
-  .chat-wrap iframe {
-    height: 650px;
-    border-radius: 11px;
+
+  .chat-section {
+
+    padding: 22px 16px;
   }
 
-  .web-icon {
-    right: 14px;
-    bottom: 14px;
-  }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="page">
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
   <div class="brand">
 
-    <!-- YOUR REAL ICON -->
+    <!-- YOUR REAL PK ICON -->
+
     <img
-      class="real-icon"
       src="favicon.png"
+      class="real-icon"
       alt="PK Chat AI icon"
     >
 
-    <div>
-      <h1>PK Chat AI</h1>
-      <p>Smart AI Assistant</p>
+
+    <div class="brand-text">
+
+      <h1>
+        PK Chat AI
+      </h1>
+
+      <p>
+        Smart AI Assistant
+      </p>
+
     </div>
 
   </div>
@@ -251,63 +441,95 @@ footer {
 </header>
 
 
-<!-- MAIN -->
+
+<!-- =========================
+     MAIN
+========================= -->
+
 <main>
 
-  <h2>PK Chat AI</h2>
+
+  <div class="badge">
+    ⚡ Smart AI Assistant
+  </div>
+
+
+  <h2>
+    PK Chat AI
+  </h2>
+
 
   <p class="subtitle">
-    Ask questions, learn something new, explore ideas,
-    and chat with your AI assistant.
+
+    Ask questions, learn something new,
+    explore ideas, and chat with your
+    AI assistant.
+
   </p>
 
 
-  <!-- RAGMYAI CHATBOT -->
-  <section
-    class="chat-wrap"
-    aria-label="PK Chat AI chatbot"
-  >
 
-    <iframe
-      src="https://chat.ragmyai.com/ccc0c077-f3cb-467e-a3a3-89316f42a657"
-      title="PK Chat AI chatbot"
-      loading="lazy"
-      allow="microphone; clipboard-write">
-    </iframe>
+  <!-- CHAT INFORMATION -->
+
+  <section class="chat-section">
+
+    <h3>
+      🤖 Chat with PK Chat AI
+    </h3>
+
+
+    <p>
+
+      Click the chat button in the
+      bottom-right corner to start
+      chatting with PK Chat AI.
+
+    </p>
 
   </section>
 
 
+
   <p class="creator">
+
     PK Chat AI · Created &amp; owned by
-    <strong>Prashant Yadav</strong>
+
+    <strong>
+      Prashant Yadav
+    </strong>
+
   </p>
+
 
 </main>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-  © 2026 PK Chat AI · Created &amp; owned by Prashant Yadav
+
+  © 2026 PK Chat AI ·
+  Created &amp; owned by Prashant Yadav
+
 </footer>
 
 
-<!-- LAST WEB ICON USING YOUR REAL ICON -->
-<a
-  class="web-icon"
-  href="https://raoshaabprashantyadavji-wq.github.io/PK-chat/"
-  aria-label="Open PK Chat AI website"
-  title="PK Chat AI website"
->
-
-  <img
-    src="favicon.png"
-    alt="PK Chat AI"
-  >
-
-</a>
-
 </div>
+
+
+
+<!-- =================================================
+     RAGMYAI OFFICIAL CHAT WIDGET
+================================================= -->
+
+<script
+  src="https://chat.ragmyai.com/chat-widget.min.js"
+  data-page-id="ccc0c077-f3cb-467e-a3a3-89316f42a657">
+</script>
+
 
 </body>
 </html>
