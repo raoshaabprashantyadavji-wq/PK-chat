@@ -1,535 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PK Chat AI – Smart AI Assistant</title>
-
-<meta
-  name="description"
-  content="PK Chat AI is a smart AI assistant created and owned by Prashant Yadav. Chat, learn and explore."
->
-
-<meta name="author" content="Prashant Yadav">
-
-<meta name="robots" content="index, follow">
-
-<link
-  rel="canonical"
-  href="https://raoshaabprashantyadavji-wq.github.io/PK-chat/"
->
-
-<!-- YOUR REAL ICON -->
-<link
-  rel="icon"
-  type="image/png"
-  href="favicon.png"
->
-
-<!-- SOCIAL PREVIEW -->
-<meta property="og:title" content="PK Chat AI – Smart AI Assistant">
-
-<meta
-  property="og:description"
-  content="Chat, learn and explore with PK Chat AI."
->
-
-<meta
-  property="og:url"
-  content="https://raoshaabprashantyadavji-wq.github.io/PK-chat/"
->
-
-<meta property="og:type" content="website">
-
-<meta
-  property="og:image"
-  content="og-image.png"
->
-
-
+<title>PK study — Student Learning System</title>
+<meta name="description" content="PK study — Student Life OS — Owner & Creator: Prashant Yadav Ji">
 <style>
 
-/* =========================
-   RESET
-========================= */
+/* ===== PK study animated neon background + icon polish ===== */
+html{background:#020508}
+body{position:relative;isolation:isolate;overflow-x:hidden;background:#020508!important}
+body::before{content:"";position:fixed;inset:-25%;z-index:-3;pointer-events:none;background:radial-gradient(circle at 15% 20%,rgba(0,183,255,.16),transparent 24%),radial-gradient(circle at 82% 18%,rgba(0,140,255,.12),transparent 22%),radial-gradient(circle at 70% 85%,rgba(0,230,255,.10),transparent 24%),radial-gradient(circle at 18% 80%,rgba(0,120,255,.08),transparent 20%);filter:blur(18px);animation:pkGlow 14s ease-in-out infinite alternate}
+body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(0,183,255,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(0,183,255,.18) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,transparent,black 18%,black 82%,transparent);animation:pkGrid 22s linear infinite}
+#pkAnimatedBg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.pk-orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.42;box-shadow:0 0 50px currentColor;animation:pkFloat 12s ease-in-out infinite}
+.pk-orb:nth-child(1){width:180px;height:180px;left:8%;top:12%;color:#00b7ff;background:rgba(0,183,255,.10);animation-delay:-2s}
+.pk-orb:nth-child(2){width:120px;height:120px;right:14%;top:34%;color:#008cff;background:rgba(0,140,255,.09);animation-delay:-7s}
+.pk-orb:nth-child(3){width:230px;height:230px;right:2%;bottom:4%;color:#00e6ff;background:rgba(0,230,255,.07);animation-delay:-4s}
+.pk-orb:nth-child(4){width:90px;height:90px;left:34%;bottom:12%;color:#00b7ff;background:rgba(0,183,255,.10);animation-delay:-9s}
+@keyframes pkGlow{from{transform:translate3d(-2%,0,0) scale(1)}to{transform:translate3d(2%,2%,0) scale(1.08)}}
+@keyframes pkGrid{from{transform:translateY(0)}to{transform:translateY(48px)}}
+@keyframes pkFloat{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(22px,-30px,0) scale(1.08)}}
+.logo h1,.brand h1{position:relative;text-shadow:0 0 12px rgba(0,183,255,.55),0 0 28px rgba(0,183,255,.22)}
+.logo h1::before{content:"✦";display:inline-block;margin-right:8px;color:#00e6ff;font-size:.72em;vertical-align:middle;animation:pkIconPulse 2.2s ease-in-out infinite}
+.nav button{transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}
+.nav button:hover{transform:translateX(4px);box-shadow:0 0 18px rgba(0,183,255,.10)}
+.btn{transition:transform .16s ease,box-shadow .16s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 0 20px rgba(0,183,255,.20)}
+.auth-card,.card,.panel{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+@keyframes pkIconPulse{0%,100%{transform:scale(1);text-shadow:0 0 5px #00b7ff}50%{transform:scale(1.22);text-shadow:0 0 18px #00e6ff}}
+@media (prefers-reduced-motion:reduce){body::before,body::after,.pk-orb,.logo h1::before{animation:none!important}.nav button,.btn{transition:none}}
+:root{
+  --bg:#020508;--panel:#071018;--panel2:#0b151e;--line:#123448;
+  --blue:#00b7ff;--blue2:#008cff;--text:#eef9ff;--muted:#8ba3b2;
+  --green:#00e6a0;--red:#ff4d6d;--shadow:0 0 28px rgba(0,183,255,.08)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;background:
+radial-gradient(circle at 10% 0%,rgba(0,183,255,.12),transparent 28%),
+radial-gradient(circle at 90% 100%,rgba(0,140,255,.08),transparent 30%),var(--bg);
+color:var(--text);min-height:100vh}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
+#authScreen{min-height:100vh;display:grid;place-items:center;padding:24px}
+.auth-card{width:min(430px,100%);background:rgba(7,16,24,.96);border:1px solid #16445d;border-radius:22px;padding:30px;box-shadow:0 0 50px rgba(0,183,255,.12)}
+.brand{text-align:center;margin-bottom:24px}.brand h1{font-size:38px;color:var(--blue);text-shadow:0 0 20px rgba(0,183,255,.55)}.brand p{color:var(--muted);margin-top:6px}
+.auth-card h2{margin-bottom:16px}.field{margin-bottom:12px}.field label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+input,textarea,select{width:100%;background:#04090d;color:var(--text);border:1px solid #1a3a4c;border-radius:10px;padding:12px;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 12px rgba(0,183,255,.13)}
+.btn{border:0;border-radius:10px;padding:11px 16px;color:#fff;background:linear-gradient(135deg,var(--blue2),var(--blue));font-weight:700}
+.btn:hover{filter:brightness(1.08);box-shadow:0 0 18px rgba(0,183,255,.25)}
+.btn.secondary{background:#0c1a24;border:1px solid #1a4257}.btn.danger{background:var(--red)}.btn.green{background:#008f69}
+.auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.switch{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}.switch button{background:none;border:0;color:var(--blue)}
+.status{min-height:20px;color:#ffb8c5;font-size:13px;margin-top:10px}.success{color:var(--green)}
+#app{display:none;min-height:100vh}.sidebar{position:fixed;z-index:10;left:0;top:0;bottom:0;width:250px;background:#04080c;border-right:1px solid #123448;padding:24px 14px}
+.logo{text-align:center;margin-bottom:25px}.logo h1{color:var(--blue);font-size:29px;text-shadow:0 0 15px rgba(0,183,255,.55)}.logo p{font-size:11px;color:var(--muted);margin-top:5px}
+.nav{display:grid;gap:5px}.nav button{width:100%;text-align:left;background:transparent;color:#a9bdc9;border:1px solid transparent;padding:12px;border-radius:10px}.nav button:hover,.nav button.active{background:rgba(0,183,255,.09);border-color:#16445d;color:#fff}
+.creator{position:absolute;left:14px;right:14px;bottom:18px;text-align:center;border:1px solid #123448;border-radius:12px;padding:12px;background:#061018}.creator small{color:var(--muted)}.creator strong{display:block;color:var(--blue);margin:4px 0}
+.main{margin-left:250px;padding:25px;max-width:1500px}.mobile-top{display:none}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:15px}.topbar h2{font-size:28px}.date{color:var(--muted);margin-top:4px}.clock{color:var(--blue);font-weight:700}
+.userbox{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#08202d;color:var(--blue);border:1px solid #15506a}
+.section{display:none}.section.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}.card{background:linear-gradient(145deg,#071018,#04090d);border:1px solid #123448;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.stat-title{color:var(--muted);font-size:13px}.stat-number{color:var(--blue);font-size:30px;font-weight:800;margin-top:8px}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:14px}.card h3{margin-bottom:14px}
+.progress{height:9px;background:#0b1922;border-radius:99px;overflow:hidden}.bar{height:100%;background:var(--blue);box-shadow:0 0 14px var(--blue);width:0;transition:.3s}
+.form-row{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}.form-row>*{flex:1;min-width:130px}
+.list{display:grid;gap:9px}.item{display:flex;align-items:center;gap:10px;background:#09131b;border:1px solid #123448;border-radius:11px;padding:12px}.item-main{flex:1;min-width:0}.item-main strong{display:block}.item-main small{color:var(--muted);display:block;margin-top:3px}.item-actions{display:flex;gap:6px;flex-wrap:wrap}.empty{padding:22px;text-align:center;color:var(--muted)}
+.badge{display:inline-block;font-size:11px;padding:3px 7px;border-radius:99px;border:1px solid #1c4a61;color:#8ddfff;margin-left:5px}
+.note-content{white-space:pre-wrap;color:#c9dbe4;line-height:1.5;margin-top:8px}
+.timer{text-align:center;padding:35px}.timer-display{font-size:70px;color:var(--blue);font-weight:800;text-shadow:0 0 24px rgba(0,183,255,.4);margin:18px}.timer-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:11px;border-bottom:1px solid #123448}th{color:var(--blue)}
+.small{font-size:12px;color:var(--muted)}
+.toast{position:fixed;right:20px;bottom:20px;background:#07151e;border:1px solid #1a526c;color:#fff;padding:13px 16px;border-radius:10px;box-shadow:0 0 25px rgba(0,183,255,.15);z-index:99}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Pro UI upgrades */
+.glow-line{height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:.65;margin:18px 0}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;background:#03070a;border:1px solid #123448;border-radius:12px;padding:5px;margin-bottom:16px}
+.auth-tabs button{border:0;background:transparent;color:var(--muted);padding:10px;border-radius:8px;font-weight:700}
+.auth-tabs button.active{background:rgba(0,183,255,.13);color:#fff;box-shadow:inset 0 0 0 1px #16445d}
+.auth-help{font-size:12px;color:var(--muted);line-height:1.5;margin-top:9px}
+.auth-card{backdrop-filter:blur(14px)}
+.card{backdrop-filter:blur(8px)}
+.note-editor{display:grid;grid-template-columns:1fr 220px;gap:12px}
+.note-title-wrap{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.note-title-wrap input{font-size:17px;font-weight:700}
+.note-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px}
+.note-toolbar .small{margin-left:auto}
+.notes-search{margin:0 0 12px}
+.note-card{position:relative}
+.note-card .pin{color:var(--blue);font-size:12px;font-weight:700}
+.completed{text-decoration:line-through;opacity:.55}
+.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.quick-grid .btn{padding:13px 10px}
+@media(max-width:760px){.note-editor{grid-template-columns:1fr}.quick-grid{grid-template-columns:1fr}}
+
+@media(max-width:950px){.grid{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}
+@media(max-width:700px){
+ .sidebar{transform:translateX(-100%);transition:.25s}.sidebar.open{transform:translateX(0)}
+ .main{margin-left:0;padding:15px}.mobile-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+ .topbar{align-items:flex-start;flex-direction:column}.userbox{width:100%;justify-content:space-between}.grid{grid-template-columns:1fr}
+ .timer-display{font-size:52px}.auth-card{padding:22px}
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  background: #05070b;
-
-  color: #eefaff;
-}
-
-
-/* =========================
-   PAGE
-========================= */
-
-.page {
-  min-height: 100vh;
-
-  display: flex;
-
-  flex-direction: column;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-
-  height: 72px;
-
-  display: flex;
-
-  align-items: center;
-
-  padding: 0 25px;
-
-  background: #060910;
-
-  border-bottom:
-    1px solid
-    rgba(0, 190, 255, 0.18);
-}
-
-
-.brand {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-}
-
-
-/* YOUR REAL ICON */
-
-.real-icon {
-
-  width: 44px;
-
-  height: 44px;
-
-  border-radius: 12px;
-
-  object-fit: cover;
-
-  display: block;
-
-  box-shadow:
-    0 0 22px
-    rgba(0, 190, 255, 0.30);
-}
-
-
-.brand-text h1 {
-
-  font-size: 20px;
-
-  font-weight: 700;
-
-  letter-spacing: -0.4px;
-}
-
-
-.brand-text p {
-
-  margin-top: 3px;
-
-  font-size: 11px;
-
-  color: #7890a2;
-}
-
-
-/* =========================
-   MAIN
-========================= */
-
-main {
-
-  width: min(1050px, 100%);
-
-  margin: auto;
-
-  padding:
-    70px 20px
-    80px;
-
-  text-align: center;
-}
-
-
-.badge {
-
-  display: inline-block;
-
-  padding:
-    7px 14px;
-
-  border-radius: 999px;
-
-  font-size: 12px;
-
-  color: #69dcff;
-
-  background:
-    rgba(0, 190, 255, 0.07);
-
-  border:
-    1px solid
-    rgba(0, 190, 255, 0.25);
-
-  margin-bottom: 18px;
-}
-
-
-h2 {
-
-  font-size:
-    clamp(34px, 7vw, 56px);
-
-  line-height: 1.1;
-
-  letter-spacing: -1.8px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #ffffff,
-      #42d8ff
-    );
-
-  -webkit-background-clip: text;
-
-  background-clip: text;
-
-  color: transparent;
-}
-
-
-.subtitle {
-
-  max-width: 650px;
-
-  margin:
-    18px auto
-    32px;
-
-  color: #91a7b8;
-
-  font-size: 15px;
-
-  line-height: 1.7;
-}
-
-
-/* =========================
-   CHAT SECTION
-========================= */
-
-.chat-section {
-
-  max-width: 720px;
-
-  margin: 0 auto;
-
-  padding: 25px;
-
-  border-radius: 20px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #080d14,
-      #060a10
-    );
-
-  border:
-    1px solid
-    rgba(0, 190, 255, 0.18);
-
-  box-shadow:
-    0 20px 70px
-    rgba(0,0,0,0.45);
-}
-
-
-.chat-section h3 {
-
-  font-size: 18px;
-
-  margin-bottom: 10px;
-}
-
-
-.chat-section p {
-
-  color: #718899;
-
-  font-size: 13px;
-
-  line-height: 1.6;
-}
-
-
-/* =========================
-   CREATOR
-========================= */
-
-.creator {
-
-  margin-top: 25px;
-
-  font-size: 12px;
-
-  color: #718899;
-}
-
-
-.creator strong {
-
-  color: #b9d9e9;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-  margin-top: auto;
-
-  padding: 18px;
-
-  text-align: center;
-
-  font-size: 11px;
-
-  color: #60798a;
-
-  border-top:
-    1px solid
-    rgba(0, 190, 255, 0.12);
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-  header {
-
-    height: 64px;
-
-    padding:
-      0 15px;
-  }
-
-
-  .real-icon {
-
-    width: 40px;
-
-    height: 40px;
-  }
-
-
-  .brand-text h1 {
-
-    font-size: 17px;
-  }
-
-
-  .brand-text p {
-
-    display: none;
-  }
-
-
-  main {
-
-    padding:
-      45px 15px
-      60px;
-  }
-
-
-  .subtitle {
-
-    font-size: 13px;
-
-    margin-bottom: 25px;
-  }
-
-
-  .chat-section {
-
-    padding: 22px 16px;
-  }
-
-}
-
+.image-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:none;align-items:center;justify-content:center;padding:30px}.image-modal.show{display:flex}.image-modal-inner{width:min(1200px,96vw);height:min(92vh,900px);display:flex;flex-direction:column;gap:10px}.image-modal-toolbar{display:flex;justify-content:flex-end;gap:8px}.image-modal-toolbar button{width:auto}.image-modal-stage{flex:1;overflow:auto;border:1px solid #16445d;border-radius:14px;background:#050b10;display:flex;align-items:center;justify-content:center}.image-modal-stage img{max-width:none;max-height:none;transform-origin:center center;transition:transform .15s ease}.zoom-label{color:#9ccde2;min-width:60px;text-align:center;padding:8px}.editor-toolbar button:active{transform:translateY(1px)}
 </style>
-
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23020508'/%3E%3Cpath d='M15 18c11-5 18-2 25 2v29c-7-4-14-5-25 0z' fill='none' stroke='%2300b7ff' stroke-width='4'/%3E%3Cpath d='M40 20c4-2 7-2 10-1v30c-3-1-6-1-10 0z' fill='none' stroke='%23008cff' stroke-width='4'/%3E%3Cpath d='M31 25l-5 9h6l-4 9 10-12h-6l5-6z' fill='%2300e6ff'/%3E%3C/svg%3E">
 </head>
-
-
 <body>
-
-
-<div class="page">
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header>
-
-  <div class="brand">
-
-    <!-- YOUR REAL PK ICON -->
-
-    <img
-      src="favicon.png"
-      class="real-icon"
-      alt="PK Chat AI icon"
-    >
-
-
-    <div class="brand-text">
-
-      <h1>
-        PK Chat AI
-      </h1>
-
-      <p>
-        Smart AI Assistant
-      </p>
-
+<div id="pkAnimatedBg" aria-hidden="true"><span class="pk-orb"></span><span class="pk-orb"></span><span class="pk-orb"></span><span class="pk-orb"></span></div>
+<div id="authScreen">
+  <div class="auth-card">
+    <div class="brand"><h1>PK study</h1><p>Student Life • Learn • Organize • Grow</p></div>
+    <div id="loginBox">
+      <h2>Welcome back 👋</h2>
+      <div class="field"><label>Email</label><input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      <div class="field"><label>Password</label><input id="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••"></div>
+      <div class="auth-actions"><button class="btn" id="loginBtn">Login</button><button class="btn secondary" id="showSignup">Create account</button></div>
+      <div class="status" id="loginStatus"></div>
     </div>
-
+    <div id="signupBox" class="hidden">
+      <h2>Create your account</h2>
+      <div class="field"><label>Email</label><input id="signupEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      <div class="field"><label>Password</label><input id="signupPassword" type="password" autocomplete="new-password" placeholder="At least 6 characters"></div>
+      <div class="auth-actions"><button class="btn" id="signupBtn">Sign up</button><button class="btn secondary" id="backLogin">Back to login</button></div>
+      <div class="status" id="signupStatus"></div>
+    </div>
+    <p class="small" style="text-align:center;margin-top:20px">Owner & Creator: <b style="color:#00b7ff">Prashant Yadav Ji</b></p>
   </div>
-
-</header>
-
-
-
-<!-- =========================
-     MAIN
-========================= -->
-
-<main>
-
-
-  <div class="badge">
-    ⚡ Smart AI Assistant
-  </div>
-
-
-  <h2>
-    PK Chat AI
-  </h2>
-
-
-  <p class="subtitle">
-
-    Ask questions, learn something new,
-    explore ideas, and chat with your
-    AI assistant.
-
-  </p>
-
-
-
-  <!-- CHAT INFORMATION -->
-
-  <section class="chat-section">
-
-    <h3>
-      🤖 Chat with PK Chat AI
-    </h3>
-
-
-    <p>
-
-      Click the chat button in the
-      bottom-right corner to start
-      chatting with PK Chat AI.
-
-    </p>
-
-  </section>
-
-
-
-  <p class="creator">
-
-    PK Chat AI · Created &amp; owned by
-
-    <strong>
-      Prashant Yadav
-    </strong>
-
-  </p>
-
-
-</main>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  © 2026 PK Chat AI ·
-  Created &amp; owned by Prashant Yadav
-
-</footer>
-
-
 </div>
 
+<div id="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="logo"><h1>PK study</h1><p>STUDENT LEARNING SYSTEM</p></div>
+    <div class="nav">
+      <button class="active" data-section="dashboard">🏠 Dashboard</button>
+      <button data-section="notes">📝 My Notes</button>
+      <button data-section="study">⏱️ Study Timer</button>
+      <button data-section="subjects">📚 Subject Notebooks</button>
+      <button data-section="timetable">📅 School Timetable</button>
+      <button data-section="videos">🎬 Educational Videos</button>
+      <button data-section="images">🖼️ Notebook Images</button>
+    </div>
+    <div class="creator"><small>OWNER & CREATOR</small><strong>Prashant Yadav Ji</strong><small>PK study</small></div>
+  </aside>
 
+  <main class="main">
+    <div class="mobile-top"><button class="btn secondary" id="menuBtn">☰ Menu</button><b style="color:#00b7ff">PK study</b></div>
+    <div class="topbar"><div><h2 id="pageTitle">Dashboard</h2><div class="date" id="date"></div></div><div class="userbox"><span id="userEmail"></span><span class="avatar" id="avatar">P</span><button class="btn secondary" id="logoutBtn">Logout</button></div></div>
 
-<!-- =================================================
-     RAGMYAI OFFICIAL CHAT WIDGET
-================================================= -->
+    <section id="dashboard" class="section active">
+      <div class="grid">
+        <div class="card"><div class="stat-title">Subjects</div><div class="stat-number" id="statSubjects">0</div></div>
+        <div class="card"><div class="stat-title">My Notes</div><div class="stat-number" id="statNotes">0</div></div>
+        <div class="card"><div class="stat-title">Study Sessions</div><div class="stat-number" id="statSessions">0</div></div>
+        <div class="card"><div class="stat-title">Videos</div><div class="stat-number" id="statVideos">0</div></div>
+      </div>
+      <div class="two">
+        <div class="card"><h3>📚 Your Study Space</h3><p class="small">Create a separate notebook for every subject, write with blue or black pen, edit old notes anytime, and keep notebook photos in one place.</p><div class="glow-line"></div><div class="quick-grid"><button class="btn" id="goSubjects">+ Subject Notebook</button><button class="btn" id="goNotes">+ Note</button><button class="btn" id="goVideos">🎬 Learning Hub</button></div></div>
+        <div class="card"><h3>⚡ Quick Study</h3><p class="small">Set your own study duration and start whenever you are ready.</p><div style="margin-top:14px"><button class="btn" id="goStudy">Open Timer</button></div></div>
+      </div>
+      <div class="card" style="margin-top:14px"><h3>✨ Recently Edited Notes</h3><div id="recentNotes" class="list"></div></div>
+    </section>
 
-<script
-  src="https://chat.ragmyai.com/chat-widget.min.js"
-  data-page-id="ccc0c077-f3cb-467e-a3a3-89316f42a657">
+    <section id="notes" class="section">
+      <div class="card">
+        <div class="section-head"><div><h3>📝 My Notes</h3><p class="small">Edit any saved note again and again.</p></div><button class="btn" id="newNote">+ New Note</button></div>
+        <div class="note-editor">
+          <div>
+            <div class="note-title-wrap"><input id="noteTitle" placeholder="Note title"></div>
+            <div class="editor-toolbar" id="noteToolbar">
+              <button data-cmd="bold"><b>B</b></button><button data-cmd="italic"><i>I</i></button><button data-cmd="underline"><u>U</u></button>
+              <select id="noteFontSize"><option value="3">Normal</option><option value="1">Small</option><option value="4">Large</option><option value="5">XL</option><option value="6">XXL</option></select>
+              <button data-cmd="justifyLeft">L</button><button data-cmd="justifyCenter">C</button><button data-cmd="justifyRight">R</button>
+              <button data-cmd="insertUnorderedList">• List</button><button data-cmd="insertOrderedList">1. List</button>
+              <button class="pen-blue" data-color="#1976d2">Blue pen</button><button class="pen-black" data-color="#111111">Black pen</button>
+              <button data-cmd="removeFormat">Clear format</button>
+            </div>
+            <div id="noteContent" class="rich-editor" contenteditable="true" data-placeholder="Write your notes here..."></div>
+            <div class="note-toolbar"><button class="btn" id="saveNote">☁ Save / Update Note</button><span class="small" id="noteCount">0 words</span></div>
+          </div>
+          <div class="card side-panel"><h3>Saved notes</h3><input id="noteSearch" placeholder="🔎 Search notes"><div id="noteList" class="list" style="margin-top:10px"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="study" class="section">
+      <div class="card timer"><h3>⏱️ Custom Study Timer</h3><p class="small">Set any duration you want.</p><div class="timer-settings"><input id="timerMinutes" type="number" min="1" max="999" value="25"><span>minutes</span><button class="btn secondary" id="applyTimer">Set Timer</button></div><div class="timer-display" id="timer">25:00</div><div class="timer-actions"><button class="btn" id="startTimer">▶ Start</button><button class="btn secondary" id="pauseTimer">⏸ Pause</button><button class="btn secondary" id="resetTimer">↻ Reset</button></div></div>
+      <div class="card" style="margin-top:14px"><h3>📈 Study Statistics</h3><p class="small">Completed sessions: <b style="color:#00b7ff" id="sessionCount">0</b></p></div>
+    </section>
+
+    <section id="subjects" class="section">
+      <div class="card"><div class="section-head"><div><h3>📚 Subject Notebooks</h3><p class="small">Every subject gets its own notebook.</p></div></div><div class="form-row"><input id="subjectName" placeholder="e.g. Mathematics"><button class="btn" id="addSubject">Create Notebook</button></div><div id="subjectList" class="subject-grid"></div></div>
+      <div id="subjectNotebookPanel" class="card hidden" style="margin-top:14px"></div>
+    </section>
+
+    <section id="timetable" class="section">
+      <div class="card"><div class="section-head"><div><h3>📅 School Timetable</h3><p class="small">Adjust up to 8 periods for every school day.</p></div></div><div class="timetable-tools"><label>Periods per day <select id="periodCount"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8" selected>8</option></select></label><button class="btn" id="saveTimetable">Save Weekly Timetable</button></div><div id="timetableGrid" class="school-grid"></div></div>
+    </section>
+
+    <section id="videos" class="section">
+      <div class="card"><div class="section-head"><div><h3>🎬 Educational Video Library</h3><p class="small">Save useful educational videos and open them anytime.</p></div></div><div class="form-row"><input id="videoTitle" placeholder="Video title"><input id="videoUrl" placeholder="YouTube / video URL"><button class="btn" id="addVideo">Add Video</button></div><div id="videoList" class="video-grid"></div></div>
+    </section>
+
+    <section id="images" class="section">
+      <div class="card"><div class="section-head"><div><h3>🖼️ Notebook Images</h3><p class="small">Save photos/scans of handwritten notebooks. Images are resized before saving.</p></div></div><div class="form-row"><input id="imageTitle" placeholder="Image title"><input id="imageFile" type="file" accept="image/*"><button class="btn" id="saveImage">Save Image</button></div><div id="imageList" class="image-grid"></div></div>
+    </section>
+  </main>
+</div>
+<div id="toast" class="toast hidden"></div>
+
+<style>
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.section-head h3{margin-bottom:3px}
+.editor-toolbar{display:flex;gap:5px;flex-wrap:wrap;background:#050b10;border:1px solid #123448;border-bottom:0;border-radius:12px 12px 0 0;padding:8px}.editor-toolbar button,.editor-toolbar select{width:auto;min-width:38px;padding:7px 9px;border-radius:7px;background:#0a1620;color:#dff6ff;border:1px solid #183d51}.editor-toolbar button:hover{border-color:#00b7ff}.pen-blue{color:#4db8ff!important}.pen-black{color:#fff!important}.rich-editor{min-height:380px;background:repeating-linear-gradient(to bottom,#fff 0,#fff 29px,#dce8ef 30px);color:#111;padding:24px 28px;border:1px solid #123448;border-radius:0 0 12px 12px;outline:none;line-height:30px;font-family:Georgia,serif;font-size:18px}.rich-editor:empty:before{content:attr(data-placeholder);color:#777}.note-title-wrap input{background:#071018}.side-panel{max-height:560px;overflow:auto}.subject-grid,.video-grid,.image-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.subject-card{background:linear-gradient(145deg,#071018,#04090d);border:1px solid #16445d;border-radius:15px;padding:16px;cursor:pointer}.subject-card:hover{border-color:#00b7ff;box-shadow:0 0 20px rgba(0,183,255,.1)}.subject-card h4{color:#fff;margin-bottom:8px}.subject-card p{color:#8ba3b2;font-size:12px}.subject-card .actions{display:flex;gap:6px;margin-top:12px}.notebook-paper{background:repeating-linear-gradient(to bottom,#fff 0,#fff 29px,#dce8ef 30px);color:#111;border-radius:12px;min-height:500px;padding:24px 30px;line-height:30px;font-family:Georgia,serif;font-size:18px;outline:none}.notebook-paper:empty:before{content:'Start writing in your subject notebook...';color:#777}.notebook-head{display:flex;gap:8px;align-items:center;margin-bottom:12px}.notebook-head input{background:#071018}.timetable-tools{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin-bottom:14px}.timetable-tools label{display:grid;gap:5px;color:#8ba3b2;font-size:12px}.timetable-tools select{width:120px}.school-grid{overflow:auto}.school-grid table{min-width:900px;background:#061018}.school-grid th{background:#091722;position:sticky;top:0}.period-input{min-width:115px}.video-card,.image-card{background:#071018;border:1px solid #123448;border-radius:14px;overflow:hidden}.video-card{padding:14px}.video-card h4,.image-card h4{margin-bottom:7px}.video-card a{color:#5cc9ff;word-break:break-all}.video-card .actions,.image-card .actions{display:flex;gap:6px;margin-top:10px}.image-card img{width:100%;height:210px;object-fit:cover;display:block}.image-card .body{padding:12px}.timer-settings{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:15px}.timer-settings input{width:100px;text-align:center}.timer-settings span{color:#8ba3b2}.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+@media(max-width:1000px){.subject-grid,.video-grid,.image-grid{grid-template-columns:repeat(2,1fr)}.note-editor{grid-template-columns:1fr!important}}
+@media(max-width:700px){.subject-grid,.video-grid,.image-grid,.quick-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.rich-editor{min-height:300px;padding:18px}.notebook-paper{padding:18px}}
+</style>
+
+<div id="imageModal" class="image-modal" aria-hidden="true">
+  <div class="image-modal-inner">
+    <div class="image-modal-toolbar">
+      <button class="btn secondary" id="zoomOut">− Zoom out</button>
+      <span class="zoom-label" id="zoomLabel">100%</span>
+      <button class="btn secondary" id="zoomIn">+ Zoom in</button>
+      <button class="btn secondary" id="zoomReset">Reset</button>
+      <button class="btn" id="closeImageModal">Close ✕</button>
+    </div>
+    <div class="image-modal-stage" id="imageModalStage"><img id="modalImage" alt="Notebook preview"></div>
+  </div>
+</div>
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+const SUPABASE_URL="https://jwkevvjjzqeypithmisr.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY="sb_publishable_gOtmxkUI30my9EyVyqriZw_VADOvGYz";
+const supabase=createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+let user=null;
+let data={notes:[],subjects:[],timetable:[],videos:[],images:[]};
+let sessions=Number(localStorage.getItem("pk_study_sessions")||0);
+let timerSeconds=1500,timerDefault=1500,timerInterval=null,editingNoteId=null,editingSubjectId=null;
+const $=id=>document.getElementById(id);
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+function toast(msg,ok=true){$("toast").textContent=msg;$("toast").classList.remove("hidden");$("toast").style.borderColor=ok?"#1a526c":"#6b2636";setTimeout(()=>$("toast").classList.add("hidden"),2800)}
+function status(el,msg,ok=false){el.textContent=msg;el.className="status"+(ok?" success":"")}
+function showAuth(mode){$("loginBox").classList.toggle("hidden",mode!=="login");$("signupBox").classList.toggle("hidden",mode!=="signup")}
+$("showSignup").onclick=()=>showAuth("signup");$("backLogin").onclick=()=>showAuth("login");
+$("signupBtn").onclick=async()=>{const email=$("signupEmail").value.trim(),password=$("signupPassword").value;if(!email||password.length<6){status($("signupStatus"),"Enter a valid email and password of at least 6 characters.");return}$("signupBtn").disabled=true;$("signupBtn").textContent="Creating...";const {data:r,error}=await supabase.auth.signUp({email,password});$("signupBtn").disabled=false;$("signupBtn").textContent="Sign up";if(error){status($("signupStatus"),/rate limit|too many requests/i.test(error.message)?"Email service rate limit reached. Please wait before trying another signup.":error.message);return}if(r.session){user=r.session.user;await showApp()}else status($("signupStatus"),"Account created. If email confirmation is enabled, verify your email once.",true)};
+$("loginBtn").onclick=async()=>{const email=$("loginEmail").value.trim(),password=$("loginPassword").value;if(!email||!password){status($("loginStatus"),"Enter your email and password.");return}$("loginBtn").disabled=true;$("loginBtn").textContent="Logging in...";const {data:r,error}=await supabase.auth.signInWithPassword({email,password});if(error){$("loginBtn").disabled=false;$("loginBtn").textContent="Login";status($("loginStatus"),error.message);return}user=r.user;status($("loginStatus"),"Login successful. Opening dashboard...",true);await showApp();$("loginBtn").disabled=false;$("loginBtn").textContent="Login"};
+$("logoutBtn").onclick=async()=>{await supabase.auth.signOut();location.reload()};$("menuBtn").onclick=()=>$("sidebar").classList.toggle("open");
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>openSection(b.dataset.section));
+function openSection(id){document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.section===id));document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));$(id).classList.add("active");$("pageTitle").textContent=document.querySelector(`[data-section="${id}"]`).textContent.replace(/^\S+\s*/,"");$("sidebar").classList.remove("open")}
+$("goSubjects").onclick=()=>openSection("subjects");$("goNotes").onclick=()=>openSection("notes");$("goVideos").onclick=()=>openSection("videos");$("goStudy").onclick=()=>openSection("study");
+async function loadData(){const uid=user.id;const [notes,subjects,timetable,videos,images]=await Promise.all([supabase.from("notes").select("*").eq("user_id",uid).order("updated_at",{ascending:false}),supabase.from("subjects").select("*").eq("user_id",uid).order("created_at",{ascending:false}),supabase.from("timetable").select("*").eq("user_id",uid).order("created_at",{ascending:false}),supabase.from("educational_videos").select("*").eq("user_id",uid).order("created_at",{ascending:false}),supabase.from("notebook_images").select("*").eq("user_id",uid).order("created_at",{ascending:false})]);for(const r of [notes,subjects,timetable,videos,images])if(r.error)throw r.error;data={notes:notes.data||[],subjects:subjects.data||[],timetable:timetable.data||[],videos:videos.data||[],images:images.data||[]};renderAll()}
+async function insert(table,payload){const {data:r,error}=await supabase.from(table).insert({...payload,user_id:user.id}).select().single();if(error)throw error;return r}
+async function update(table,id,payload){const {data:r,error}=await supabase.from(table).update({...payload,updated_at:new Date().toISOString()}).eq("id",id).eq("user_id",user.id).select().single();if(error)throw error;return r}
+async function remove(table,id){const {error}=await supabase.from(table).delete().eq("id",id).eq("user_id",user.id);if(error)throw error}
+
+let savedRange=null;
+function rememberSelection(editor){const sel=window.getSelection();if(sel&&sel.rangeCount){const r=sel.getRangeAt(0);if(editor.contains(r.commonAncestorContainer))savedRange=r.cloneRange()}}
+function restoreSelection(editor){if(!savedRange)return;editor.focus();const sel=window.getSelection();sel.removeAllRanges();sel.addRange(savedRange)}
+function exec(cmd,val=null,editor=$("noteContent")){rememberSelection(editor);restoreSelection(editor);document.execCommand("styleWithCSS",false,true);document.execCommand(cmd,false,val);rememberSelection(editor);updateNoteCount()}
+function applyPen(editor,color,rememberFn=null,restoreFn=null){
+  if(rememberFn) rememberFn(); else rememberSelection(editor);
+  if(restoreFn) restoreFn(); else restoreSelection(editor);
+  editor.focus();
+  const sel=window.getSelection();
+  if(!sel || !sel.rangeCount || !editor.contains(sel.anchorNode)) return;
+  const range=sel.getRangeAt(0);
+  document.execCommand("styleWithCSS",false,true);
+  if(!range.collapsed){
+    document.execCommand("foreColor",false,color);
+  }else{
+    const span=document.createElement("span");
+    span.style.color=color;
+    span.appendChild(document.createTextNode("\u200b"));
+    range.insertNode(span);
+    const r=document.createRange(); r.selectNodeContents(span); r.collapse(false);
+    sel.removeAllRanges(); sel.addRange(r);
+  }
+  if(rememberFn) rememberFn(); else rememberSelection(editor);
+  updateNoteCount();
+}
+$("noteContent").addEventListener("keyup",()=>rememberSelection($("noteContent")));$("noteContent").addEventListener("mouseup",()=>rememberSelection($("noteContent")));$("noteContent").addEventListener("focus",()=>rememberSelection($("noteContent")));
+document.querySelectorAll("#noteToolbar [data-cmd]").forEach(b=>b.onmousedown=e=>{e.preventDefault();exec(b.dataset.cmd)});
+$("noteFontSize").onchange=e=>exec("fontSize",e.target.value);
+document.querySelectorAll("#noteToolbar [data-color]").forEach(b=>b.onmousedown=e=>{e.preventDefault();applyPen($("noteContent"),b.dataset.color)});
+function updateNoteCount(){const text=$("noteContent").innerText.trim();$("noteCount").textContent=text?(text.split(/\s+/).length+" words"):"0 words"}
+$("noteContent").oninput=updateNoteCount;$("newNote").onclick=()=>{editingNoteId=null;$("noteTitle").value="";$("noteContent").innerHTML="";updateNoteCount();$("noteTitle").focus()};$("noteSearch").oninput=renderNotes;
+$("saveNote").onclick=async()=>{const title=$("noteTitle").value.trim()||"Untitled note",content=$("noteContent").innerHTML.trim();if(!content)return toast("Write something first.",false);try{if(editingNoteId){const row=await update("notes",editingNoteId,{title,content});const i=data.notes.findIndex(x=>x.id===editingNoteId);if(i>=0)data.notes[i]=row;toast("Note updated ☁️")}else{const row=await insert("notes",{title,content});data.notes.unshift(row);toast("Note saved ☁️")}editingNoteId=null;renderAll()}catch(e){toast(e.message,false)}};
+async function editNote(id){const n=data.notes.find(x=>x.id===id);if(!n)return;editingNoteId=id;$("noteTitle").value=n.title;$("noteContent").innerHTML=n.content;updateNoteCount();openSection("notes");window.scrollTo({top:0,behavior:"smooth"})}
+async function deleteNote(id){try{await remove("notes",id);data.notes=data.notes.filter(x=>x.id!==id);if(editingNoteId===id){editingNoteId=null;$("noteTitle").value="";$("noteContent").innerHTML=""}renderAll();toast("Note deleted")}catch(e){toast(e.message,false)}}
+function renderNotes(){const q=($("noteSearch").value||"").toLowerCase();const rows=data.notes.filter(n=>(n.title+" "+strip(n.content)).toLowerCase().includes(q));$("noteList").innerHTML=rows.length?rows.map(n=>`<div class="item"><div class="item-main"><strong>${esc(n.title)}</strong><small>${new Date(n.updated_at||n.created_at).toLocaleString()}</small><div class="note-content">${esc(strip(n.content)).slice(0,160)}</div></div><div class="item-actions"><button class="btn" onclick="window.pkEditNote(${n.id})">Edit</button><button class="btn danger" onclick="window.pkDeleteNote(${n.id})">Delete</button></div></div>`).join(""):'<div class="empty">No notes found.</div>';$("recentNotes").innerHTML=data.notes.slice(0,5).map(n=>`<div class="item"><div class="item-main"><strong>${esc(n.title)}</strong><small>${new Date(n.updated_at||n.created_at).toLocaleString()}</small></div><button class="btn secondary" onclick="window.pkEditNote(${n.id})">Open</button></div>`).join("")||'<div class="empty">No notes yet.</div>'}
+function strip(html){const d=document.createElement("div");d.innerHTML=html;return d.innerText||""}
+window.pkEditNote=editNote;window.pkDeleteNote=deleteNote;
+
+$("addSubject").onclick=async()=>{const name=$("subjectName").value.trim();if(!name)return toast("Enter a subject name.",false);try{const row=await insert("subjects",{name});data.subjects.unshift(row);$("subjectName").value="";renderAll();openSubject(row.id)}catch(e){toast(e.message,false)}};
+async function deleteSubject(id){try{await remove("subjects",id);data.subjects=data.subjects.filter(x=>x.id!==id);if(editingSubjectId===id){editingSubjectId=null;$("subjectNotebookPanel").classList.add("hidden")}renderAll();toast("Subject notebook deleted")}catch(e){toast(e.message,false)}}
+async function openSubject(id){
+ const s=data.subjects.find(x=>x.id===id); if(!s)return; editingSubjectId=id; openSection("subjects");
+ const panel=$("subjectNotebookPanel"); panel.classList.remove("hidden");
+ panel.innerHTML=`<div class="notebook-head"><input id="subjectPageTitle" value="${esc(s.name)} — Notebook"><button class="btn" id="saveSubjectPage">Save Notebook</button><button class="btn secondary" id="closeSubject">Close</button></div>
+ <div class="editor-toolbar" id="subjectToolbar"><button data-cmd="bold"><b>B</b></button><button data-cmd="italic"><i>I</i></button><button data-cmd="underline"><u>U</u></button><select id="subjectFontSize"><option value="3">Normal</option><option value="4">Large</option><option value="5">XL</option><option value="6">XXL</option></select><button data-cmd="justifyLeft">L</button><button data-cmd="justifyCenter">C</button><button data-cmd="justifyRight">R</button><button data-cmd="insertUnorderedList">• List</button><button data-cmd="insertOrderedList">1. List</button><button data-color="#1976d2">🔵 Blue pen</button><button data-color="#111111">⚫ Black pen</button><button data-cmd="removeFormat">Clear format</button></div>
+ <div id="subjectPaper" class="notebook-paper" contenteditable="true"></div><p class="small" style="margin-top:10px">Select text and choose a pen colour, or choose a colour before typing.</p>`;
+ const paper=$("subjectPaper"); let subjectRange=null;
+ const remember=()=>{const sel=window.getSelection();if(sel&&sel.rangeCount&&paper.contains(sel.anchorNode)){subjectRange=sel.getRangeAt(0).cloneRange()}};
+ const restore=()=>{paper.focus();if(subjectRange){const sel=window.getSelection();sel.removeAllRanges();sel.addRange(subjectRange)}};
+ const apply=(cmd,val=null)=>{restore();paper.focus();document.execCommand("styleWithCSS",false,true);document.execCommand(cmd,false,val);remember()};
+ const applySubjectPen=(color)=>applyPen(paper,color,remember,restore);
+ paper.addEventListener("mouseup",remember);paper.addEventListener("keyup",remember);paper.addEventListener("focus",remember);
+ const {data:pages,error}=await supabase.from("subject_notebook_pages").select("*").eq("user_id",user.id).eq("subject_id",id).order("updated_at",{ascending:false}).limit(1);
+ if(error){toast("Notebook database is not ready. Run the subject_notebook_pages SQL first.",false);return}
+ if(pages?.[0]){$("subjectPageTitle").value=pages[0].title||`${s.name} — Notebook`;paper.innerHTML=pages[0].content_html||"";}
+ document.querySelectorAll("#subjectToolbar [data-cmd]").forEach(b=>b.onmousedown=e=>{e.preventDefault();apply(b.dataset.cmd)});
+ $("subjectFontSize").onchange=e=>apply("fontSize",e.target.value);
+ document.querySelectorAll("#subjectToolbar [data-color]").forEach(b=>b.onmousedown=e=>{e.preventDefault();applySubjectPen(b.dataset.color)});
+ $("closeSubject").onclick=()=>panel.classList.add("hidden");
+ $("saveSubjectPage").onclick=async()=>{const title=$("subjectPageTitle").value.trim()||`${s.name} — Notebook`,content_html=paper.innerHTML;try{const existing=await supabase.from("subject_notebook_pages").select("id").eq("user_id",user.id).eq("subject_id",id).maybeSingle();if(existing.error)throw existing.error;if(existing.data){const row=await update("subject_notebook_pages",existing.data.id,{title,content_html});}else{await insert("subject_notebook_pages",{subject_id:id,title,content_html});}toast("Subject notebook saved ☁️")}catch(e){toast("Could not save notebook: "+e.message,false)}};
+}
+function renderSubjects(){$("subjectList").innerHTML=data.subjects.length?data.subjects.map(s=>`<div class="subject-card"><h4>📓 ${esc(s.name)}</h4><p>Separate editable notebook</p><div class="actions"><button class="btn" onclick="window.pkOpenSubject(${s.id})">Open Notebook</button><button class="btn danger" onclick="window.pkDeleteSubject(${s.id})">Delete</button></div></div>`).join(""):'<div class="empty">Create your first subject notebook.</div>'}
+window.pkOpenSubject=openSubject;window.pkDeleteSubject=deleteSubject;
+
+const days=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+function defaultPeriods(){return Array.from({length:8},(_,i)=>({period:i+1,time:"",subject:""}))}
+function renderTimetable(){const map={};for(const x of data.timetable)map[x.day]=x.periods||[];const count=Number($("periodCount").value||8);$("timetableGrid").innerHTML=`<table><thead><tr><th>Period</th>${days.map(d=>`<th>${d}</th>`).join("")}</tr></thead><tbody>${Array.from({length:count},(_,i)=>`<tr><td><b>P${i+1}</b></td>${days.map(d=>{const p=(map[d]||[])[i]||{};return `<td><input class="period-input" data-day="${d}" data-period="${i}" data-kind="time" type="time" value="${esc(p.time||"")}"><input class="period-input" data-day="${d}" data-period="${i}" data-kind="subject" placeholder="Subject / class" value="${esc(p.subject||"")}"></td>`}).join("")}</tr>`).join("")}</tbody></table>`}
+$("periodCount").onchange=renderTimetable;$("saveTimetable").onclick=async()=>{try{const count=Number($("periodCount").value),rows=[];for(const day of days){const periods=Array.from({length:count},(_,i)=>({period:i+1,time:document.querySelector(`[data-day="${day}"][data-period="${i}"][data-kind="time"]`).value,subject:document.querySelector(`[data-day="${day}"][data-period="${i}"][data-kind="subject"]`).value.trim()}));rows.push({day,periods})}for(const old of data.timetable)await remove("timetable",old.id);data.timetable=[];for(const r of rows){const row=await insert("timetable",r);data.timetable.push(row)}toast("Weekly timetable saved ☁️")}catch(e){toast(e.message,false)}};
+
+$("addVideo").onclick=async()=>{const title=$("videoTitle").value.trim(),url=$("videoUrl").value.trim();if(!title||!/^https?:\/\//i.test(url))return toast("Enter a title and valid video URL.",false);try{const row=await insert("educational_videos",{title,url});data.videos.unshift(row);$("videoTitle").value="";$("videoUrl").value="";renderAll();toast("Educational video saved ☁️")}catch(e){toast(e.message,false)}};
+async function deleteVideo(id){try{await remove("educational_videos",id);data.videos=data.videos.filter(x=>x.id!==id);renderAll();toast("Video removed")}catch(e){toast(e.message,false)}}
+function renderVideos(){$("videoList").innerHTML=data.videos.length?data.videos.map(v=>`<div class="video-card"><h4>🎬 ${esc(v.title)}</h4><a href="${esc(v.url)}" target="_blank" rel="noopener">Open video ↗</a><div class="actions"><button class="btn danger" onclick="window.pkDeleteVideo(${v.id})">Delete</button></div></div>`).join(""):'<div class="empty">No educational videos yet.</div>'}
+window.pkDeleteVideo=deleteVideo;
+
+function resizeImage(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>{const img=new Image();img.onload=()=>{const max=1600,scale=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement("canvas");c.width=Math.round(img.width*scale);c.height=Math.round(img.height*scale);const ctx=c.getContext("2d");ctx.drawImage(img,0,0,c.width,c.height);resolve(c.toDataURL("image/jpeg",.72))};img.onerror=reject;img.src=r.result};r.onerror=reject;r.readAsDataURL(file)})}
+$("saveImage").onclick=async()=>{const file=$("imageFile").files[0],title=$("imageTitle").value.trim()||"Notebook image";if(!file)return toast("Choose an image first.",false);if(file.size>12*1024*1024)return toast("Choose an image smaller than 12 MB.",false);try{const image_data=await resizeImage(file);const row=await insert("notebook_images",{title,image_data});data.images.unshift(row);$("imageFile").value="";$("imageTitle").value="";renderAll();toast("Notebook image saved ☁️")}catch(e){toast(e.message,false)}};
+async function deleteImage(id){try{await remove("notebook_images",id);data.images=data.images.filter(x=>x.id!==id);renderAll();toast("Image deleted")}catch(e){toast(e.message,false)}}
+let imageZoom=1;
+function openImageModal(src,title){$("modalImage").src=src;$("modalImage").alt=title||"Notebook preview";imageZoom=1;applyImageZoom();$("imageModal").classList.add("show");$("imageModal").setAttribute("aria-hidden","false")}
+function closeImageModal(){$("imageModal").classList.remove("show");$("imageModal").setAttribute("aria-hidden","true");$("modalImage").src=""}
+function applyImageZoom(){$("modalImage").style.transform=`scale(${imageZoom})`;$("zoomLabel").textContent=Math.round(imageZoom*100)+"%"}
+function renderImages(){$("imageList").innerHTML=data.images.length?data.images.map(x=>`<div class="image-card"><img src="${x.image_data}" alt="${esc(x.title)}" onclick="window.pkOpenImage(${x.id})" style="cursor:zoom-in"><div class="body"><h4>${esc(x.title)}</h4><div class="actions"><button class="btn" onclick="window.pkOpenImage(${x.id})">🔍 Open & Zoom</button><button class="btn danger" onclick="window.pkDeleteImage(${x.id})">Delete</button></div></div></div>`).join(""):'<div class="empty">No notebook images saved.</div>'}
+window.pkOpenImage=id=>{const x=data.images.find(i=>i.id===id);if(x)openImageModal(x.image_data,x.title)};window.pkDeleteImage=deleteImage;
+$("zoomIn").onclick=()=>{imageZoom=Math.min(4,imageZoom+.25);applyImageZoom()};$("zoomOut").onclick=()=>{imageZoom=Math.max(.5,imageZoom-.25);applyImageZoom()};$("zoomReset").onclick=()=>{imageZoom=1;applyImageZoom()};$("closeImageModal").onclick=closeImageModal;$("imageModal").onclick=e=>{if(e.target.id==="imageModal")closeImageModal()};document.addEventListener("keydown",e=>{if(e.key==="Escape")closeImageModal()});
+$("imageModalStage").addEventListener("wheel",e=>{if(!$('imageModal').classList.contains('show'))return;e.preventDefault();imageZoom=Math.max(.5,Math.min(4,imageZoom+(e.deltaY<0?.1:-.1)));applyImageZoom()},{passive:false});
+
+function updateClock(){$("date").textContent=new Date().toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"})}setInterval(updateClock,1000);updateClock();
+function updateTimer(){const m=String(Math.floor(timerSeconds/60)).padStart(2,"0"),s=String(timerSeconds%60).padStart(2,"0");$("timer").textContent=`${m}:${s}`}
+function applyTimer(){const mins=Math.max(1,Math.min(999,Number($("timerMinutes").value)||25));timerDefault=mins*60;timerSeconds=timerDefault;pauseTimer();updateTimer()}
+function startTimer(){if(timerInterval)return;timerInterval=setInterval(()=>{if(timerSeconds>0){timerSeconds--;updateTimer()}else{pauseTimer();sessions++;localStorage.setItem("pk_study_sessions",sessions);$("sessionCount").textContent=sessions;renderDashboard();toast("🎉 Study session completed!")}},1000)}function pauseTimer(){clearInterval(timerInterval);timerInterval=null}function resetTimer(){pauseTimer();timerSeconds=timerDefault;updateTimer()}
+$("applyTimer").onclick=applyTimer;$("startTimer").onclick=startTimer;$("pauseTimer").onclick=pauseTimer;$("resetTimer").onclick=resetTimer;updateTimer();
+function renderDashboard(){$("statSubjects").textContent=data.subjects.length;$('statNotes').textContent=data.notes.length;$('statSessions').textContent=sessions;$('statVideos').textContent=data.videos.length}
+function renderAll(){renderDashboard();renderNotes();renderSubjects();renderTimetable();renderVideos();renderImages();$("sessionCount").textContent=sessions}
+async function showApp(){$("authScreen").classList.add("hidden");$("app").style.display="block";$('userEmail').textContent=user?.email||"";$('avatar').textContent=(user?.email||"P").charAt(0).toUpperCase();try{await loadData()}catch(e){toast("Database error: "+e.message,false)}}function showAuthScreen(){$("authScreen").classList.remove("hidden");$("app").style.display="none"}
+async function boot(){const {data:{session}}=await supabase.auth.getSession();if(session){user=session.user;await showApp()}else showAuthScreen()}
+supabase.auth.onAuthStateChange((event,session)=>setTimeout(async()=>{if(session){user=session.user;if($("app").style.display!=="block")await showApp()}else{user=null;showAuthScreen()}},0));boot();
 </script>
-
-
-</body>
-</html>
+</body></html>
