@@ -1,4 +1,3 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://raoshaabprashantyadavji-wq.github.io/PK-chat/sitemap.xml
+Allow: /PKSTUDY/
+Sitemap: https://raoshaabprashantyadavji-wq.github.io/PKSTUDY/sitemap.xml
