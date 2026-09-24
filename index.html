@@ -157,7 +157,8 @@ input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 
     <div class="logo"><h1>PK study</h1><p>STUDENT LEARNING SYSTEM</p></div>
     <div class="nav">
       <button class="active" data-section="dashboard">🏠 Dashboard</button>
-      <button data-section="notes">📝 My Notes</button>
+    <button data-section="tenses">📘 PK Tenses</button>
+  <button data-section="notes">📝 My Notes</button>
       <button data-section="study">⏱️ Study Timer</button>
       <button data-section="subjects">📚 Subject Notebooks</button>
       <button data-section="timetable">📅 School Timetable</button>
@@ -228,11 +229,192 @@ input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 
     <section id="images" class="section">
       <div class="card"><div class="section-head"><div><h3>🖼️ Notebook Images</h3><p class="small">Save photos/scans of handwritten notebooks. Images are resized before saving.</p></div></div><div class="form-row"><input id="imageTitle" placeholder="Image title"><input id="imageFile" type="file" accept="image/*"><button class="btn" id="saveImage">Save Image</button></div><div id="imageList" class="image-grid"></div></div>
     </section>
+<section id="tenses" class="section">
+  <div class="card">
+
+    <div class="section-head">
+      <div>
+        <h3>📘 PK Tenses</h3>
+        <p class="small">
+          Learn all 12 English tenses with formulas and simple examples.
+        </p>
+      </div>
+    </div>
+
+    <div class="pk-tenses-grid">
+
+      <!-- 1 -->
+      <article class="pk-tense-card">
+        <h4>1. Simple Present Tense</h4>
+        <p><b>Formula:</b> Subject + V1(s/es) + Object</p>
+        <p><b>Positive:</b> She reads a book.</p>
+        <p><b>Negative:</b> She does not read a book.</p>
+        <p><b>Question:</b> Does she read a book?</p>
+        <p><b>Use:</b> Habits, routines and general facts.</p>
+      </article>
+
+      <!-- 2 -->
+      <article class="pk-tense-card">
+        <h4>2. Present Continuous Tense</h4>
+        <p><b>Formula:</b> Subject + am/is/are + V-ing + Object</p>
+        <p><b>Positive:</b> She is reading a book.</p>
+        <p><b>Negative:</b> She is not reading a book.</p>
+        <p><b>Question:</b> Is she reading a book?</p>
+        <p><b>Use:</b> An action happening now.</p>
+      </article>
+
+      <!-- 3 -->
+      <article class="pk-tense-card">
+        <h4>3. Present Perfect Tense</h4>
+        <p><b>Formula:</b> Subject + has/have + V3 + Object</p>
+        <p><b>Positive:</b> She has read the book.</p>
+        <p><b>Negative:</b> She has not read the book.</p>
+        <p><b>Question:</b> Has she read the book?</p>
+        <p><b>Use:</b> A completed action with present relevance.</p>
+      </article>
+
+      <!-- 4 -->
+      <article class="pk-tense-card">
+        <h4>4. Present Perfect Continuous</h4>
+        <p><b>Formula:</b> Subject + has/have been + V-ing + since/for</p>
+        <p><b>Positive:</b> She has been reading for two hours.</p>
+        <p><b>Negative:</b> She has not been reading for two hours.</p>
+        <p><b>Question:</b> Has she been reading for two hours?</p>
+        <p><b>Use:</b> An action continuing from the past until now.</p>
+      </article>
+
+      <!-- 5 -->
+      <article class="pk-tense-card">
+        <h4>5. Simple Past Tense</h4>
+        <p><b>Formula:</b> Subject + V2 + Object</p>
+        <p><b>Positive:</b> She read a book.</p>
+        <p><b>Negative:</b> She did not read a book.</p>
+        <p><b>Question:</b> Did she read a book?</p>
+        <p><b>Use:</b> A completed action in the past.</p>
+      </article>
+
+      <!-- 6 -->
+      <article class="pk-tense-card">
+        <h4>6. Past Continuous Tense</h4>
+        <p><b>Formula:</b> Subject + was/were + V-ing + Object</p>
+        <p><b>Positive:</b> She was reading a book.</p>
+        <p><b>Negative:</b> She was not reading a book.</p>
+        <p><b>Question:</b> Was she reading a book?</p>
+        <p><b>Use:</b> An action that was happening at a past time.</p>
+      </article>
+
+      <!-- 7 -->
+      <article class="pk-tense-card">
+        <h4>7. Past Perfect Tense</h4>
+        <p><b>Formula:</b> Subject + had + V3 + Object</p>
+        <p><b>Positive:</b> She had read the book.</p>
+        <p><b>Negative:</b> She had not read the book.</p>
+        <p><b>Question:</b> Had she read the book?</p>
+        <p><b>Use:</b> An action completed before another past action.</p>
+      </article>
+
+      <!-- 8 -->
+      <article class="pk-tense-card">
+        <h4>8. Past Perfect Continuous</h4>
+        <p><b>Formula:</b> Subject + had been + V-ing + since/for</p>
+        <p><b>Positive:</b> She had been reading for two hours.</p>
+        <p><b>Negative:</b> She had not been reading for two hours.</p>
+        <p><b>Question:</b> Had she been reading for two hours?</p>
+        <p><b>Use:</b> An action continuing for a period before a past point.</p>
+      </article>
+
+      <!-- 9 -->
+      <article class="pk-tense-card">
+        <h4>9. Simple Future Tense</h4>
+        <p><b>Formula:</b> Subject + will + V1 + Object</p>
+        <p><b>Positive:</b> She will read a book.</p>
+        <p><b>Negative:</b> She will not read a book.</p>
+        <p><b>Question:</b> Will she read a book?</p>
+        <p><b>Use:</b> Future actions, decisions and predictions.</p>
+      </article>
+
+      <!-- 10 -->
+      <article class="pk-tense-card">
+        <h4>10. Future Continuous</h4>
+        <p><b>Formula:</b> Subject + will be + V-ing + Object</p>
+        <p><b>Positive:</b> She will be reading a book.</p>
+        <p><b>Negative:</b> She will not be reading a book.</p>
+        <p><b>Question:</b> Will she be reading a book?</p>
+        <p><b>Use:</b> An action that will be happening at a future time.</p>
+      </article>
+
+      <!-- 11 -->
+      <article class="pk-tense-card">
+        <h4>11. Future Perfect</h4>
+        <p><b>Formula:</b> Subject + will have + V3 + Object</p>
+        <p><b>Positive:</b> She will have read the book.</p>
+        <p><b>Negative:</b> She will not have read the book.</p>
+        <p><b>Question:</b> Will she have read the book?</p>
+        <p><b>Use:</b> An action that will be completed before a future time.</p>
+      </article>
+
+      <!-- 12 -->
+      <article class="pk-tense-card">
+        <h4>12. Future Perfect Continuous</h4>
+        <p><b>Formula:</b> Subject + will have been + V-ing + since/for</p>
+        <p><b>Positive:</b> She will have been reading for two hours.</p>
+        <p><b>Negative:</b> She will not have been reading for two hours.</p>
+        <p><b>Question:</b> Will she have been reading for two hours?</p>
+        <p><b>Use:</b> An action continuing for a duration up to a future point.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
   </main>
 </div>
 <div id="toast" class="toast hidden"></div>
 
 <style>
+.pk-tenses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.pk-tense-card {
+  background: linear-gradient(145deg, #071018, #04090d);
+  border: 1px solid #16445d;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 0 18px rgba(0, 183, 255, 0.07);
+  transition: 0.2s ease;
+}
+
+.pk-tense-card:hover {
+  transform: translateY(-3px);
+  border-color: #00b7ff;
+  box-shadow: 0 0 25px rgba(0, 183, 255, 0.18);
+}
+
+.pk-tense-card h4 {
+  margin: 0 0 12px;
+  color: #00b7ff;
+  font-size: 18px;
+}
+
+.pk-tense-card p {
+  margin: 8px 0;
+  line-height: 1.55;
+}
+
+@media (max-width: 950px) {
+  .pk-tenses-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .pk-tenses-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.section-head h3{margin-bottom:3px}
 .editor-toolbar{display:flex;gap:5px;flex-wrap:wrap;background:#050b10;border:1px solid #123448;border-bottom:0;border-radius:12px 12px 0 0;padding:8px}.editor-toolbar button,.editor-toolbar select{width:auto;min-width:38px;padding:7px 9px;border-radius:7px;background:#0a1620;color:#dff6ff;border:1px solid #183d51}.editor-toolbar button:hover{border-color:#00b7ff}.pen-blue{color:#4db8ff!important}.pen-black{color:#fff!important}.rich-editor{min-height:380px;background:repeating-linear-gradient(to bottom,#fff 0,#fff 29px,#dce8ef 30px);color:#111;padding:24px 28px;border:1px solid #123448;border-radius:0 0 12px 12px;outline:none;line-height:30px;font-family:Georgia,serif;font-size:18px}.rich-editor:empty:before{content:attr(data-placeholder);color:#777}.note-title-wrap input{background:#071018}.side-panel{max-height:560px;overflow:auto}.subject-grid,.video-grid,.image-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.subject-card{background:linear-gradient(145deg,#071018,#04090d);border:1px solid #16445d;border-radius:15px;padding:16px;cursor:pointer}.subject-card:hover{border-color:#00b7ff;box-shadow:0 0 20px rgba(0,183,255,.1)}.subject-card h4{color:#fff;margin-bottom:8px}.subject-card p{color:#8ba3b2;font-size:12px}.subject-card .actions{display:flex;gap:6px;margin-top:12px}.notebook-paper{background:repeating-linear-gradient(to bottom,#fff 0,#fff 29px,#dce8ef 30px);color:#111;border-radius:12px;min-height:500px;padding:24px 30px;line-height:30px;font-family:Georgia,serif;font-size:18px;outline:none}.notebook-paper:empty:before{content:'Start writing in your subject notebook...';color:#777}.notebook-head{display:flex;gap:8px;align-items:center;margin-bottom:12px}.notebook-head input{background:#071018}.timetable-tools{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin-bottom:14px}.timetable-tools label{display:grid;gap:5px;color:#8ba3b2;font-size:12px}.timetable-tools select{width:120px}.school-grid{overflow:auto}.school-grid table{min-width:900px;background:#061018}.school-grid th{background:#091722;position:sticky;top:0}.period-input{min-width:115px}.video-card,.image-card{background:#071018;border:1px solid #123448;border-radius:14px;overflow:hidden}.video-card{padding:14px}.video-card h4,.image-card h4{margin-bottom:7px}.video-card a{color:#5cc9ff;word-break:break-all}.video-card .actions,.image-card .actions{display:flex;gap:6px;margin-top:10px}.image-card img{width:100%;height:210px;object-fit:cover;display:block}.image-card .body{padding:12px}.timer-settings{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:15px}.timer-settings input{width:100px;text-align:center}.timer-settings span{color:#8ba3b2}.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
 @media(max-width:1000px){.subject-grid,.video-grid,.image-grid{grid-template-columns:repeat(2,1fr)}.note-editor{grid-template-columns:1fr!important}}
